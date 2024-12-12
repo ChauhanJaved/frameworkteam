@@ -102,7 +102,7 @@ export default function Portfolio(props: { galleryID: string }) {
                 className="flex w-full scroll-m-[64px] flex-col p-4 md:w-1/2 lg:w-1/3"
               >
                 <figure className="rounded bg-white p-4 shadow-lg">
-                  <div className="relative overflow-hidden md:h-[196px] lg:h-[171px] xl:h-[222px]">
+                  <div className="relative overflow-hidden border md:h-[196px] lg:h-[171px] xl:h-[222px]">
                     <Link
                       id={"image-" + index}
                       href={cloudinaryLoader({
