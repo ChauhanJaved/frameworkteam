@@ -43,6 +43,39 @@ export default function Services() {
           digital landscape.
         </p>
       </div>
+      <h2 className="mt-5 text-lg md:text-xl">
+        <b>Windows Desktop Application Development</b>
+      </h2>
+      <div className="text-base md:text-lg">
+        <p className="mt-5">
+          Our expertise in Windows Desktop Application development using .NET
+          and C# empowers us to create robust, high-performing, and feature-rich
+          solutions tailored to meet diverse business needs. By leveraging the
+          .NET framework, we develop applications that are not only efficient
+          and scalable but also secure and user-friendly. Our services include
+          designing custom applications to address unique business challenges,
+          modernizing legacy systems by transforming outdated software into
+          advanced .NET-based solutions, and seamlessly integrating applications
+          with third-party systems, databases, and APIs.
+        </p>
+        <p className="mt-5">
+          We excel in building intuitive and visually appealing user interfaces
+          using technologies like Windows Presentation Foundation (WPF),
+          ensuring an enhanced user experience. Our team specializes in
+          developing enterprise-grade solutions with multi-tiered architecture,
+          offering advanced functionalities such as role-based access control,
+          dynamic reporting, and offline capabilities. Additionally, we provide
+          comprehensive maintenance and support services to ensure the seamless
+          performance of your applications post-deployment, including regular
+          updates to align with the latest technological advancements.
+        </p>
+        <p className="mt-5">
+          With in-depth expertise in C# and a thorough understanding of Windows
+          APIs and advanced .NET libraries, we are committed to delivering
+          secure, reliable, and scalable desktop applications that drive
+          efficiency and add value to your business.
+        </p>
+      </div>
     </section>
   );
 }
