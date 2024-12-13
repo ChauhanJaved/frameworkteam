@@ -3,7 +3,7 @@ import Image from "next/image";
 
 //Internal Imports
 import { montserrat } from "@/components/font/font";
-import { portfolioItems } from "@/data/website-data";
+import { HeaderNavItems, portfolioItems } from "@/data/website-data";
 import BreadCrumbs from "@/components/UI/BreadCrumbs";
 import SectionHeader from "@/components/UI/SectionHeader";
 import HeroIcons, { IconNames } from "@/components/UI/HeroIcons";
@@ -26,9 +26,14 @@ export default function Page({ params }: { params: { product: string } }) {
   );
   //Breadcrumb data
   const pageLocation = [
-    { name: "Home", link: "/" },
-    { name: "Portfolio", link: "/#portfolio" },
-    { name: `${portfolioItem?.title}`, link: `/#${portfolioItem?.id}` },
+    {
+      name: `${HeaderNavItems.Home[0].toUpperCase()}${HeaderNavItems.Home.slice(1)}`,
+      link: `/#${HeaderNavItems.Home}`,
+    },
+    {
+      name: `${HeaderNavItems.Portfolio[0].toUpperCase()}${HeaderNavItems.Portfolio.slice(1)}`,
+      link: `/#${HeaderNavItems.Portfolio}`,
+    },
   ];
   return (
     <>
@@ -36,7 +41,10 @@ export default function Page({ params }: { params: { product: string } }) {
       <main id="main" className="text-lg">
         {portfolioItem && (
           <>
-            <BreadCrumbs pageLocation={pageLocation} />
+            <BreadCrumbs
+              pageLocation={pageLocation}
+              pageName={portfolioItem?.title}
+            />
             <div className="container mx-auto flex flex-col items-center justify-center px-3 py-10 xl:max-w-screen-xl">
               <SectionHeader
                 caption={portfolioItem.title}

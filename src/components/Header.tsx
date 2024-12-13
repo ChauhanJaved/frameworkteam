@@ -106,7 +106,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                 onClick={() => {
                   setActiveSection(HeaderNavItems.Home);
                 }}
-                href={`/`}
+                href={`/#${HeaderNavItems.Home}`}
               >
                 {headerCompanyName}
               </Link>
@@ -122,7 +122,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                         setActiveSection(item);
                       }}
                       className={linkClasses(activeSection === item)}
-                      href={index === 0 ? "/" : `/#${item}`}
+                      href={`/#${item}`}
                     >
                       {item}
                     </Link>

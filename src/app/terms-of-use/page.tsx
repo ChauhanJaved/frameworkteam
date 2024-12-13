@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import BreadCrumbs from "@/components/UI/BreadCrumbs";
 import SectionHeader from "@/components/UI/SectionHeader";
-import { companyName } from "@/data/website-data";
+import { companyName, HeaderNavItems } from "@/data/website-data";
 
 const pageName = "Terms of Use";
 
@@ -15,7 +15,12 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  const pageLocation = [{ name: "Home", link: "/" }];
+  const pageLocation = [
+    {
+      name: `${HeaderNavItems.Home[0].toUpperCase()}${HeaderNavItems.Home.slice(1)}`,
+      link: `/#${HeaderNavItems.Home}`,
+    },
+  ];
   return (
     <>
       <Header />
