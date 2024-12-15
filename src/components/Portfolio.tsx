@@ -8,12 +8,12 @@ import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 
 //Internal imports
-import SectionHeader from "@/components/UI/SectionHeader";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { Categories, categoryList, HeaderNavItems } from "@/data/website-data";
 import { portfolioItems } from "@/data/website-data";
 import { montserrat } from "@/components/font/font";
 import cloudinaryLoader from "@/lib/cloudinary-loader";
-import HeroIcons, { IconNames } from "./UI/HeroIcons";
+import HeroIcons, { IconNames } from "./ui/HeroIcons";
 
 export default function Portfolio(props: { galleryID: string }) {
   const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -91,7 +91,7 @@ export default function Portfolio(props: { galleryID: string }) {
         {/* ===== End Catagory filter ===== */}
         <div
           id={props.galleryID}
-          className="flex flex-wrap items-center text-center"
+          className="flex flex-wrap items-center border border-black text-center"
         >
           {filteredItems.map((item, index) => {
             return (
@@ -99,10 +99,10 @@ export default function Portfolio(props: { galleryID: string }) {
               <div
                 id={item.id}
                 key={index}
-                className="flex w-full scroll-m-[64px] flex-col p-4 md:w-1/2 lg:w-1/3"
+                className="flex w-full scroll-m-[64px] flex-col items-center justify-center border border-red-500 p-4 md:w-1/2 lg:w-1/3"
               >
-                <figure className="rounded bg-white p-4 shadow-lg">
-                  <div className="relative overflow-hidden border md:h-[196px] lg:h-[171px] xl:h-[222px]">
+                <figure className="h-[200px] w-[250px] rounded border border-blue-600 bg-black p-4 shadow">
+                  <div className="relative overflow-hidden border">
                     <Link
                       id={"image-" + index}
                       href={cloudinaryLoader({
@@ -149,7 +149,7 @@ export default function Portfolio(props: { galleryID: string }) {
                       />
                     </Link>
                   </div>
-                  <figcaption className={`mt-4 text-lg font-bold`}>
+                  <figcaption className={`mt-4 text-base font-bold md:text-lg`}>
                     <Link
                       href={item.pageLink}
                       className="text-blue-dark-imperial transition-all duration-300 hover:opacity-75 active:opacity-75"

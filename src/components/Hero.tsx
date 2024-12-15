@@ -3,14 +3,15 @@ import Image from "next/image";
 
 //Internal imports
 import { nunito } from "@/components/font/font";
-import Button from "./UI/Button";
+import { Button } from "@/components/ui/button";
 import {
   HeaderNavItems,
   headerNavItems,
   heroDesc,
   heroTitle,
 } from "@/data/website-data";
-import { IconNames } from "./UI/HeroIcons";
+import { IconNames } from "./ui/HeroIcons";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -48,12 +49,9 @@ const Hero = () => {
           <p className="mt-1 bg-transparent text-lg md:text-xl lg:text-2xl">
             {heroDesc}
           </p>
-          <Button
-            caption="Read More"
-            icon={IconNames.ArrowLongRight}
-            link={`#${headerNavItems[1]}`}
-            className="mt-8"
-          />
+          <Button>
+            <Link href={`#${headerNavItems[1]}`}>Read More</Link>
+          </Button>
         </div>
       </div>
     </section>
