@@ -1,5 +1,5 @@
 //Internal imports
-import SectionHeader from "./UI/SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
 import { HeaderNavItems, headerNavItems } from "@/data/website-data";
 
 export default function Services() {

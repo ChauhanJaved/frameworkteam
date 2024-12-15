@@ -4,11 +4,12 @@ import Image from "next/image";
 //Internal Imports
 import { montserrat } from "@/components/font/font";
 import { HeaderNavItems, portfolioItems } from "@/data/website-data";
-import BreadCrumbs from "@/components/UI/BreadCrumbs";
-import SectionHeader from "@/components/UI/SectionHeader";
-import HeroIcons, { IconNames } from "@/components/UI/HeroIcons";
-import Button from "@/components/UI/Button";
+import BreadCrumbs from "@/components/ui/BreadCrumbs";
+import SectionHeader from "@/components/ui/SectionHeader";
+import HeroIcons, { IconNames } from "@/components/ui/HeroIcons";
 import Header from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ product: item.id }));
@@ -54,12 +55,9 @@ export default function Page({ params }: { params: { product: string } }) {
                     : "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial"
                 }
               />
-              <Button
-                caption="Download Now"
-                link={portfolioItem.downloadLink}
-                icon={IconNames.ArrowDownTray}
-                className="mt-10"
-              />
+              <Button className="mt-10">
+                <Link href={portfolioItem.downloadLink}>Download Now</Link>
+              </Button>
               <div className="mt-10 flex w-full flex-col md:flex-row">
                 {/* ----- Box-1 ----- */}
                 <div className="flex w-full flex-col items-center md:w-2/3">

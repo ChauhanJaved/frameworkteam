@@ -3,7 +3,7 @@ import "./globals.css";
 import { roboto } from "@/components/font/font";
 import { companyName, copyrightYear } from "@/data/website-data";
 import Footer from "@/components/Footer";
-import ScrollTop from "@/components/UI/ScrollTop";
+import ScrollTop from "@/components/ui/ScrollTop";
 import { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {

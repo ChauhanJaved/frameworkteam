@@ -4,8 +4,8 @@ import { Metadata } from "next";
 
 //Internal imports
 import Header from "@/components/Header";
-import BreadCrumbs from "@/components/UI/BreadCrumbs";
-import SectionHeader from "@/components/UI/SectionHeader";
+import BreadCrumbs from "@/components/ui/BreadCrumbs";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { companyName, HeaderNavItems } from "@/data/website-data";
 
 const pageName = "Privacy Policy";
