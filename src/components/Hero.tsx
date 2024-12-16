@@ -1,4 +1,5 @@
 //External  imports
+import Link from "next/link";
 import Image from "next/image";
 
 //Internal imports
@@ -10,9 +11,8 @@ import {
   heroDesc,
   heroTitle,
 } from "@/data/website-data";
-import { IconNames } from "./ui/HeroIcons";
-import Link from "next/link";
-import { ArrowBigRight } from "lucide-react";
+
+import { ArrowDown, Delete, MoveDown } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -50,10 +50,12 @@ const Hero = () => {
           <p className="mt-1 bg-transparent text-lg md:text-xl lg:text-2xl">
             {heroDesc}
           </p>
-          <Button>
-            <Link href={`#${headerNavItems[1]}`}>Read More</Link>
-            <ArrowBigRight />
-          </Button>
+          <Link href={`#${headerNavItems[1]}`} className="mt-5">
+            <Button className="py-5">
+              <ArrowDown />
+              Read More
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

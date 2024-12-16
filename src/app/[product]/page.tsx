@@ -10,6 +10,7 @@ import HeroIcons, { IconNames } from "@/components/ui/HeroIcons";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Download } from "lucide-react";
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ product: item.id }));
@@ -55,9 +56,13 @@ export default function Page({ params }: { params: { product: string } }) {
                     : "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial"
                 }
               />
-              <Button className="mt-10">
-                <Link href={portfolioItem.downloadLink}>Download Now</Link>
-              </Button>
+
+              <Link href={portfolioItem.downloadLink} className="mt-10">
+                <Button className="py-5">
+                  <Download />
+                  Download Now
+                </Button>
+              </Link>
               <div className="mt-10 flex w-full flex-col md:flex-row">
                 {/* ----- Box-1 ----- */}
                 <div className="flex w-full flex-col items-center md:w-2/3">
