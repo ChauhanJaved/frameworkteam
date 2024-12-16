@@ -12,6 +12,7 @@ import {
 } from "@/data/website-data";
 import { IconNames } from "./ui/HeroIcons";
 import Link from "next/link";
+import { ArrowBigRight } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -51,6 +52,7 @@ const Hero = () => {
           </p>
           <Button>
             <Link href={`#${headerNavItems[1]}`}>Read More</Link>
+            <ArrowBigRight />
           </Button>
         </div>
       </div>
