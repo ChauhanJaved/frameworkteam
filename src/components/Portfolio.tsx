@@ -139,7 +139,7 @@ export default function Portfolio(props: { galleryID: string }) {
                       data-pswp-height={item.height}
                       target="_blank"
                       rel="noreferrer"
-                      className="pswp-gallery__item"
+                      className="pswp-gallery__item cursor-zoom-in"
                     >
                       <Image
                         src={item.src}
@@ -149,11 +149,12 @@ export default function Portfolio(props: { galleryID: string }) {
                       />
                     </Link>
                   </div>
-                  <div
+                  <Link
+                    href={item.pageLink}
                     className={`flex h-[75px] w-[250px] items-center justify-center border-t p-2 text-center text-sm`}
                   >
-                    {item.title}
-                  </div>
+                    <Button variant={"link"}>{item.title}</Button>
+                  </Link>
                 </div>
               </div>
               // ===== End Portfolio Item =====
