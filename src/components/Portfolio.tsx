@@ -93,7 +93,7 @@ export default function Portfolio(props: { galleryID: string }) {
         {/* ===== End Catagory filter ===== */}
         <div
           id={props.galleryID}
-          className="flex w-full flex-wrap items-center justify-center gap-5 p-5 text-center"
+          className="flex flex-wrap items-center text-center"
         >
           {filteredItems.map((item, index) => {
             return (
@@ -101,44 +101,59 @@ export default function Portfolio(props: { galleryID: string }) {
               <div
                 id={item.id}
                 key={index}
-                className="flex flex-col items-center justify-center rounded border shadow-sm"
+                className="flex w-full flex-col items-center justify-center p-4 md:w-1/2 lg:w-1/3"
               >
-                {/* Box-1 Toolbar--------- */}
+                <div className="flex w-[300px] flex-col items-center justify-center rounded border shadow-sm">
+                  {/* Box-1 Toolbar--------- */}
 
-                <div className="mt-2 flex w-full items-center justify-end gap-2 pr-2">
-                  <Button
-                    onClick={() => {
-                      document.getElementById("image-" + index)?.click();
-                    }}
-                    variant="outline"
-                    aria-label="Zoom In"
-                    size={"icon"}
-                  >
-                    <ZoomIn />
-                  </Button>
-                  <Link href={item.pageLink}>
+                  <div className="mt-2 flex w-full items-center justify-end gap-2 pr-2">
                     <Button
+                      onClick={() => {
+                        document.getElementById("image-" + index)?.click();
+                      }}
                       variant="outline"
-                      size="icon"
-                      aria-label="Open Product Page"
+                      aria-label="Zoom In"
+                      size={"icon"}
                     >
-                      <SquareArrowOutUpRight />
+                      <ZoomIn />
                     </Button>
-                  </Link>
-                </div>
-                {/* Box-2---------- */}
-                <div className="relative mt-2 flex h-[250px] w-[250px] items-center justify-center overflow-hidden border-t bg-primary-foreground">
-                  <Image
-                    src={item.src}
-                    alt={`${item.title}`}
-                    fill
-                    className={`object-contain`}
-                  />
-                </div>
-                <div
-                  className={`flex h-[75px] w-[250px] items-center justify-center border-t p-2 text-center text-sm`}
-                >
-                  {item.title}
+                    <Link href={item.pageLink}>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        aria-label="Open Product Page"
+                      >
+                        <SquareArrowOutUpRight />
+                      </Button>
+                    </Link>
+                  </div>
+                  {/* Box-2---------- */}
+                  <div className="relative mt-2 flex h-[250px] w-[250px] items-center justify-center overflow-hidden border-t bg-primary-foreground">
+                    <Link
+                      id={"image-" + index}
+                      href={cloudinaryLoader({
+                        src: item.src,
+                        width: item.width,
+                      })}
+                      data-pswp-width={item.width}
+                      data-pswp-height={item.height}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pswp-gallery__item"
+                    >
+                      <Image
+                        src={item.src}
+                        alt={`${item.title}`}
+                        fill
+                        className={`object-contain`}
+                      />
+                    </Link>
+                  </div>
+                  <div
+                    className={`flex h-[75px] w-[250px] items-center justify-center border-t p-2 text-center text-sm`}
+                  >
+                    {item.title}
+                  </div>
                 </div>
               </div>
               // ===== End Portfolio Item =====
