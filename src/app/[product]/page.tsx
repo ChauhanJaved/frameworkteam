@@ -10,7 +10,7 @@ import HeroIcons, { IconNames } from "@/components/ui/HeroIcons";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Download } from "lucide-react";
+import { Download, SquareArrowOutUpRight } from "lucide-react";
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ product: item.id }));
@@ -56,23 +56,37 @@ export default function Page({ params }: { params: { product: string } }) {
                     : "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial"
                 }
               />
-              <Link href={portfolioItem.downloadLink} className="mt-10">
-                <Button className="py-5 text-base">
-                  <Download className="" />
-                  Download Now
-                </Button>
-              </Link>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+                {portfolioItem.downloadLink && (
+                  <Link href={portfolioItem.downloadLink}>
+                    <Button className="py-5 text-base">
+                      <Download className="" />
+                      Download Now
+                    </Button>
+                  </Link>
+                )}
+                {portfolioItem.productWebsite && (
+                  <Link href={portfolioItem.productWebsite}>
+                    <Button className="py-5 text-base">
+                      <SquareArrowOutUpRight />
+                      Product Website
+                    </Button>
+                  </Link>
+                )}
+              </div>
+
               <div className="mt-10 flex w-full flex-col md:flex-row">
                 {/* ----- Box-1 ----- */}
                 <div className="flex w-full flex-col items-center md:w-2/3">
-                  <Image
-                    src={portfolioItem.src}
-                    width={portfolioItem.width}
-                    height={portfolioItem.height}
-                    alt={portfolioItem.title}
-                    className="relative"
-                    priority
-                  />
+                  <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden bg-primary-foreground">
+                    <Image
+                      src={portfolioItem.src}
+                      alt={portfolioItem.title}
+                      fill
+                      className={`object-contain p-5`}
+                      priority
+                    />
+                  </div>
                 </div>
                 {/* ----- Box-2 ----- */}
                 <div className="mt-5 md:ml-3 md:mt-0 md:w-1/3">
