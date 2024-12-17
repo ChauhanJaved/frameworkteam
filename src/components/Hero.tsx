@@ -51,7 +51,7 @@ const Hero = () => {
             {heroDesc}
           </p>
           <Link href={`#${headerNavItems[1]}`} className="mt-5">
-            <Button className="py-5">
+            <Button className="py-5 text-base">
               <ArrowDown />
               Read More
             </Button>
