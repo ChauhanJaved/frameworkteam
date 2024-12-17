@@ -14,6 +14,8 @@ import { portfolioItems } from "@/data/website-data";
 import { montserrat } from "@/components/font/font";
 import cloudinaryLoader from "@/lib/cloudinary-loader";
 import HeroIcons, { IconNames } from "./ui/HeroIcons";
+import { Button } from "./ui/button";
+import { SquareArrowOutUpRight, ZoomIn } from "lucide-react";
 
 export default function Portfolio(props: { galleryID: string }) {
   const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -91,7 +93,7 @@ export default function Portfolio(props: { galleryID: string }) {
         {/* ===== End Catagory filter ===== */}
         <div
           id={props.galleryID}
-          className="flex flex-wrap items-center border border-black text-center"
+          className="flex w-full flex-wrap items-center justify-center gap-5 p-5 text-center"
         >
           {filteredItems.map((item, index) => {
             return (
@@ -99,65 +101,45 @@ export default function Portfolio(props: { galleryID: string }) {
               <div
                 id={item.id}
                 key={index}
-                className="flex w-full scroll-m-[64px] flex-col items-center justify-center border border-red-500 p-4 md:w-1/2 lg:w-1/3"
+                className="flex flex-col items-center justify-center rounded border shadow-sm"
               >
-                <figure className="h-[200px] w-[250px] rounded border border-blue-600 bg-black p-4 shadow">
-                  <div className="relative overflow-hidden border">
-                    <Link
-                      id={"image-" + index}
-                      href={cloudinaryLoader({
-                        src: item.src,
-                        width: item.width,
-                      })}
-                      data-pswp-width={item.width}
-                      data-pswp-height={item.height}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="pswp-gallery__item cursor-default"
+                {/* Box-1 Toolbar--------- */}
+
+                <div className="mt-2 flex w-full items-center justify-end gap-2 pr-2">
+                  <Button
+                    onClick={() => {
+                      document.getElementById("image-" + index)?.click();
+                    }}
+                    variant="outline"
+                    aria-label="Zoom In"
+                    size={"icon"}
+                  >
+                    <ZoomIn />
+                  </Button>
+                  <Link href={item.pageLink}>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      aria-label="Open Product Page"
                     >
-                      <Image
-                        src={item.src}
-                        alt={`${item.title}`}
-                        width={item.width}
-                        height={item.height}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className={`h-full w-full`}
-                      />
-                    </Link>
-                    {/* Magnifying Icon */}
-                    <button
-                      onClick={() => {
-                        document.getElementById("image-" + index)?.click();
-                      }}
-                      className={`absolute right-[calc(10px)] top-[calc(10px)] inline-flex items-center justify-center rounded bg-black-800 p-1 text-white opacity-80 transition-all duration-300 hover:bg-blue-ultramarine hover:opacity-100 active:bg-blue-ultramarine active:opacity-100`}
-                    >
-                      <HeroIcons
-                        iconName={IconNames.MagnifyingGlassPlus}
-                        className="size-6 font-bold"
-                        strokeWidth={1.5}
-                      />
-                    </button>
-                    {/* Link Icon */}
-                    <Link
-                      href={item.pageLink}
-                      className={`absolute right-[calc(10px)] top-[calc(50px)] inline-flex items-center justify-center rounded bg-black-800 p-1 text-white opacity-80 transition-all duration-300 hover:bg-blue-ultramarine hover:opacity-100 active:bg-blue-ultramarine active:opacity-100`}
-                    >
-                      <HeroIcons
-                        iconName={IconNames.Link}
-                        className="size-6 font-bold"
-                        strokeWidth={1.5}
-                      />
-                    </Link>
-                  </div>
-                  <figcaption className={`mt-4 text-base font-bold md:text-lg`}>
-                    <Link
-                      href={item.pageLink}
-                      className="text-blue-dark-imperial transition-all duration-300 hover:opacity-75 active:opacity-75"
-                    >
-                      {item.title}
-                    </Link>
-                  </figcaption>
-                </figure>
+                      <SquareArrowOutUpRight />
+                    </Button>
+                  </Link>
+                </div>
+                {/* Box-2---------- */}
+                <div className="relative mt-2 flex h-[250px] w-[250px] items-center justify-center overflow-hidden border-t bg-primary-foreground">
+                  <Image
+                    src={item.src}
+                    alt={`${item.title}`}
+                    fill
+                    className={`object-contain`}
+                  />
+                </div>
+                <div
+                  className={`flex h-[75px] w-[250px] items-center justify-center border-t p-2 text-center text-sm`}
+                >
+                  {item.title}
+                </div>
               </div>
               // ===== End Portfolio Item =====
             );
