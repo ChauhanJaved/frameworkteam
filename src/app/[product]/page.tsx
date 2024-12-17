@@ -66,7 +66,7 @@ export default function Page({ params }: { params: { product: string } }) {
                   </Link>
                 )}
                 {portfolioItem.productWebsite && (
-                  <Link href={portfolioItem.productWebsite}>
+                  <Link href={portfolioItem.productWebsite} target="_blank">
                     <Button className="py-5 text-base">
                       <SquareArrowOutUpRight />
                       Product Website
