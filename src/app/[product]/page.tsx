@@ -56,10 +56,9 @@ export default function Page({ params }: { params: { product: string } }) {
                     : "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial"
                 }
               />
-
               <Link href={portfolioItem.downloadLink} className="mt-10">
-                <Button className="py-5">
-                  <Download />
+                <Button className="py-5 text-base">
+                  <Download className="" />
                   Download Now
                 </Button>
               </Link>
