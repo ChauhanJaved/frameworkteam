@@ -10,7 +10,7 @@ import HeroIcons, { IconNames } from "@/components/ui/HeroIcons";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Download, SquareArrowOutUpRight } from "lucide-react";
+import { CircleCheck, Download, SquareArrowOutUpRight } from "lucide-react";
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ product: item.id }));
@@ -50,11 +50,7 @@ export default function Page({ params }: { params: { product: string } }) {
             <div className="container mx-auto flex flex-col items-center justify-center px-3 py-10 xl:max-w-screen-xl">
               <SectionHeader
                 caption={portfolioItem.title}
-                desc={
-                  portfolioItem.desc
-                    ? portfolioItem.desc
-                    : "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial"
-                }
+                desc={portfolioItem.subtitle}
               />
               <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
                 {portfolioItem.downloadLink && (
@@ -94,13 +90,11 @@ export default function Page({ params }: { params: { product: string } }) {
                     {portfolioItem.features.map((item, index) => (
                       <div key={index} className="mb-3 flex w-full flex-col">
                         <div className="flex flex-row items-center">
-                          <HeroIcons
-                            iconName={IconNames.CheckCircle}
-                            className="h-9 w-9 flex-none text-blue-ultramarine"
-                          />
-
+                          <div className="size-6">
+                            <CircleCheck />
+                          </div>
                           <div className="flex flex-grow flex-col pl-3 text-left">
-                            <h2 className={`${montserrat.className} font-bold`}>
+                            <h2 className={`${montserrat.className} `}>
                               {item}
                             </h2>
                           </div>

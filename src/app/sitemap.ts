@@ -8,7 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.JPGtoPDFConverter}.html`,
+      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.JPGtoPDFConverterWeb}.html`,
+      lastModified: new Date(),
+    },
+    {
+      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.JPGtoPDFConverterDesktop}.html`,
       lastModified: new Date(),
     },
     {

@@ -87,9 +87,9 @@ export const categoryList: string[] = [
 ];
 
 export enum ProductIDs {
-  JPGtoPDFConverterOnline = "jpg-to-pdf-converter-online",
+  JPGtoPDFConverterWeb = "jpg-to-pdf-converter",
 
-  JPGtoPDFConverter = "jpg-to-pdf-converter",
+  JPGtoPDFConverterDesktop = "jpg-to-pdf-converter-desktop",
   TIFFtoPDFConverter = "tiff-to-pdf-converter",
   PNGtoPDFConverter = "png-to-pdf-converter",
 
@@ -112,9 +112,9 @@ export enum ProductIDs {
 }
 
 enum ProductTitles {
-  JPGtoPDFConverterOnline = "JPG to PDF Converter Online",
+  JPGtoPDFConverterWeb = "JPG to PDF Converter",
 
-  JPGtoPDFConverter = "JPG to PDF Converter",
+  JPGtoPDFConverterDesktop = "JPG to PDF Converter",
   TIFFtoPDFConverter = "TIFF to PDF Converter",
   PNGtoPDFConverter = "PNG to PDF Converter",
 
@@ -135,11 +135,35 @@ enum ProductTitles {
   ConvertHTMLtoImage = "Convert HTML to Image",
   WebsitesScreenshot = "Websites Screenshot",
 }
+enum ProductSubTitles {
+  JPGtoPDFConverterWeb = "Combine All JPGs into a Single PDF | Convert Each JPG to a Separate PDF | Easily Adjust Orientation, Page Size, and Margins",
+
+  JPGtoPDFConverterDesktop = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  TIFFtoPDFConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  PNGtoPDFConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+
+  PDFtoJPGConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  PDFtoTIFFConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  PDFtoPNGConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  PDFtoImageConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+
+  TIFFSplitter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  TIFFCombiner = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  TIFFSplitMerge = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+
+  PDFSplitter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  PDFCombiner = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  PDFSplitMerge = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+
+  WebpageThumbnailer = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  ConvertHTMLtoImage = "Windows 11/10/8/7 | Command Line Tool",
+  WebsitesScreenshot = "Windows 11/10/8/7 | .NET Component",
+}
 
 enum ProductWebsites {
-  JPGtoPDFConverterOnline = "https://www.jpg-to-pdf-converter.com/",
+  JPGtoPDFConverterWeb = "https://www.jpg-to-pdf-converter.com/",
 
-  JPGtoPDFConverter = "https://www.jpg-to-pdf-converter.com/desktop.html",
+  JPGtoPDFConverterDesktop = "https://www.jpg-to-pdf-converter.com/desktop.html",
   TIFFtoPDFConverter = "https://www.tiff-to-pdf-converter.com/",
   PNGtoPDFConverter = "https://www.png-to-pdf-converter.com/",
 
@@ -162,7 +186,7 @@ enum ProductWebsites {
 }
 
 enum ProductDownloadLinks {
-  JPGtoPDFConverter = "https://jpg-to-pdf-converter.com/downloads/jpg-to-pdf-converter-setup.exe",
+  JPGtoPDFConverterDesktop = "https://jpg-to-pdf-converter.com/downloads/jpg-to-pdf-converter-setup.exe",
   TIFFtoPDFConverter = "https://tiff-to-pdf-converter.com/downloads/tiff-to-pdf-converter-setup.exe",
   PNGtoPDFConverter = "https://png-to-pdf-converter.com/downloads/png-to-pdf-converter-setup.exe",
 
@@ -190,7 +214,7 @@ const productImages = {
     width: 1170,
     height: 2532,
   },
-  JPGtoPDFConverter: {
+  JPGtoPDFConverterDesktop: {
     imgName: "jpg-to-pdf-converter",
     width: 756,
     height: 463,
@@ -279,7 +303,7 @@ const productImages = {
 interface portfolioItem {
   id: string;
   title: string;
-  desc?: string;
+  subtitle: string;
   src: string;
   width: number;
   height: number;
@@ -293,23 +317,23 @@ interface portfolioItem {
 }
 
 export const portfolioItems: portfolioItem[] = [
-  // ***** JPG to PDF Converter Online*****
+  // ***** JPG to PDF Converter Web*****
   {
-    id: ProductIDs.JPGtoPDFConverterOnline,
-    title: ProductTitles.JPGtoPDFConverterOnline,
+    id: ProductIDs.JPGtoPDFConverterWeb,
+    title: ProductTitles.JPGtoPDFConverterWeb,
+    subtitle: ProductSubTitles.JPGtoPDFConverterWeb,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.JPGtoPDFConverterWeb.imgName.toLowerCase()}`,
     width: productImages.JPGtoPDFConverterWeb.width,
     height: productImages.JPGtoPDFConverterWeb.height,
     categories: [Categories.All, Categories.WebApp],
-    pageLink: `/${ProductIDs.JPGtoPDFConverterOnline}`,
-    productWebsite: ProductWebsites.JPGtoPDFConverterOnline,
+    pageLink: `/${ProductIDs.JPGtoPDFConverterWeb}`,
+    productWebsite: ProductWebsites.JPGtoPDFConverterWeb,
     features: [
-      "Local & Secure Offline Conversion",
-      "Lightning-Fast Conversion Speed",
-      "Batch Conversion Made Easy",
-      "Simple Drag and Drop Interface",
-      "Flexible Conversion Modes",
-      "Easily Change Image Order",
+      "Convenient Online Web App for Instant Use",
+      "Local, Secure, and Private File Conversion",
+      "Flexible PDF Creation Options",
+      "Easily Customizable Orientation, Page Size, and Margins",
+      "Simple Drag-and-Drop with Easy Image Rearrangement",
     ],
     description: (
       <div className="flex flex-col">
@@ -411,29 +435,29 @@ export const portfolioItems: portfolioItem[] = [
       </div>
     ),
     metaData: {
-      title: `Free ${ProductTitles.JPGtoPDFConverter} for Windows | Fast & Secure JPG to PDF Tool`,
+      title: `Free ${ProductTitles.JPGtoPDFConverterWeb} for Windows | Fast & Secure JPG to PDF Tool`,
       keywords:
         "JPG to PDF Converter, JPEG to PDF Converter, Convert JPG to PDF, Batch JPG to PDF, Windows PDF Converter, Image to PDF Tool",
       description:
         "Easily convert JPEG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable settings to ensure top-quality PDF output.",
       alternates: {
-        canonical: ProductWebsites.JPGtoPDFConverter,
+        canonical: ProductWebsites.JPGtoPDFConverterWeb,
       },
       openGraph: {
-        title: `Free ${ProductTitles.JPGtoPDFConverter} for Windows |  Fast & Secure JPG to PDF Tool`,
+        title: `Free ${ProductTitles.JPGtoPDFConverterWeb} for Windows |  Fast & Secure JPG to PDF Tool`,
         description:
           "Easily convert JPEG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable settings to ensure top-quality PDF output.",
-        url: `https://www.frameworkteam.com/${ProductIDs.JPGtoPDFConverter}.html`,
-        siteName: `${ProductTitles.JPGtoPDFConverter} for Windows`,
+        url: `https://www.frameworkteam.com/${ProductIDs.JPGtoPDFConverterWeb}.html`,
+        siteName: `${ProductTitles.JPGtoPDFConverterWeb} for Windows`,
         images: [
           {
             url: cloudinaryLoader({
-              src: `/${headerCompanyName.toLocaleLowerCase}/${productImages.JPGtoPDFConverter.imgName.toLocaleLowerCase}`,
-              width: productImages.JPGtoPDFConverter.width,
+              src: `/${headerCompanyName.toLocaleLowerCase}/${productImages.JPGtoPDFConverterWeb.imgName.toLocaleLowerCase}`,
+              width: productImages.JPGtoPDFConverterWeb.width,
             }),
-            width: productImages.JPGtoPDFConverter.width,
-            height: productImages.JPGtoPDFConverter.height,
-            alt: `Free ${ProductTitles.JPGtoPDFConverter} for Windows`,
+            width: productImages.JPGtoPDFConverterWeb.width,
+            height: productImages.JPGtoPDFConverterWeb.height,
+            alt: `Free ${ProductTitles.JPGtoPDFConverterWeb} for Windows`,
           },
         ],
         locale: "en_US",
@@ -441,22 +465,23 @@ export const portfolioItems: portfolioItem[] = [
       },
     },
   },
-  // ***** JPG to PDF Converter *****
+  // ***** JPG to PDF Converter Desktop*****
   {
-    id: ProductIDs.JPGtoPDFConverter,
-    title: ProductTitles.JPGtoPDFConverter,
-    src: `/${headerCompanyName.toLowerCase()}/${productImages.JPGtoPDFConverter.imgName.toLowerCase()}`,
-    width: productImages.JPGtoPDFConverter.width,
-    height: productImages.JPGtoPDFConverter.height,
+    id: ProductIDs.JPGtoPDFConverterDesktop,
+    title: ProductTitles.JPGtoPDFConverterDesktop,
+    subtitle: ProductSubTitles.JPGtoPDFConverterDesktop,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.JPGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+    width: productImages.JPGtoPDFConverterDesktop.width,
+    height: productImages.JPGtoPDFConverterDesktop.height,
     categories: [
       Categories.All,
       Categories.JPG,
       Categories.PDF,
       Categories.Converter,
     ],
-    pageLink: `/${ProductIDs.JPGtoPDFConverter}`,
-    productWebsite: ProductWebsites.JPGtoPDFConverter,
-    downloadLink: ProductDownloadLinks.JPGtoPDFConverter,
+    pageLink: `/${ProductIDs.JPGtoPDFConverterDesktop}`,
+    productWebsite: ProductWebsites.JPGtoPDFConverterDesktop,
+    downloadLink: ProductDownloadLinks.JPGtoPDFConverterDesktop,
     features: [
       "Local & Secure Offline Conversion",
       "Lightning-Fast Conversion Speed",
@@ -565,29 +590,29 @@ export const portfolioItems: portfolioItem[] = [
       </div>
     ),
     metaData: {
-      title: `Free ${ProductTitles.JPGtoPDFConverter} for Windows | Fast & Secure JPG to PDF Tool`,
+      title: `Free ${ProductTitles.JPGtoPDFConverterDesktop} for Windows | Fast & Secure JPG to PDF Tool`,
       keywords:
         "JPG to PDF Converter, JPEG to PDF Converter, Convert JPG to PDF, Batch JPG to PDF, Windows PDF Converter, Image to PDF Tool",
       description:
         "Easily convert JPEG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable settings to ensure top-quality PDF output.",
       alternates: {
-        canonical: ProductWebsites.JPGtoPDFConverter,
+        canonical: ProductWebsites.JPGtoPDFConverterDesktop,
       },
       openGraph: {
-        title: `Free ${ProductTitles.JPGtoPDFConverter} for Windows |  Fast & Secure JPG to PDF Tool`,
+        title: `Free ${ProductTitles.JPGtoPDFConverterDesktop} for Windows |  Fast & Secure JPG to PDF Tool`,
         description:
           "Easily convert JPEG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable settings to ensure top-quality PDF output.",
-        url: `https://www.frameworkteam.com/${ProductIDs.JPGtoPDFConverter}.html`,
-        siteName: `${ProductTitles.JPGtoPDFConverter} for Windows`,
+        url: `https://www.frameworkteam.com/${ProductIDs.JPGtoPDFConverterDesktop}.html`,
+        siteName: `${ProductTitles.JPGtoPDFConverterDesktop} for Windows`,
         images: [
           {
             url: cloudinaryLoader({
-              src: `/${headerCompanyName.toLocaleLowerCase}/${productImages.JPGtoPDFConverter.imgName.toLocaleLowerCase}`,
-              width: productImages.JPGtoPDFConverter.width,
+              src: `/${headerCompanyName.toLocaleLowerCase}/${productImages.JPGtoPDFConverterDesktop.imgName.toLocaleLowerCase}`,
+              width: productImages.JPGtoPDFConverterDesktop.width,
             }),
-            width: productImages.JPGtoPDFConverter.width,
-            height: productImages.JPGtoPDFConverter.height,
-            alt: `Free ${ProductTitles.JPGtoPDFConverter} for Windows`,
+            width: productImages.JPGtoPDFConverterDesktop.width,
+            height: productImages.JPGtoPDFConverterDesktop.height,
+            alt: `Free ${ProductTitles.JPGtoPDFConverterDesktop} for Windows`,
           },
         ],
         locale: "en_US",
@@ -599,6 +624,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.TIFFtoPDFConverter,
     title: ProductTitles.TIFFtoPDFConverter,
+    subtitle: ProductSubTitles.TIFFtoPDFConverter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverter.imgName.toLowerCase()}`,
     width: productImages.TIFFtoPDFConverter.width,
     height: productImages.TIFFtoPDFConverter.height,
@@ -743,6 +769,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PNGtoPDFConverter,
     title: ProductTitles.PNGtoPDFConverter,
+    subtitle: ProductSubTitles.PNGtoPDFConverter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverter.imgName.toLowerCase()}`,
     width: productImages.PNGtoPDFConverter.width,
     height: productImages.PNGtoPDFConverter.height,
@@ -881,6 +908,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PDFtoJPGConverter,
     title: ProductTitles.PDFtoJPGConverter,
+    subtitle: ProductSubTitles.PDFtoJPGConverter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFtoJPGConverter.imgName.toLowerCase()}`,
     width: productImages.PDFtoJPGConverter.width,
     height: productImages.PDFtoJPGConverter.height,
@@ -1017,6 +1045,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PDFtoTIFFConverter,
     title: ProductTitles.PDFtoTIFFConverter,
+    subtitle: ProductSubTitles.PDFtoTIFFConverter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFtoTIFFConverter.imgName.toLowerCase()}`,
     width: productImages.PDFtoTIFFConverter.width,
     height: productImages.PDFtoTIFFConverter.height,
@@ -1157,6 +1186,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PDFtoPNGConverter,
     title: ProductTitles.PDFtoPNGConverter,
+    subtitle: ProductSubTitles.PDFtoPNGConverter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFtoPNGConverter.imgName.toLowerCase()}`,
     width: productImages.PDFtoPNGConverter.width,
     height: productImages.PDFtoPNGConverter.height,
@@ -1295,6 +1325,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PDFtoImageConverter,
     title: ProductTitles.PDFtoImageConverter,
+    subtitle: ProductSubTitles.PDFtoImageConverter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFtoImageConverter.imgName.toLowerCase()}`,
     width: productImages.PDFtoImageConverter.width,
     height: productImages.PDFtoImageConverter.height,
@@ -1425,6 +1456,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.TIFFSplitter,
     title: ProductTitles.TIFFSplitter,
+    subtitle: ProductSubTitles.TIFFSplitter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFSplitter.imgName.toLowerCase()}`,
     width: productImages.TIFFSplitter.width,
     height: productImages.TIFFSplitter.height,
@@ -1544,6 +1576,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.TIFFCombiner,
     title: ProductTitles.TIFFCombiner,
+    subtitle: ProductSubTitles.TIFFCombiner,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFCombiner.imgName.toLowerCase()}`,
     width: productImages.TIFFCombiner.width,
     height: productImages.TIFFCombiner.height,
@@ -1674,6 +1707,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.TIFFSplitMerge,
     title: ProductTitles.TIFFSplitMerge,
+    subtitle: ProductSubTitles.TIFFSplitMerge,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFSplitMerge.imgName.toLowerCase()}`,
     width: productImages.TIFFSplitMerge.width,
     height: productImages.TIFFSplitMerge.height,
@@ -1812,6 +1846,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PDFSplitter,
     title: ProductTitles.PDFSplitter,
+    subtitle: ProductSubTitles.PDFSplitter,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFSplitter.imgName.toLowerCase()}`,
     width: productImages.PDFSplitter.width,
     height: productImages.PDFSplitter.height,
@@ -1927,6 +1962,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PDFCombiner,
     title: ProductTitles.PDFCombiner,
+    subtitle: ProductSubTitles.PDFCombiner,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFCombiner.imgName.toLowerCase()}`,
     width: productImages.PDFCombiner.width,
     height: productImages.PDFCombiner.height,
@@ -2056,6 +2092,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.PDFSplitMerge,
     title: ProductTitles.PDFSplitMerge,
+    subtitle: ProductSubTitles.PDFSplitMerge,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFSplitMerge.imgName.toLowerCase()}`,
     width: productImages.PDFSplitMerge.width,
     height: productImages.PDFSplitMerge.height,
@@ -2179,6 +2216,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.WebpageThumbnailer,
     title: ProductTitles.WebpageThumbnailer,
+    subtitle: ProductSubTitles.WebpageThumbnailer,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.WebpageThumbnailer.imgName.toLowerCase()}`,
     width: productImages.WebpageThumbnailer.width,
     height: productImages.WebpageThumbnailer.height,
@@ -2357,7 +2395,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.ConvertHTMLtoImage,
     title: ProductTitles.ConvertHTMLtoImage,
-    desc: "Windows 11/10/8/7 | Command Line Tool",
+    subtitle: ProductSubTitles.ConvertHTMLtoImage,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.ConvertHTMLtoImage.imgName.toLowerCase()}`,
     width: productImages.ConvertHTMLtoImage.width,
     height: productImages.ConvertHTMLtoImage.height,
@@ -2505,7 +2543,7 @@ export const portfolioItems: portfolioItem[] = [
   {
     id: ProductIDs.WebsitesScreenshot,
     title: ProductTitles.WebsitesScreenshot,
-    desc: "Windows 11/10/8/7 | .NET Component",
+    subtitle: ProductSubTitles.WebsitesScreenshot,
     src: `/${headerCompanyName.toLowerCase()}/${productImages.WebsitesScreenshot.imgName.toLowerCase()}`,
     width: productImages.WebsitesScreenshot.width,
     height: productImages.WebsitesScreenshot.height,
