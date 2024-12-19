@@ -89,12 +89,14 @@ export default function Page({ params }: { params: { product: string } }) {
                   <div className="flex flex-col text-center">
                     {portfolioItem.features.map((item, index) => (
                       <div key={index} className="mb-3 flex w-full flex-col">
-                        <div className="flex flex-row items-center">
-                          <div className="size-6">
+                        <div className="flex flex-row items-start">
+                          <div className="mt-1 size-6">
                             <CircleCheck />
                           </div>
                           <div className="flex flex-grow flex-col pl-3 text-left">
-                            <h2 className={`${montserrat.className} `}>
+                            <h2
+                              className={`${montserrat.className} text-base lg:text-lg`}
+                            >
                               {item}
                             </h2>
                           </div>
