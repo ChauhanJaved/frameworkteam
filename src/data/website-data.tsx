@@ -54,7 +54,7 @@ export const indexMetadata: Metadata = {
   },
 };
 export enum Categories {
-  All = "all",
+  All = "All",
   WebApp = "Web App",
   DesktopApp = "Desktop App",
   CommandLine = "Command Line",
