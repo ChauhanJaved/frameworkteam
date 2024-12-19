@@ -105,20 +105,21 @@ export default function Portfolio(props: { galleryID: string }) {
                 className="flex w-full flex-col items-center justify-center p-4 md:w-1/2 lg:w-1/3"
               >
                 <div className="flex w-[300px] flex-col items-center justify-center rounded border py-3">
+                  <Badge variant={"secondary"} className="ml-3 mr-auto">
+                    {item.categories[1]}
+                  </Badge>
                   {/* Box-1---------- */}
-                  <div className="relative flex h-[250px] w-[250px] items-center justify-center overflow-hidden bg-primary-foreground">
+                  <div className="relative mt-3 flex h-[250px] w-[250px] items-center justify-center overflow-hidden bg-primary-foreground">
                     <Image
                       src={item.src}
                       alt={`${item.title}`}
                       fill
-                      className={`object-contain`}
+                      className={`border object-contain`}
                     />
                   </div>
                   {/* Box-2---------- */}
-                  <Badge variant={"secondary"} className="mt-3">
-                    {item.categories[1]}
-                  </Badge>
-                  <p className="mt-1 text-sm font-semibold">{item.title}</p>
+
+                  <p className="mt-3 text-sm font-semibold">{item.title}</p>
                 </div>
               </Link>
               // ===== End Portfolio Item =====
