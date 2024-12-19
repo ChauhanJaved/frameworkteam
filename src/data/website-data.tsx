@@ -68,6 +68,8 @@ export enum Categories {
   Merger = "merger",
   Combiner = "combiner",
   Splitter = "splitter",
+  CLI = "CLI",
+  DotNet = ".Net",
 }
 export const categoryList: string[] = [
   Categories.All,
@@ -84,6 +86,8 @@ export const categoryList: string[] = [
   Categories.BMP,
   Categories.PCX,
   Categories.HTML,
+  Categories.CLI,
+  Categories.DotNet,
 ];
 
 export enum ProductIDs {
@@ -475,6 +479,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.JPGtoPDFConverterDesktop.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.JPG,
       Categories.PDF,
       Categories.Converter,
@@ -630,6 +635,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.TIFFtoPDFConverter.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.TIFF,
       Categories.PDF,
       Categories.Converter,
@@ -775,6 +781,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.PNGtoPDFConverter.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.PNG,
       Categories.PDF,
       Categories.Converter,
@@ -914,6 +921,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.PDFtoJPGConverter.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.PDF,
       Categories.JPG,
       Categories.Converter,
@@ -1051,6 +1059,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.PDFtoTIFFConverter.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.PDF,
       Categories.TIFF,
       Categories.Converter,
@@ -1192,6 +1201,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.PDFtoPNGConverter.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.PDF,
       Categories.PNG,
       Categories.Converter,
@@ -1331,6 +1341,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.PDFtoImageConverter.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.PDF,
       Categories.JPG,
       Categories.PNG,
@@ -1460,7 +1471,12 @@ export const portfolioItems: portfolioItem[] = [
     src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFSplitter.imgName.toLowerCase()}`,
     width: productImages.TIFFSplitter.width,
     height: productImages.TIFFSplitter.height,
-    categories: [Categories.All, Categories.TIFF, Categories.Splitter],
+    categories: [
+      Categories.All,
+      Categories.DesktopApp,
+      Categories.TIFF,
+      Categories.Splitter,
+    ],
     pageLink: `/${ProductIDs.TIFFSplitter}`,
     productWebsite: ProductWebsites.TIFFSplitter,
     downloadLink: ProductDownloadLinks.TIFFSplitter,
@@ -1582,6 +1598,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.TIFFCombiner.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.TIFF,
       Categories.Combiner,
       Categories.Merger,
@@ -1713,6 +1730,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.TIFFSplitMerge.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.TIFF,
       Categories.Combiner,
       Categories.Merger,
@@ -1850,7 +1868,12 @@ export const portfolioItems: portfolioItem[] = [
     src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFSplitter.imgName.toLowerCase()}`,
     width: productImages.PDFSplitter.width,
     height: productImages.PDFSplitter.height,
-    categories: [Categories.All, Categories.PDF, Categories.Splitter],
+    categories: [
+      Categories.All,
+      Categories.DesktopApp,
+      Categories.PDF,
+      Categories.Splitter,
+    ],
     pageLink: `/${ProductIDs.PDFSplitter}`,
     productWebsite: ProductWebsites.PDFSplitter,
     downloadLink: ProductDownloadLinks.PDFSplitter,
@@ -1968,6 +1991,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.PDFCombiner.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.PDF,
       Categories.Combiner,
       Categories.Merger,
@@ -2098,6 +2122,7 @@ export const portfolioItems: portfolioItem[] = [
     height: productImages.PDFSplitMerge.height,
     categories: [
       Categories.All,
+      Categories.DesktopApp,
       Categories.PDF,
       Categories.Splitter,
       Categories.Combiner,
@@ -2220,7 +2245,7 @@ export const portfolioItems: portfolioItem[] = [
     src: `/${headerCompanyName.toLowerCase()}/${productImages.WebpageThumbnailer.imgName.toLowerCase()}`,
     width: productImages.WebpageThumbnailer.width,
     height: productImages.WebpageThumbnailer.height,
-    categories: [Categories.All, Categories.HTML],
+    categories: [Categories.All, Categories.DesktopApp, Categories.HTML],
     pageLink: `/${ProductIDs.WebpageThumbnailer}`,
     productWebsite: ProductWebsites.WebpageThumbnailer,
     downloadLink: ProductDownloadLinks.WebpageThumbnailer,
@@ -2399,7 +2424,12 @@ export const portfolioItems: portfolioItem[] = [
     src: `/${headerCompanyName.toLowerCase()}/${productImages.ConvertHTMLtoImage.imgName.toLowerCase()}`,
     width: productImages.ConvertHTMLtoImage.width,
     height: productImages.ConvertHTMLtoImage.height,
-    categories: [Categories.All, Categories.HTML, Categories.Converter],
+    categories: [
+      Categories.All,
+      Categories.CLI,
+      Categories.HTML,
+      Categories.Converter,
+    ],
     pageLink: `/${ProductIDs.ConvertHTMLtoImage}`,
     productWebsite: ProductWebsites.ConvertHTMLtoImage,
     downloadLink: ProductDownloadLinks.ConvertHTMLtoImage,
@@ -2547,7 +2577,7 @@ export const portfolioItems: portfolioItem[] = [
     src: `/${headerCompanyName.toLowerCase()}/${productImages.WebsitesScreenshot.imgName.toLowerCase()}`,
     width: productImages.WebsitesScreenshot.width,
     height: productImages.WebsitesScreenshot.height,
-    categories: [Categories.All, Categories.HTML],
+    categories: [Categories.All, Categories.DotNet, Categories.HTML],
     pageLink: `/${ProductIDs.WebsitesScreenshot}`,
     productWebsite: ProductWebsites.WebsitesScreenshot,
     downloadLink: ProductDownloadLinks.WebsitesScreenshot,
