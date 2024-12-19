@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CircleCheck, Download, SquareArrowOutUpRight } from "lucide-react";
+import ProductImage from "@/components/product-image";
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ product: item.id }));
@@ -73,17 +74,13 @@ export default function Page({ params }: { params: { product: string } }) {
 
               <div className="mt-10 flex w-full flex-col md:flex-row">
                 {/* ----- Box-1 ----- */}
-                <div className="flex w-full flex-col items-center md:w-2/3">
-                  <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden bg-primary-foreground">
-                    <Image
-                      src={portfolioItem.src}
-                      alt={portfolioItem.title}
-                      fill
-                      className={`object-contain p-5`}
-                      priority
-                    />
-                  </div>
-                </div>
+                <ProductImage
+                  src={portfolioItem.src}
+                  width={portfolioItem.width}
+                  height={portfolioItem.height}
+                  alt={portfolioItem.title}
+                  galleryID="product-image"
+                />
                 {/* ----- Box-2 ----- */}
                 <div className="mt-5 md:ml-3 md:mt-0 md:w-1/3">
                   <div className="flex flex-col text-center">
