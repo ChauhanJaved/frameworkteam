@@ -16,6 +16,7 @@ import cloudinaryLoader from "@/lib/cloudinary-loader";
 import HeroIcons, { IconNames } from "./ui/HeroIcons";
 import { Button } from "./ui/button";
 import { SquareArrowOutUpRight, ZoomIn } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 export default function Portfolio(props: { galleryID: string }) {
   const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -98,65 +99,28 @@ export default function Portfolio(props: { galleryID: string }) {
           {filteredItems.map((item, index) => {
             return (
               // ===== Portfolio Item =====
-              <div
-                id={item.id}
+              <Link
                 key={index}
+                href={item.pageLink}
                 className="flex w-full flex-col items-center justify-center p-4 md:w-1/2 lg:w-1/3"
               >
-                <div className="flex w-[300px] flex-col items-center justify-center rounded border shadow-sm">
-                  {/* Box-1 Toolbar--------- */}
-
-                  <div className="mt-2 flex w-full items-center justify-end gap-2 pr-2">
-                    <Button
-                      onClick={() => {
-                        document.getElementById("image-" + index)?.click();
-                      }}
-                      variant="outline"
-                      aria-label="Zoom In"
-                      size={"icon"}
-                    >
-                      <ZoomIn />
-                    </Button>
-                    <Link href={item.pageLink}>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        aria-label="Open Product Page"
-                      >
-                        <SquareArrowOutUpRight />
-                      </Button>
-                    </Link>
+                <div className="flex w-[300px] flex-col items-center justify-center rounded border py-3">
+                  {/* Box-1---------- */}
+                  <div className="relative flex h-[250px] w-[250px] items-center justify-center overflow-hidden bg-primary-foreground">
+                    <Image
+                      src={item.src}
+                      alt={`${item.title}`}
+                      fill
+                      className={`object-contain`}
+                    />
                   </div>
                   {/* Box-2---------- */}
-                  <div className="relative mt-2 flex h-[250px] w-[250px] items-center justify-center overflow-hidden border-t bg-primary-foreground">
-                    <Link
-                      id={"image-" + index}
-                      href={cloudinaryLoader({
-                        src: item.src,
-                        width: item.width,
-                      })}
-                      data-pswp-width={item.width}
-                      data-pswp-height={item.height}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="pswp-gallery__item cursor-zoom-in"
-                    >
-                      <Image
-                        src={item.src}
-                        alt={`${item.title}`}
-                        fill
-                        className={`object-contain`}
-                      />
-                    </Link>
-                  </div>
-                  <Link
-                    href={item.pageLink}
-                    className={`flex h-[75px] w-[250px] items-center justify-center border-t p-2 text-center text-sm`}
-                  >
-                    <Button variant={"link"}>{item.title}</Button>
-                  </Link>
+                  <Badge variant={"secondary"} className="mt-3">
+                    {item.categories[1]}
+                  </Badge>
+                  <p className="mt-1 text-sm font-semibold">{item.title}</p>
                 </div>
-              </div>
+              </Link>
               // ===== End Portfolio Item =====
             );
           })}

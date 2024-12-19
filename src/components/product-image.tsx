@@ -60,7 +60,7 @@ export default function ProductImage(props: ProductImageProps) {
   return (
     <div
       id={props.galleryID}
-      className="flex w-full flex-col items-center md:w-2/3"
+      className="flex w-full flex-col items-center shadow-sm md:w-2/3"
     >
       <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden bg-primary-foreground">
         <Link
