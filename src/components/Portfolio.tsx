@@ -46,26 +46,25 @@ export default function Portfolio(props: { galleryID: string }) {
           {filteredItems.map((item, index) => {
             return (
               // ===== Portfolio Item =====
-              <Link
+              <div
                 key={index}
-                href={item.pageLink}
                 className="flex w-full flex-col items-center justify-center p-4 md:w-1/2 lg:w-1/3"
               >
-                <div className="flex w-[300px] flex-col items-center justify-center rounded border py-3">
-                  {/* Box-1---------- */}
-                  <div className="relative mt-3 flex h-[250px] w-[250px] items-center justify-center overflow-hidden bg-primary-foreground">
-                    <Image
-                      src={item.src}
-                      alt={`${item.title}`}
-                      fill
-                      className={`border object-contain`}
-                    />
+                <Link href={item.pageLink}>
+                  <div className="flex w-[300px] flex-col items-center justify-center rounded border py-3">
+                    <div className="relative mt-3 flex h-[250px] w-[250px] items-center justify-center overflow-hidden rounded bg-primary-foreground">
+                      <Image
+                        src={item.src}
+                        alt={`${item.title}`}
+                        fill
+                        className={`object-contain p-3`}
+                      />
+                    </div>
+                    <p className="mt-3 text-xs">{item.categories[1]}</p>
+                    <p className="mt-1 text-sm font-semibold">{item.title}</p>
                   </div>
-                  {/* Box-2---------- */}
-                  <p className="mt-3 text-xs">{item.categories[1]}</p>
-                  <p className="mt-1 text-sm font-semibold">{item.title}</p>
-                </div>
-              </Link>
+                </Link>
+              </div>
               // ===== End Portfolio Item =====
             );
           })}
