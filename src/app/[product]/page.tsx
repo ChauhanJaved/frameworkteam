@@ -2,12 +2,12 @@
 import Image from "next/image";
 
 //Internal Imports
-import { montserrat } from "@/components/font/font";
+import { montserrat } from "@/lib/font";
 import { HeaderNavItems, portfolioItems } from "@/data/website-data";
-import BreadCrumbs from "@/components/ui/BreadCrumbs";
-import SectionHeader from "@/components/ui/SectionHeader";
-import HeroIcons, { IconNames } from "@/components/ui/HeroIcons";
-import Header from "@/components/Header";
+import BreadCrumbs from "@/components/bread-crumbs";
+import SectionHeader from "@/components/section-header";
+import HeroIcons, { IconNames } from "@/components/hero-icons";
+import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CircleCheck, Download, SquareArrowOutUpRight } from "lucide-react";

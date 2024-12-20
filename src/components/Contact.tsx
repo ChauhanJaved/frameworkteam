@@ -1,8 +1,8 @@
 //Internal imports
-import { nunito } from "@/components/font/font";
+import { nunito } from "@/lib/font";
 import { email, HeaderNavItems, headerNavItems } from "@/data/website-data";
-import SectionHeader from "./ui/SectionHeader";
-import HeroIcons, { IconNames } from "./ui/HeroIcons";
+import SectionHeader from "@/components/section-header";
+import HeroIcons, { IconNames } from "@/components/hero-icons";
 
 export default function Contact() {
   return (
