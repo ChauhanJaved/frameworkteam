@@ -1,9 +1,9 @@
 //Internal imports
 import "./globals.css";
-import { roboto } from "@/components/font/font";
+import { roboto } from "@/lib/font";
 import { companyName, copyrightYear } from "@/data/website-data";
-import Footer from "@/components/Footer";
-import ScrollTop from "@/components/ui/ScrollTop";
+import Footer from "@/components/footer";
+import ScrollTop from "@/components/scroll-top";
 import { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {

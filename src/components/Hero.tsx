@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 //Internal imports
-import { nunito } from "@/components/font/font";
+import { nunito } from "@/lib/font";
 import { Button } from "@/components/ui/button";
 import {
   HeaderNavItems,

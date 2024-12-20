@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 //Internal imports
 
-import { Button } from "./button";
+import { Button } from "./ui/button";
 import { ArrowUp } from "lucide-react";
 
 export default function ScrollTop() {

@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 //Internal imports
-import SectionHeader from "@/components/ui/SectionHeader";
+import SectionHeader from "@/components/section-header";
 import { Categories, categoryList, HeaderNavItems } from "@/data/website-data";
 import { portfolioItems } from "@/data/website-data";
-import { montserrat } from "@/components/font/font";
+import { montserrat } from "@/lib/font";
 import { Button } from "@/components/ui/button";
 
 export default function Portfolio(props: { galleryID: string }) {
@@ -61,7 +61,7 @@ export default function Portfolio(props: { galleryID: string }) {
                       />
                     </div>
                     <p className="mt-3 text-xs">{item.categories[1]}</p>
-                    <p className="mt-1 text-sm font-semibold">{item.title}</p>
+                    <Button variant={"link"}>{item.title}</Button>
                   </div>
                 </Link>
               </div>

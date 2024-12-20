@@ -5,14 +5,14 @@ import Link from "next/link";
 import classNames from "classnames";
 
 //Internal imports
-import { montserrat } from "@/components/font/font";
-import HeroIcons, { IconNames } from "./ui/HeroIcons";
+import { montserrat } from "@/lib/font";
+import HeroIcons, { IconNames } from "./hero-icons";
 import {
   headerCompanyName,
   HeaderNavItems,
   headerNavItems,
 } from "@/data/website-data";
-import useIntersectionObserver from "./hooks/useIntersectionObserver";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 interface HeaderProps {
   defaultActiveSection?: string;
