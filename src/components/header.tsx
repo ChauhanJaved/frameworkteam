@@ -5,7 +5,6 @@ import Link from "next/link";
 import classNames from "classnames";
 
 //Internal imports
-import { montserrat } from "@/lib/font";
 import HeroIcons, { IconNames } from "./hero-icons";
 import {
   headerCompanyName,
@@ -63,7 +62,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
     );
 
   return (
-    <header className={`${montserrat.className}`}>
+    <header className={``}>
       {/* z-index 999 */}
       {/* Mobile meun */}
       <nav>
@@ -100,7 +99,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
           <div className="mx-auto flex h-20 w-11/12 items-center justify-between md:w-full">
             {/* company name */}
             <h1
-              className={`${montserrat.className} border-l-[5px] border-l-blue-ultramarine pl-3 text-2xl font-bold tracking-wider sm:text-3xl lg:text-4xl`}
+              className={`border-l-[5px] border-l-blue-ultramarine pl-3 text-2xl font-bold tracking-wider sm:text-3xl lg:text-4xl`}
             >
               <Link
                 onClick={() => {

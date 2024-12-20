@@ -7,7 +7,6 @@ import React, { useState } from "react";
 import SectionHeader from "@/components/section-header";
 import { Categories, categoryList, HeaderNavItems } from "@/data/website-data";
 import { portfolioItems } from "@/data/website-data";
-import { montserrat } from "@/lib/font";
 import { Button } from "@/components/ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
 
@@ -23,10 +22,7 @@ export default function Portfolio(props: { galleryID: string }) {
   );
 
   return (
-    <section
-      id={HeaderNavItems.Portfolio}
-      className={`${montserrat.className} scroll-m-[64px]`}
-    >
+    <section id={HeaderNavItems.Portfolio} className={`scroll-m-[64px]`}>
       <div className="container mx-auto px-3 pt-16 text-lg xl:max-w-screen-xl">
         <SectionHeader caption="portfolio" element="h2" />
         {/* ===== Catagory filter ===== */}

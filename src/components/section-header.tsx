@@ -1,7 +1,6 @@
 //External imports
 import React from "react";
 //Internal imports
-import { montserrat } from "@/lib/font";
 
 interface PropsSectionHeader {
   caption: string;
@@ -12,7 +11,7 @@ interface PropsSectionHeader {
 export default function SectionHeader(props: PropsSectionHeader) {
   const Element = props.element || "h1";
   return (
-    <div className={`${props.className} ${montserrat.className}`}>
+    <div className={`${props.className} `}>
       {React.createElement(
         Element,
         {
