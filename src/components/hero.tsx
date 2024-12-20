@@ -48,7 +48,7 @@ const Hero = () => {
             {heroTitle}
           </h2>
           {/* Hero description */}
-          <p className="mt-1 bg-transparent text-lg md:text-xl lg:text-2xl">
+          <p className="mt-1 bg-transparent text-lg text-gray-700 md:text-xl lg:text-2xl">
             {heroDesc}
           </p>
           <Link href={`#${headerNavItems[1]}`} className="mt-5">

@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${roboto.className} bg-white text-base font-normal text-black-600`}
+        className={`${roboto.className} text-base text-gray-700 dark:text-gray-300 lg:text-lg`}
       >
         <ThemeProvider
           attribute="class"
