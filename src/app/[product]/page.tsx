@@ -2,7 +2,6 @@
 import Image from "next/image";
 
 //Internal Imports
-import { montserrat } from "@/lib/font";
 import { HeaderNavItems, portfolioItems } from "@/data/website-data";
 import BreadCrumbs from "@/components/bread-crumbs";
 import SectionHeader from "@/components/section-header";
@@ -91,11 +90,7 @@ export default function Page({ params }: { params: { product: string } }) {
                             <CircleCheck />
                           </div>
                           <div className="flex flex-grow flex-col pl-3 text-left">
-                            <h2
-                              className={`${montserrat.className} text-base lg:text-lg`}
-                            >
-                              {item}
-                            </h2>
+                            <h2 className={`text-base lg:text-lg`}>{item}</h2>
                           </div>
                         </div>
                       </div>

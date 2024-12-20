@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 //Internal imports
-import { nunito } from "@/lib/font";
 import { Button } from "@/components/ui/button";
 import {
   HeaderNavItems,
@@ -42,7 +41,7 @@ const Hero = () => {
         <div className="flex flex-col bg-transparent pb-16 pt-5 md:w-1/2 md:items-start md:pb-0 md:pt-0">
           {/* Hero Title */}
           <h2
-            className={`${nunito.className} bg-transparent text-3xl font-bold text-blue-dark-imperial md:text-4xl lg:text-5xl`}
+            className={`bg-transparent text-3xl font-bold text-blue-dark-imperial md:text-4xl lg:text-5xl`}
           >
             {heroTitle}
           </h2>

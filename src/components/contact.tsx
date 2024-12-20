@@ -1,5 +1,4 @@
 //Internal imports
-import { nunito } from "@/lib/font";
 import { email, HeaderNavItems, headerNavItems } from "@/data/website-data";
 import SectionHeader from "@/components/section-header";
 import HeroIcons, { IconNames } from "@/components/hero-icons";
@@ -19,7 +18,7 @@ export default function Contact() {
               className="size-14 text-blue-ultramarine"
             />
             <h3
-              className={`${nunito.className} mt-3 text-lg font-bold text-blue-dark-imperial md:text-xl`}
+              className={`mt-3 text-lg font-bold text-blue-dark-imperial md:text-xl`}
             >
               Email Us
             </h3>
@@ -31,7 +30,7 @@ export default function Contact() {
               className="size-14 text-blue-ultramarine"
             />
             <h3
-              className={`${nunito.className} mt-3 text-lg font-bold text-blue-dark-imperial md:text-xl`}
+              className={`mt-3 text-lg font-bold text-blue-dark-imperial md:text-xl`}
             >
               Open Hours
             </h3>
