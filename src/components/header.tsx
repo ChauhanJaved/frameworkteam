@@ -208,7 +208,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
           onClick={() => setActiveSection(HeaderNavItems.Home)}
         >
           <div
-            className={`${raleway.className} flex flex-col items-start justify-center border-l-[5px] border-l-primary py-1 pl-3 text-lg font-extrabold leading-tight tracking-wider`}
+            className={`${raleway.className} flex flex-col items-start justify-center border-l-[5px] border-l-primary py-1 pl-3 text-lg font-extrabold leading-tight tracking-wider text-blue-dark-imperial dark:text-gray-300`}
           >
             <p>FrameworkTeam</p>
             <p>Softwares</p>
@@ -219,7 +219,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
         <nav className="flex items-center gap-2">
           {/* Desktop Menu */}
           <ul
-            className={`${poppins.className} hidden items-center gap-2 lg:flex`}
+            className={`${poppins.className} hidden items-center gap-2 text-blue-dark-imperial dark:text-gray-300 lg:flex`}
           >
             {headerNavItems.map((item) => (
               <li key={item}>
@@ -240,7 +240,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
             </li>
           </ul>
           <ul
-            className={`${poppins.className} flex items-center gap-1 lg:hidden`}
+            className={`${poppins.className} flex items-center gap-1 text-blue-dark-imperial dark:text-gray-300 lg:hidden`}
           >
             {/* Mobile meun */}
             <li className="pl-1">
