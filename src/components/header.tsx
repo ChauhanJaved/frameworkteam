@@ -239,7 +239,9 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
               <HeaderModeToggle />
             </li>
           </ul>
-          <ul className={`${poppins.className} flex items-center gap-1`}>
+          <ul
+            className={`${poppins.className} flex items-center gap-1 lg:hidden`}
+          >
             {/* Mobile meun */}
             <li className="pl-1">
               {/* Dark mode */}
@@ -247,7 +249,6 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
             </li>
             <li>
               <HeaderSheetMainManu
-                className="lg:hidden"
                 activeSection={activeSection}
                 setActiveSection={setActiveSection}
               />

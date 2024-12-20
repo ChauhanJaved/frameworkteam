@@ -1,4 +1,5 @@
 //External imports
+import { raleway } from "@/lib/font";
 import React from "react";
 //Internal imports
 
@@ -15,10 +16,10 @@ export default function SectionHeader(props: PropsSectionHeader) {
       {React.createElement(
         Element,
         {
-          className: `text flex flex-col items-center text-center md:text-3xl text-2xl font-bold  text-blue-dark-imperial uppercase`,
+          className: `${raleway.className} text flex flex-col items-center text-center md:text-3xl text-2xl font-bold  text-blue-dark-imperial`,
         },
         <>
-          {props.caption}
+          {props.caption[0].toUpperCase() + props.caption.slice(1)}
 
           <span className="relative w-[120px] pt-[15px] text-center">
             <span className="absolute bottom-[1px] block h-[1px] w-[120px] bg-black-200"></span>
