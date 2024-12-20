@@ -23,7 +23,7 @@ const Hero = () => {
     >
       {/* Hero background image */}
       <Image
-        className="object-cover"
+        className="object-cover dark:hidden"
         src={"/frameworkteam/hero-bg"}
         fill
         alt="hero image"
@@ -43,12 +43,12 @@ const Hero = () => {
         <div className="flex flex-col bg-transparent pb-16 pt-5 md:w-1/2 md:items-start md:pb-0 md:pt-0">
           {/* Hero Title */}
           <h2
-            className={`${nunito.className} bg-transparent text-3xl font-bold text-blue-dark-imperial md:text-4xl lg:text-5xl`}
+            className={`${nunito.className} bg-transparent text-3xl font-bold text-blue-dark-imperial dark:text-gray-300 md:text-4xl lg:text-5xl`}
           >
             {heroTitle}
           </h2>
           {/* Hero description */}
-          <p className="mt-1 bg-transparent text-lg text-gray-700 md:text-xl lg:text-2xl">
+          <p className="mt-1 bg-transparent text-lg md:text-xl lg:text-2xl">
             {heroDesc}
           </p>
           <Link href={`#${headerNavItems[1]}`} className="mt-5">
