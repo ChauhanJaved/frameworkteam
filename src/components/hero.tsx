@@ -12,6 +12,8 @@ import {
 } from "@/data/website-data";
 
 import { ArrowDown, Delete, MoveDown } from "lucide-react";
+import { Nunito } from "next/font/google";
+import { nunito } from "@/lib/font";
 
 const Hero = () => {
   return (
@@ -41,7 +43,7 @@ const Hero = () => {
         <div className="flex flex-col bg-transparent pb-16 pt-5 md:w-1/2 md:items-start md:pb-0 md:pt-0">
           {/* Hero Title */}
           <h2
-            className={`bg-transparent text-3xl font-bold text-blue-dark-imperial md:text-4xl lg:text-5xl`}
+            className={`${nunito.className} bg-transparent text-3xl font-bold text-blue-dark-imperial md:text-4xl lg:text-5xl`}
           >
             {heroTitle}
           </h2>

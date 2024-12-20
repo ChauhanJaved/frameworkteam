@@ -21,7 +21,7 @@ import { HeaderModeToggle } from "./header-mode-toggle";
 import { Separator } from "@/components/ui/separator";
 
 interface HeaderSheetMainManuProps {
-  className: string;
+  className?: string;
   activeSection: string;
   setActiveSection: (value: string) => void;
 }

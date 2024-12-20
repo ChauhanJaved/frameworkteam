@@ -9,6 +9,7 @@ import { Categories, categoryList, HeaderNavItems } from "@/data/website-data";
 import { portfolioItems } from "@/data/website-data";
 import { Button } from "@/components/ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { poppins } from "@/lib/font";
 
 export default function Portfolio(props: { galleryID: string }) {
   const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -26,7 +27,9 @@ export default function Portfolio(props: { galleryID: string }) {
       <div className="container mx-auto px-3 pt-16 text-lg xl:max-w-screen-xl">
         <SectionHeader caption="portfolio" element="h2" />
         {/* ===== Catagory filter ===== */}
-        <ul className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <ul
+          className={`${poppins.className} mt-10 flex flex-wrap items-center justify-center gap-3`}
+        >
           {categoryList.map((item, index) => (
             <li key={index}>
               <Button
@@ -58,8 +61,7 @@ export default function Portfolio(props: { galleryID: string }) {
                       />
                     </div>
                     <p className="mt-3 text-xs">{item.categories[1]}</p>
-                    <Button variant={"secondary"} className="mt-2">
-                      <SquareArrowOutUpRight />
+                    <Button variant={"outline"} className="mt-2">
                       {item.title}
                     </Button>
                   </div>
