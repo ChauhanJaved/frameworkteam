@@ -9,6 +9,7 @@ import { Categories, categoryList, HeaderNavItems } from "@/data/website-data";
 import { portfolioItems } from "@/data/website-data";
 import { montserrat } from "@/lib/font";
 import { Button } from "@/components/ui/button";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function Portfolio(props: { galleryID: string }) {
   const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -61,7 +62,10 @@ export default function Portfolio(props: { galleryID: string }) {
                       />
                     </div>
                     <p className="mt-3 text-xs">{item.categories[1]}</p>
-                    <Button variant={"link"}>{item.title}</Button>
+                    <Button variant={"secondary"} className="mt-2">
+                      <SquareArrowOutUpRight />
+                      {item.title}
+                    </Button>
                   </div>
                 </Link>
               </div>
