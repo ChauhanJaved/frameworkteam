@@ -12,14 +12,11 @@ export const metadata: Metadata = indexMetadata;
 
 export default async function Home() {
   return (
-    <>
-      <Header defaultActiveSection={HeaderNavItems.Home} />
+    <main id="main">
       <Hero />
-      <main id="main">
-        <Services />
-        <Portfolio galleryID="portfolio" />
-        <Contact />
-      </main>
-    </>
+      <Services />
+      <Portfolio galleryID="portfolio" />
+      <Contact />
+    </main>
   );
 }

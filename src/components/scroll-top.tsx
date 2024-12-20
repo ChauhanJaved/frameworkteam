@@ -1,17 +1,24 @@
 "use client";
-//External imports
+
+//External Imports
 import { useEffect, useRef, useState } from "react";
+import { ArrowUp } from "lucide-react";
+import { useActiveSection } from "@/context/active-section-context";
 
 //Internal imports
-
-import { Button } from "./ui/button";
-import { ArrowUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { HeaderNavItems } from "@/data/website-data";
 
 export default function ScrollTop() {
+  const { setActiveSection } = useActiveSection();
   const [isVisible, setIsVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const scrollToTop = () => {
+    const home = document.getElementById(HeaderNavItems.Home);
+    if (home) {
+      setActiveSection(HeaderNavItems.Home);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -34,11 +41,11 @@ export default function ScrollTop() {
   return (
     <>
       <div id="page-top" style={{ position: "absolute", top: 0 }}></div>
-      {/* Z-index 996 (less than mobile menu) */}
+      {/* Z-index 50 */}
       <Button
-        onClick={scrollToTop}
         size={"icon"}
-        className={`${isVisible ? "visible opacity-100" : "invisible opacity-0"} fixed bottom-4 right-4 z-[996] transition-all duration-300`}
+        onClick={scrollToTop}
+        className={`${isVisible ? "visible opacity-100" : "invisible opacity-0"} fixed bottom-4 right-4 z-[50]`}
       >
         <ArrowUp />
       </Button>

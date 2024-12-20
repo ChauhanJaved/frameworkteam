@@ -5,6 +5,9 @@ import { companyName, copyrightYear } from "@/data/website-data";
 import Footer from "@/components/footer";
 import ScrollTop from "@/components/scroll-top";
 import { Metadata, Viewport } from "next";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ActiveSectionProvider } from "@/context/active-section-context";
+import Header from "@/components/header";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -33,9 +36,19 @@ export default function RootLayout({
       <body
         className={`${roboto.className} bg-white text-base font-normal text-black-600`}
       >
-        <ScrollTop />
-        {children}
-        <Footer companyName={companyName} copyrightYear={copyrightYear} />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ActiveSectionProvider>
+            <ScrollTop />
+            <Header />
+            {children}
+            <Footer companyName={companyName} copyrightYear={copyrightYear} />
+          </ActiveSectionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
