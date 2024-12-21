@@ -24,7 +24,7 @@ export default function Contact() {
       <SectionHeader
         caption="Contact Us"
         element="h2"
-        desc="Product Support | Purchase Inquiries | Report an Issue"
+        desc="Product Support | Development Inquiries | Purchase Assistance | Report an Issue"
       />
       <div className="mt-10 flex flex-col items-center">
         <div className="m-2 flex flex-col items-center justify-center rounded border p-5 shadow">
@@ -40,12 +40,11 @@ export default function Contact() {
           </Button>
         </div>
         <p className={`mt-5 text-lg`}>
-          Please feel free to contact us if you have encountered a problem with
-          our product, you have a question about our product or purchase related
-          question. If you are a licensed user, please include your order
-          details, so that we can make your problem a priority for our support
-          staff. Please note that the response will take some time (12 - 24
-          hours).
+          Feel free to contact us if you encounter an issue with our product,
+          have questions about our product, purchase inquiries, or are
+          interested in development services. For licensed users, please include
+          your order details to ensure your issue is prioritized by our support
+          team. Please note that responses may take 12-24 hours.).
         </p>
       </div>
     </section>
