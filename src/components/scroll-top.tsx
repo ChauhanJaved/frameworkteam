@@ -30,10 +30,12 @@ export default function ScrollTop() {
       setIsVisible(!entry.isIntersecting);
       setPageOnTop(entry.isIntersecting);
       if (entry.isIntersecting) {
-        //console.log("in");
         const home = document.getElementById(HeaderNavItems.Home);
         if (home) {
           setActiveSection(HeaderNavItems.Home);
+        } else {
+          setActiveSection("");
+          setPageOnTop(false);
         }
       }
     };
