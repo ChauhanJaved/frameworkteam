@@ -1,16 +1,20 @@
 //Internal imports
-import SectionHeader from "./section-header";
-import { HeaderNavItems, headerNavItems } from "@/data/website-data";
+import SectionHeader from "@/components/section-header";
+import { HeaderNavItems } from "@/data/website-data";
 
 export default function Services() {
   return (
     <section
       id={HeaderNavItems.Services}
-      className="container mx-auto scroll-m-[64px] px-3 pt-16 xl:max-w-screen-xl"
+      className="container scroll-m-20 px-5 pt-10 xl:max-w-screen-xl"
     >
-      <SectionHeader caption="services" element="h2" />
-      <h2 className="mt-5 text-lg md:text-xl">
-        <b>Progressive Web Application (PWA) Development</b>
+      <SectionHeader
+        caption="services"
+        desc="Empowering Digital Excellence | Cutting-Edge Progressive Web Apps & Windows Apps | Robust Solutions Tailored to Your Needs"
+        element="h2"
+      />
+      <h2 className="mt-10 text-lg md:text-xl">
+        <b>Progressive Web Application (PWA) Development :</b>
       </h2>
       <div className="text-base md:text-lg">
         <p className="mt-3">
@@ -44,7 +48,7 @@ export default function Services() {
           digital landscape.
         </p>
       </div>
-      <h2 className="mt-5 text-lg md:text-xl">
+      <h2 className="mt-10 text-lg md:text-xl">
         <b>Windows Desktop Application Development</b>
       </h2>
       <div className="text-base md:text-lg">
