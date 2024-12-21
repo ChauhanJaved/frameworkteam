@@ -1,3 +1,4 @@
+"use client";
 //External  imports
 import Link from "next/link";
 import Image from "next/image";
@@ -12,14 +13,13 @@ import {
 } from "@/data/website-data";
 
 import { ArrowDown, Delete, MoveDown } from "lucide-react";
-import { Nunito } from "next/font/google";
 import { nunito } from "@/lib/font";
 
 const Hero = () => {
   return (
     <section
       id={HeaderNavItems.Home}
-      className="relative mt-[80px] flex w-full scroll-m-[80px] flex-col items-center justify-center md:min-h-[calc(100vh-80px)]"
+      className="relative flex w-full scroll-m-[80px] flex-col items-center justify-center md:min-h-[calc(100vh-80px)]"
     >
       {/* Hero background image */}
       <Image
@@ -36,7 +36,7 @@ const Hero = () => {
           alt="Hero Image"
           width={"539"}
           height={"438"}
-          className="animate-up-down bg-transparent pt-8 md:w-1/2 md:pl-10 md:pt-0"
+          className="mt-[80px] animate-up-down bg-transparent pt-8 md:w-1/2 md:pl-10 md:pt-0"
           priority
         />
         {/* BOX-----2 */}

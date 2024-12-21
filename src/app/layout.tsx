@@ -8,6 +8,7 @@ import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ActiveSectionProvider } from "@/context/active-section-context";
 import Header from "@/components/header";
+import { PageOnTopProvider } from "@/context/page-on-top-context";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -43,10 +44,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ActiveSectionProvider>
-            <ScrollTop />
-            <Header />
-            {children}
-            <Footer companyName={companyName} copyrightYear={copyrightYear} />
+            <PageOnTopProvider>
+              <ScrollTop />
+              <Header />
+              {children}
+              <Footer companyName={companyName} copyrightYear={copyrightYear} />
+            </PageOnTopProvider>
           </ActiveSectionProvider>
         </ThemeProvider>
       </body>
