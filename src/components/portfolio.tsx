@@ -39,7 +39,7 @@ export default function Portfolio(props: { galleryID: string }) {
           <li key={index}>
             <Button
               onClick={() => handleCategoryClick(item)}
-              variant={selectedCategory === item ? "default" : "secondary"}
+              variant={selectedCategory === item ? "default" : "outline"}
             >
               {item}
             </Button>
