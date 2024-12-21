@@ -19,17 +19,16 @@ import { headerNavItems } from "@/data/website-data";
 import { poppins } from "@/lib/font";
 import { HeaderModeToggle } from "./header-mode-toggle";
 import { Separator } from "@/components/ui/separator";
+import { useActiveSection } from "@/context/active-section-context";
 
 interface HeaderSheetMainManuProps {
   className?: string;
-  activeSection: string;
-  setActiveSection: (value: string) => void;
 }
 export default function HeaderSheetMainManu({
   className,
-  setActiveSection,
 }: HeaderSheetMainManuProps) {
   const [open, setOpen] = useState(false);
+  const { setActiveSection } = useActiveSection();
   const openSheet = () => {
     setOpen(true);
   };
@@ -40,7 +39,7 @@ export default function HeaderSheetMainManu({
         size={"icon"}
         variant={"ghost"}
         onClick={openSheet}
-        className={className}
+        className={`${className} hover:text-blue-dark-imperial`}
       >
         <Menu />
       </Button>
