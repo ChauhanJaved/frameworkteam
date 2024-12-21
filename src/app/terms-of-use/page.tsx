@@ -2,7 +2,6 @@
 import { Metadata } from "next";
 
 //Internal imports
-import Header from "@/components/header";
 import BreadCrumbs from "@/components/bread-crumbs";
 import SectionHeader from "@/components/section-header";
 import { companyName, HeaderNavItems } from "@/data/website-data";

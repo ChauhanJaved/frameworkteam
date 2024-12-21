@@ -8,26 +8,18 @@ interface PropsFooter {
 
 export default function Footer(props: PropsFooter) {
   return (
-    <footer className="container mx-auto flex flex-col items-center border-t-[1px] border-black-200 px-2 py-8 text-center xl:max-w-screen-xl">
-      <p>
-        © Copyright {props.copyrightYear}{" "}
-        <span className="font-bold">{props.companyName}</span>. All Rights
-        Reserved
-      </p>
-      <div className="mt-2">
-        <Link
-          href="/terms-of-use"
-          className="hover:text-black-800 active:text-black-800"
-        >
-          Terms of Use
-        </Link>
-        <span className="mx-2">|</span>
-        <Link
-          href="/privacy-policy"
-          className="hover:text-black-800 active:text-black-800"
-        >
-          Privacy Policy
-        </Link>
+    <footer className="mt-10 border-t text-gray-700 dark:text-gray-300">
+      <div className="mx-5 mb-16 mt-5 flex flex-col items-center gap-1 text-center sm:mx-7 md:mx-9 lg:mx-11">
+        <p>
+          © {props.copyrightYear}
+          {", "}
+          {props.companyName}
+        </p>
+        <div className="flex flex-row gap-1">
+          <Link href="/terms-of-use">Terms of Use</Link>
+          <span className="mx-2">|</span>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+        </div>
       </div>
     </footer>
   );
