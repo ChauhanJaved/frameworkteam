@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ActiveSectionProvider } from "@/context/active-section-context";
 import Header from "@/components/header";
 import { PageOnTopProvider } from "@/context/page-on-top-context";
+import { Toaster } from "@/components/ui/toaster";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -49,6 +50,7 @@ export default function RootLayout({
               <Header />
               {children}
               <Footer companyName={companyName} copyrightYear={copyrightYear} />
+              <Toaster />
             </PageOnTopProvider>
           </ActiveSectionProvider>
         </ThemeProvider>
