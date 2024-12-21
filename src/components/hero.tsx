@@ -1,4 +1,3 @@
-"use client";
 //External  imports
 import Link from "next/link";
 import Image from "next/image";
@@ -11,15 +10,14 @@ import {
   heroDesc,
   heroTitle,
 } from "@/data/website-data";
-
-import { ArrowDown, Delete, MoveDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { nunito } from "@/lib/font";
 
 const Hero = () => {
   return (
     <section
       id={HeaderNavItems.Home}
-      className="relative flex w-full scroll-m-[80px] flex-col items-center justify-center md:min-h-[calc(100vh-80px)]"
+      className="relative flex w-full flex-col items-center justify-center md:min-h-[calc(100vh)]"
     >
       {/* Hero background image */}
       <Image
@@ -29,7 +27,7 @@ const Hero = () => {
         alt="hero image"
         priority
       />
-      <div className="container z-0 mx-auto flex grow flex-col items-center px-3 text-lg md:flex-row-reverse xl:max-w-screen-xl">
+      <div className="container z-0 mx-auto flex grow flex-col items-center px-5 text-lg md:flex-row-reverse lg:px-10 xl:max-w-screen-xl">
         {/* BOX----1 */}
         <Image
           src={"/frameworkteam/hero-img"}
