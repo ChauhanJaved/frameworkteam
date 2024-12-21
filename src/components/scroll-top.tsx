@@ -29,6 +29,13 @@ export default function ScrollTop() {
       const entry = entries[0];
       setIsVisible(!entry.isIntersecting);
       setPageOnTop(entry.isIntersecting);
+      if (entry.isIntersecting) {
+        console.log("in");
+        const home = document.getElementById(HeaderNavItems.Home);
+        if (home) {
+          setActiveSection(HeaderNavItems.Home);
+        }
+      }
     };
     observerRef.current = new IntersectionObserver(handleIntersection);
     const target = document.getElementById("page-top");
@@ -40,7 +47,7 @@ export default function ScrollTop() {
         observerRef.current.unobserve(target);
       }
     };
-  });
+  }, [setActiveSection, setPageOnTop]);
   return (
     <>
       <div id="page-top" style={{ position: "absolute", top: 0 }}></div>
