@@ -44,7 +44,7 @@ export default function Contact() {
           have questions about our product, purchase inquiries, or are
           interested in development services. For licensed users, please include
           your order details to ensure your issue is prioritized by our support
-          team. Please note that responses may take 12-24 hours.).
+          team. Please note that responses may take 12-24 hours.
         </p>
       </div>
     </section>
