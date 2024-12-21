@@ -58,7 +58,7 @@ export enum Categories {
   WebApp = "Web App",
   DesktopApp = "Desktop App",
   CommandLine = "Command Line",
-  Library = "Library",
+  Library = ".NET Library",
 }
 export const categoryList: string[] = [
   Categories.All,
