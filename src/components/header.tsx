@@ -176,12 +176,14 @@ import { HeaderNavItems, headerNavItems } from "@/data/website-data";
 import HeaderSheetMainManu from "@/components/header-sheet-main-manu";
 
 import { useActiveSection } from "@/context/active-section-context";
+import { usePageOnTop } from "@/context/page-on-top-context";
 
 interface HeaderProps {
   defaultActiveSection?: string;
 }
 export default function Header({ defaultActiveSection = "" }: HeaderProps) {
   const { activeSection, setActiveSection } = useActiveSection();
+  const { pageOnTop } = usePageOnTop();
 
   // Handle direct navigation with hash
   useEffect(() => {
@@ -197,11 +199,12 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
     }
   }, [defaultActiveSection, setActiveSection]);
 
-  //useIntersectionObserver();
   return (
     <header>
       {/* z-index 10 */}
-      <div className="fixed left-0 right-0 top-0 z-[10] flex h-20 w-full items-center justify-between border-b bg-background px-3 text-gray-900 shadow-sm dark:text-gray-100">
+      <div
+        className={`${pageOnTop ? "bg-transparent" : "bg-background shadow-[0_0_18px_rgba(0,0,0,0.1)]"} fixed left-0 right-0 top-0 z-[10] flex h-20 w-full items-center justify-between px-3 transition-all duration-300`}
+      >
         {/* Company name/logo */}
         <Link
           href={`/#${HeaderNavItems.Home}`}
@@ -228,7 +231,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                     setActiveSection(item);
                   }}
                   className={`relative px-2 py-2 text-base font-semibold before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:scale-0 before:bg-primary before:transition-transform before:duration-300 hover:before:scale-100 ${activeSection === item && "before:scale-100"}`}
-                  href={`#${item}`}
+                  href={`/#${item}`}
                 >
                   {item && item[0].toUpperCase() + item.slice(1)}
                 </Link>

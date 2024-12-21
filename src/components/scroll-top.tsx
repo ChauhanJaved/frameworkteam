@@ -8,9 +8,11 @@ import { useActiveSection } from "@/context/active-section-context";
 //Internal imports
 import { Button } from "@/components/ui/button";
 import { HeaderNavItems } from "@/data/website-data";
+import { usePageOnTop } from "@/context/page-on-top-context";
 
 export default function ScrollTop() {
   const { setActiveSection } = useActiveSection();
+  const { setPageOnTop } = usePageOnTop();
   const [isVisible, setIsVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -26,6 +28,7 @@ export default function ScrollTop() {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const entry = entries[0];
       setIsVisible(!entry.isIntersecting);
+      setPageOnTop(entry.isIntersecting);
     };
     observerRef.current = new IntersectionObserver(handleIntersection);
     const target = document.getElementById("page-top");
