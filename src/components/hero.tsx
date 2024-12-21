@@ -36,7 +36,7 @@ const Hero = () => {
           alt="Hero Image"
           width={"539"}
           height={"438"}
-          className="mt-[80px] animate-up-down bg-transparent pt-8 md:w-1/2 md:pl-10 md:pt-0"
+          className="mt-[80px] animate-up-down bg-transparent pt-8 md:mt-0 md:w-1/2 md:pl-10 md:pt-0"
           priority
         />
         {/* BOX-----2 */}
