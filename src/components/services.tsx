@@ -6,7 +6,7 @@ export default function Services() {
   return (
     <section
       id={HeaderNavItems.Services}
-      className="container scroll-m-20 px-5 pt-10 xl:max-w-screen-xl"
+      className="container scroll-m-20 px-5 pt-10 text-lg lg:px-10 lg:pt-20 xl:max-w-screen-xl"
     >
       <SectionHeader
         caption="services"
