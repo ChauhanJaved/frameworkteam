@@ -203,7 +203,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
     <header>
       {/* z-index 10 */}
       <div
-        className={`${pageOnTop ? "bg-transparent" : "border-b bg-background shadow-[0_0_18px_rgba(0,0,0,0.1)]"} fixed left-0 right-0 top-0 z-[10] flex h-20 w-full items-center justify-between px-3 transition-all duration-300`}
+        className={`${pageOnTop ? "bg-transparent" : "bg-background shadow-md dark:shadow-lg"} fixed left-0 right-0 top-0 z-[10] flex h-20 w-full items-center justify-between px-3 transition-all duration-300`}
       >
         {/* Company name/logo */}
         <Link
