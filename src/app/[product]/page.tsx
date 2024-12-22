@@ -53,7 +53,10 @@ export default function Page({ params }: { params: { product: string } }) {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbNextLink
-                linkName={HeaderNavItems.Home}
+                linkName={
+                  HeaderNavItems.Home[0].toUpperCase() +
+                  HeaderNavItems.Home.slice(1)
+                }
                 hrefActiveSection={`/#${HeaderNavItems.Home}`}
                 headerActiveSection={HeaderNavItems.Home}
               />

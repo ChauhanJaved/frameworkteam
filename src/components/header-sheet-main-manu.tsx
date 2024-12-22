@@ -10,16 +10,14 @@ import {
   SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { headerNavItems } from "@/data/website-data";
+import { HeaderNavItems, headerNavItems } from "@/data/website-data";
 import { poppins } from "@/lib/font";
-import { HeaderModeToggle } from "./header-mode-toggle";
-import { Separator } from "@/components/ui/separator";
 import { useActiveSection } from "@/context/active-section-context";
+import { usePageOnTop } from "@/context/page-on-top-context";
 
 interface HeaderSheetMainManuProps {
   className?: string;
@@ -29,6 +27,7 @@ export default function HeaderSheetMainManu({
 }: HeaderSheetMainManuProps) {
   const [open, setOpen] = useState(false);
   const { setActiveSection } = useActiveSection();
+  const { setPageOnTop } = usePageOnTop();
   const openSheet = () => {
     setOpen(true);
   };
@@ -58,8 +57,9 @@ export default function HeaderSheetMainManu({
                     <Link
                       onClick={() => {
                         setActiveSection(item);
+                        item === HeaderNavItems.Home && setPageOnTop(true);
                       }}
-                      href={`#${item}`}
+                      href={`/#${item}`}
                     >
                       <Button variant={"ghost"}>
                         {item && item[0].toUpperCase() + item.slice(1)}
