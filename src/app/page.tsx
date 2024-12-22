@@ -5,8 +5,7 @@ import Hero from "@/components/hero";
 import Services from "@/components/services";
 import Portfolio from "@/components/portfolio";
 import Contact from "@/components/contact";
-import { HeaderNavItems, indexMetadata } from "@/data/website-data";
-import Header from "@/components/header";
+import { indexMetadata } from "@/data/website-data";
 
 export const metadata: Metadata = indexMetadata;
 
