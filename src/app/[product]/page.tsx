@@ -65,6 +65,19 @@ export default function Page({ params }: { params: { product: string } }) {
               <Slash />
             </BreadcrumbSeparator>
             <BreadcrumbItem>
+              <BreadcrumbNextLink
+                linkName={
+                  HeaderNavItems.Portfolio[0].toUpperCase() +
+                  HeaderNavItems.Portfolio.slice(1)
+                }
+                hrefActiveSection={`/#${HeaderNavItems.Portfolio}`}
+                headerActiveSection={HeaderNavItems.Portfolio}
+              />
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>
+              <Slash />
+            </BreadcrumbSeparator>
+            <BreadcrumbItem>
               <BreadcrumbPage>{portfolioItem?.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
