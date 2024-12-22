@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useActiveSection } from "@/context/active-section-context";
 import { usePageOnTop } from "@/context/page-on-top-context";
+import { HeaderNavItems } from "@/data/website-data";
 
 interface BreadcrumbNextLinkProps {
   linkName: string;
@@ -21,7 +22,7 @@ export default function BreadcrumbNextLink({
       href={hrefActiveSection}
       onClick={() => {
         setActiveSection(headerActiveSection);
-        setPageOnTop(true);
+        headerActiveSection === HeaderNavItems.Home && setPageOnTop(true);
       }}
     >
       {linkName}
