@@ -320,117 +320,118 @@ export const portfolioItems: portfolioItem[] = [
     description: (
       <div className="flex flex-col">
         <strong className="mt-10">
-          Introducing the Ultimate JPG to PDF Converter for Windows
+          Local, Secure, and Private File Conversion
         </strong>
         <p className="mt-2">
-          Transform your JPG files into PDFs securely and efficiently with our
-          powerful desktop software. Designed for Windows users, our JPG to PDF
-          converter allows you to perform conversions entirely offline, ensuring
-          that your data remains private and secure. Without the need for an
-          internet connection, you can confidently convert files on your local
-          system, eliminating any risk of data breaches or unauthorized access.
+          Our JPG to PDF converter prioritizes your file security by processing
+          everything locally on your device. Unlike cloud-based tools that
+          upload your images to external servers, our solution ensures your
+          files never leave your browser. This approach guarantees complete
+          privacy, making it the perfect choice for users working with sensitive
+          or personal data. All conversions occur directly in your browser,
+          giving you peace of mind that your files remain secure and under your
+          control.
         </p>
         <strong className="mt-10">
-          Lightning-Fast and Reliable Conversions
+          No Uploads Required – 100% Offline Conversion
         </strong>
         <p className="mt-2">
-          Experience rapid conversion from JPG to PDF with our dependable
-          software. Whether you&#39;re working from home, the office, or on the
-          go, our tool is engineered to deliver quick and reliable results
-          without relying on an internet connection. Convert your JPEG files to
-          PDF format in a matter of seconds, no matter where you are, ensuring
-          your work is always uninterrupted.
+          Unlike other web-based tools, our JPG to PDF converter operates
+          entirely offline. By eliminating the need for uploads, you can enjoy
+          faster processing times and complete assurance that your data stays
+          private. Whether you&#39;re working on confidential projects or
+          personal documents, this feature ensures maximum privacy and
+          convenience.
         </p>
-        <strong className="mt-10">Effortless Batch Conversion</strong>
+        <strong className="mt-10">
+          Flexible PDF Creation Options for Every Need
+        </strong>
         <p className="mt-2">
-          Save time and streamline your workflow by converting multiple JPG
-          images to PDFs in a single operation. Our batch processing feature is
-          designed to handle large volumes of files quickly and efficiently,
-          eliminating the tedious task of converting images one by one. Whether
-          you&#39;re dealing with a handful of images or thousands, our software
-          makes bulk conversion simple and hassle-free.
+          Our JPG to PDF converter adapts to your requirements with versatile
+          conversion modes. Choose to: Combine multiple JPGs into one PDF for
+          cohesive presentations or document compilations. Convert each JPG into
+          an individual PDF for single-image needs or streamlined organization.
+          This flexibility allows you to customize your PDF creation process to
+          suit any project or purpose.
         </p>
-        <strong className="mt-10">Intuitive Drag-and-Drop Interface</strong>
+        <strong className="mt-10">Combine JPGs with Ease</strong>
         <p className="mt-2">
-          Our user-friendly interface makes file conversion effortless, even for
-          beginners. Simply drag and drop your JPG files into the software, and
-          you&#39;re ready to start converting. This intuitive feature
-          simplifies the process, allowing you to focus on your work rather than
-          navigating complex menus.
+          Whether you’re looking to create a single PDF from multiple images or
+          generate separate PDFs for each image, our tool gives you full
+          control. This flexibility is ideal for creating professional reports,
+          organizing photo collections, or preparing personal projects.
         </p>
-        <strong className="mt-10">Flexible Conversion Options</strong>
+        <strong className="mt-10">
+          Customize Orientation, Page Size, and Margins
+        </strong>
         <p className="mt-2">
-          Customize your PDF output with versatile conversion modes. Whether you
-          need to create separate PDFs for each JPG or combine multiple images
-          into a single multi-page PDF document, our software gives you the
-          flexibility to meet your specific needs. Tailor the conversion process
-          to suit your preferences and ensure your files are organized just the
-          way you want them.
+          Tailor your PDFs with a wide range of customization options:
+          Orientation: Switch between portrait and landscape modes to suit your
+          layout. Page Size: Select from standard sizes like A4, US Letter, or
+          fit-to-image for a perfect match. Margins: Adjust margins to enhance
+          readability or meet specific formatting needs. With these features,
+          you can create polished and professional PDFs that are ready for
+          printing, sharing, or archiving.
         </p>
-        <strong className="mt-10">Organize Images with Ease</strong>
+        <strong className="mt-10">
+          Professional Layout Options for Print-Ready PDFs
+        </strong>
         <p className="mt-2">
-          Take control of your file order before conversion with our easy-to-use
-          MOVE UP and MOVE DOWN buttons. Rearrange your JPG images to determine
-          their sequence in the final PDF, giving you complete freedom to
-          organize your documents exactly as you envision.
+          Our PDF converter ensures that your final output meets professional
+          standards. Whether you’re preparing documents for work, school, or
+          personal use, our layout customization options help you create
+          visually appealing and well-structured PDFs every time.
         </p>
-        <strong className="mt-10">Designed for High-Volume Conversions</strong>
+        <strong className="mt-10">Intuitive Drag-and-Drop Functionality</strong>
         <p className="mt-2">
-          Need to convert thousands of JPG files in seconds? Our JPG to PDF
-          Converter is one of the fastest and most versatile solutions
-          available. Ideal for both professionals and casual users, this robust
-          software allows you to batch process large collections of JPEG files
-          with just a few clicks. Launch the converter, drag and drop your files
-          or folders into the conversion list, customize your settings, and hit
-          &#34;Convert&#34;—your images will be instantly transformed into
-          high-quality PDF documents.
+          Simplify your workflow with an easy-to-use drag-and-drop interface.
+          Quickly upload images by dragging them directly into the converter.
+          This eliminates the hassle of navigating through complex menus and
+          saves you valuable time.
         </p>
-        <strong className="mt-10">User-Friendly with Advanced Features</strong>
+        <strong className="mt-10">Rearrange Images to Perfect Your PDF</strong>
         <p className="mt-2">
-          Not only is our JPG to PDF Converter fast and easy to use, but it also
-          offers advanced options for those who need more control over the
-          conversion process. Choose to convert each JPG file into a separate
-          PDF or merge all your images into a single, multi-page PDF. Adjust
-          image quality settings to ensure the final PDF meets your specific
-          requirements, making this tool adaptable to a wide range of needs.
+          Before converting your images, easily rearrange their order to ensure
+          your PDF is exactly how you want it. This feature is ideal for
+          creating sequential documents, such as step-by-step guides,
+          storyboards, or presentations. Arrange, edit, and convert – all in one
+          seamless process.
         </p>
-        <strong className="mt-10">Why Convert JPG to PDF?</strong>
+        <strong className="mt-10">
+          Fast and Reliable JPG to PDF Conversion
+        </strong>
         <p className="mt-2">
-          JPG (Joint Photographic Experts Group) is a widely-used image format
-          known for its efficient compression, perfect for online sharing.
-          However, when it comes to preserving image quality, especially for
-          text or line drawings, converting to PDF (Portable Document Format) is
-          often the better choice. PDFs are universally recognized and ideal for
-          sharing, printing, and archiving documents, offering a combination of
-          text, graphics, and images that maintain their quality across devices.
+          Our JPG to PDF converter is designed for speed and efficiency. Enjoy
+          quick processing without compromising on quality, making it the
+          perfect tool for users with tight deadlines or high-volume tasks.
         </p>
-        <strong className="mt-10">Conclusion</strong>
+        <strong className="mt-10">
+          Accessible Across Devices – Online Web App
+        </strong>
         <p className="mt-2">
-          Our JPG to PDF Converter for Windows is the perfect solution for
-          anyone looking to convert images to PDF with speed, security, and
-          ease. Whether you&#39;re handling a few files or thousands, this
-          software delivers the efficiency and flexibility you need to get the
-          job done. Don&#39;t settle for less—download the best JPG to PDF
-          Converter for Windows today and experience effortless file conversion
-          at its finest.
+          As an online web app, our JPG to PDF converter is accessible from any
+          device with a browser. Whether you’re using a desktop, laptop, tablet,
+          or smartphone, you can convert your JPGs to PDFs without the need for
+          downloads or installations. This flexibility ensures you can work on
+          the go, anytime and anywhere.
         </p>
       </div>
     ),
     metaData: {
-      title: `Free ${ProductTitles.JPGtoPDFConverterWeb} for Windows | Fast & Secure JPG to PDF Tool`,
+      title: `Free ${ProductTitles.JPGtoPDFConverterWeb} Online | Fast & Secure JPG to PDF Tool`,
       keywords:
-        "JPG to PDF Converter, JPEG to PDF Converter, Convert JPG to PDF, Batch JPG to PDF, Windows PDF Converter, Image to PDF Tool",
+        "Online JPG to PDF Converter, JPEG to PDF Tool, Convert JPG to PDF Free, Batch JPG to PDF Online, Image to PDF Converter, Secure PDF Tool",
       description:
-        "Easily convert JPEG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable settings to ensure top-quality PDF output.",
+        "Easily convert JPEG files to PDF with our free online tool. Enjoy secure, local processing in your browser, drag-and-drop functionality, and fully customizable PDF creation settings.",
       alternates: {
         canonical: ProductWebsites.JPGtoPDFConverterWeb,
       },
       openGraph: {
-        title: `Free ${ProductTitles.JPGtoPDFConverterWeb} for Windows |  Fast & Secure JPG to PDF Tool`,
+        title: `Free ${ProductTitles.JPGtoPDFConverterWeb} Online | Fast & Secure JPG to PDF Tool`,
         description:
-          "Easily convert JPEG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable settings to ensure top-quality PDF output.",
+          "Easily convert JPEG files to PDF with our free online tool. Enjoy secure, local processing in your browser, drag-and-drop functionality, and fully customizable PDF creation settings.",
         url: `https://www.frameworkteam.com/${ProductIDs.JPGtoPDFConverterWeb}.html`,
-        siteName: `${ProductTitles.JPGtoPDFConverterWeb} for Windows`,
+        siteName: `${ProductTitles.JPGtoPDFConverterWeb} Online`,
         images: [
           {
             url: cloudinaryLoader({
@@ -439,11 +440,11 @@ export const portfolioItems: portfolioItem[] = [
             }),
             width: productImages.JPGtoPDFConverterWeb.width,
             height: productImages.JPGtoPDFConverterWeb.height,
-            alt: `Free ${ProductTitles.JPGtoPDFConverterWeb} for Windows`,
+            alt: `Free ${ProductTitles.JPGtoPDFConverterWeb} Online`,
           },
         ],
         locale: "en_US",
-        type: "article",
+        type: "website",
       },
     },
   },

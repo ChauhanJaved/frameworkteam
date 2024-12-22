@@ -35,17 +35,6 @@ export default function Page({ params }: { params: { product: string } }) {
   const portfolioItem = portfolioItems.find(
     (item) => item.id === params.product,
   );
-  //Breadcrumb data
-  const pageLocation = [
-    {
-      name: `${HeaderNavItems.Home[0].toUpperCase()}${HeaderNavItems.Home.slice(1)}`,
-      link: `/#${HeaderNavItems.Home}`,
-    },
-    {
-      name: `${HeaderNavItems.Portfolio[0].toUpperCase()}${HeaderNavItems.Portfolio.slice(1)}`,
-      link: `/#${HeaderNavItems.Portfolio}`,
-    },
-  ];
   return (
     <>
       <div className="px-5 pt-24">
@@ -86,7 +75,7 @@ export default function Page({ params }: { params: { product: string } }) {
       <main id="main" className="text-lg">
         {portfolioItem && (
           <>
-            <div className="container mx-auto flex flex-col items-center justify-center px-3 py-10 xl:max-w-screen-xl">
+            <div className="container mx-auto flex flex-col items-center justify-center px-5 py-10 xl:max-w-screen-xl">
               <SectionHeader
                 caption={portfolioItem.title}
                 desc={portfolioItem.subtitle}
