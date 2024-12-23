@@ -38,7 +38,7 @@ export default function HeaderSheetMainManu({
         size={"icon"}
         variant={"ghost"}
         onClick={openSheet}
-        className={`${className} hover:text-blue-dark-imperial`}
+        className={`${className} hover:text-blue-dark-imperial hover:dark:text-gray-300`}
       >
         <Menu />
       </Button>
