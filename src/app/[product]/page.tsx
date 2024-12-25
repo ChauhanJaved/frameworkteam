@@ -82,12 +82,12 @@ export default function Page({ params }: { params: { product: string } }) {
               />
               <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
                 {portfolioItem.downloadLink && (
-                  <Link href={portfolioItem.downloadLink} target="_blank">
+                  <a href={portfolioItem.downloadLink}>
                     <Button className="py-5 text-base">
                       <Download className="" />
                       Download Now
                     </Button>
-                  </Link>
+                  </a>
                 )}
                 {portfolioItem.productWebsite && (
                   <Link href={portfolioItem.productWebsite} target="_blank">
