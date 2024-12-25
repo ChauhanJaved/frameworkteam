@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body
         className={`${roboto.className} text-base text-gray-700 dark:text-gray-300 lg:text-lg`}
       >
