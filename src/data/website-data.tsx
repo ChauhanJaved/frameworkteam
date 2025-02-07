@@ -16,7 +16,7 @@ export enum HeaderNavItems {
 export const heroTitle: string =
   "We offer cutting-edge solutions to grow your business";
 export const heroDesc: string =
-  "We are team of talented professionals creating feature-rich Progressive Web Apps and Windows Desktop Applications.";
+  "We are team of talented professionals creating feature-rich Web Apps and Desktop Apps.";
 export const headerNavItems: string[] = [
   HeaderNavItems.Home,
   HeaderNavItems.Services,
@@ -24,10 +24,10 @@ export const headerNavItems: string[] = [
   HeaderNavItems.Contact,
 ];
 export const indexMetadata: Metadata = {
-  title: `${companyName} - India | Progressive Web Apps | Windows Desktop Applications`,
+  title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
   description: `${heroTitle}. ${heroDesc}`,
   openGraph: {
-    title: `${companyName} - India | Progressive Web Apps | Windows Desktop Applications`,
+    title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
     description: `${heroTitle}. ${heroDesc}`,
     url: "https://frameworkteam.com",
     siteName: `${companyName} - India`,

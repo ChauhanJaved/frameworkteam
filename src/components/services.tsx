@@ -10,47 +10,50 @@ export default function Services() {
     >
       <SectionHeader
         caption="services"
-        desc="Empowering Digital Excellence | Cutting-Edge Progressive Web Apps & Windows Apps | Robust Solutions Tailored to Your Needs"
+        desc="Empowering Digital Excellence | Cutting-Edge Web Apps & Windows Apps | Robust Solutions Tailored to Your Needs"
         element="h2"
       />
-      <h2 className="mt-10 text-lg md:text-xl">
-        <b>Progressive Web Application (PWA) Development :</b>
-      </h2>
+      <h3 className="mt-10 text-lg md:text-xl">
+        <b>Web Application Development</b>
+      </h3>
       <div className="text-base md:text-lg">
         <p className="mt-3">
-          Our company FrameworkTeam Softwares excels in delivering feature-rich
-          and high-performance Progressive Web Applications (PWAs) by leveraging
-          modern technologies like Next.js with TypeScript, Tailwind CSS for
-          styling, Shadcn for component design, Firebase for backend services,
-          and generative AI for innovative user experiences. PWAs bridge the gap
-          between web and native applications, offering a seamless user
-          experience across various devices. Using Next.js, we ensure superior
-          performance through server-side rendering (SSR) and static site
-          generation (SSG), optimizing loading times and enhancing SEO
-          capabilities. With Tailwind CSS, we craft visually appealing,
-          responsive designs that adapt to screens of all sizes.{" "}
+          At FrameworkTeam Softwares, we specialize in developing feature-rich,
+          high-performance web applications using the latest technologies. Our
+          expertise includes Next.js with TypeScript, Tailwind CSS for modern
+          styling, Shadcn for sleek UI components, Firebase for scalable backend
+          services, and generative AI for innovative user experiences.
         </p>
         <p className="mt-3">
-          Our expertise extends to Firebase, which enables secure user
-          authentication, real-time database integration, and cloud storage for
-          scalable backend solutions. We also utilize Shadcn for building
-          reusable and accessible components, ensuring a consistent and
-          professional user interface. By integrating TypeScript into our
-          development process, we deliver robust, error-free, and maintainable
-          codebases. Additionally, we streamline deployment through platforms
-          like Vercel and Firebase Hosting, ensuring efficient hosting and
-          seamless updates with CI/CD pipelines.
+          We build fast, responsive, and SEO-friendly web apps that deliver
+          seamless performance across devices. By leveraging Next.js, we
+          optimize speed through static site generation (SSG) and server-side
+          rendering (SSR), ensuring smooth navigation and enhanced search
+          visibility. With Tailwind CSS, we design visually appealing,
+          mobile-friendly interfaces that adapt to any screen size.
         </p>
         <p className="mt-3">
-          At FrameworkTeam Softwares, we aim to create PWAs that provide
-          native-like performance, offline support, and engaging user
-          experiences, helping your business stay ahead in a rapidly evolving
-          digital landscape.
+          Our development process is backed by Firebase, enabling secure
+          authentication, real-time data syncing, and cloud storage for scalable
+          and reliable solutions. We also utilize Shadcn for reusable,
+          accessible UI components, maintaining a consistent and professional
+          design. By integrating TypeScript, we ensure a robust, error-free, and
+          maintainable codebase.
+        </p>
+        <p className="mt-3">
+          For deployment, we use platforms like Vercel and Firebase Hosting,
+          streamlining updates with CI/CD pipelines for a hassle-free user
+          experience.
+        </p>
+        <p className="mt-3">
+          At FrameworkTeam Softwares, our goal is to build fast, secure, and
+          engaging web applications that help your business stay ahead in the
+          ever-evolving digital world.
         </p>
       </div>
-      <h2 className="mt-10 text-lg md:text-xl">
-        <b>Windows Desktop Application Development</b>
-      </h2>
+      <h3 className="mt-10 text-lg md:text-xl">
+        <b>Windows Application Development</b>
+      </h3>
       <div className="text-base md:text-lg">
         <p className="mt-3">
           Our expertise in Windows Desktop Application development using .NET

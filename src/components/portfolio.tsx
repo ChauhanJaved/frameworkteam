@@ -28,7 +28,7 @@ export default function Portfolio(props: { galleryID: string }) {
     >
       <SectionHeader
         caption="portfolio"
-        desc="Showcasing Innovation | Expertise in Progressive Web Apps & Windows Apps | Proven Success in Digital Solutions"
+        desc="Showcasing Innovation | Expertise in Web Apps & Windows Apps | Proven Success in Digital Solutions"
         element="h2"
       />
       {/* ===== Catagory filter ===== */}
