@@ -3,6 +3,7 @@ import cloudinaryLoader from "@/lib/cloudinary-loader";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 
+export const VALID_CHARS: string = "0123456789ABCDEFGHJKLMNPQRTUVWXY";
 export const headerCompanyName: string = "FrameworkTeam";
 export const companyName: string = "FrameworkTeam Softwares";
 export const email: string = "support@frameworkteam.com";
@@ -10,7 +11,8 @@ export const copyrightYear: string = new Date().getFullYear().toString();
 export enum HeaderNavItems {
   Home = "home",
   Services = "services",
-  Portfolio = "portfolio",
+  Portfolio = "products",
+  Pricing = "purchase",
   Contact = "contact",
 }
 export const heroTitle: string =
@@ -21,8 +23,12 @@ export const headerNavItems: string[] = [
   HeaderNavItems.Home,
   HeaderNavItems.Services,
   HeaderNavItems.Portfolio,
+  HeaderNavItems.Pricing,
   HeaderNavItems.Contact,
 ];
+export function hrefValue(item: string): string {
+  return `/#${item}`;
+}
 export const indexMetadata: Metadata = {
   title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
   description: `${heroTitle}. ${heroDesc}`,
