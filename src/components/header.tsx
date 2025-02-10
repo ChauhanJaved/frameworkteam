@@ -19,9 +19,7 @@ import {
 import { capitalizeWords } from "@/lib/utils";
 import { raleway } from "@/lib/font";
 import { HeaderNavItems, headerNavItems, hrefValue } from "@/data/website-data";
-import { useUser } from "@/context/user-context";
 import { useActiveSection } from "@/context/active-section-context";
-import LicenseRegisterDialog from "@/components/license-register-dialog";
 import { useToast } from "@/hooks/use-toast";
 import { usePageOnTop } from "@/context/page-on-top-context";
 
@@ -31,7 +29,6 @@ interface HeaderProps {
 export default function Header({ defaultActiveSection = "" }: HeaderProps) {
   const { activeSection, setActiveSection } = useActiveSection();
   const { pageOnTop, setPageOnTop } = usePageOnTop();
-  const { userStatus } = useUser();
   const [showDialog, setShowDialog] = useState(false);
   const handleRegisterClick = () => setShowDialog(true);
   const { setTheme, systemTheme, theme } = useTheme();
@@ -110,43 +107,6 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
               ))}
             </ul>
             <Menubar>
-              {/* User status---------------------- */}
-              {userStatus === "paid" ? (
-                <MenubarMenu>
-                  <MenubarTrigger
-                    aria-label="Check license"
-                    onClick={() => {
-                      toast({
-                        title: "You are a Licensed User",
-                        description:
-                          "Thank you for purchasing a license! You have full access to all features.",
-                      });
-                    }}
-                  >
-                    <UserCheck />
-                  </MenubarTrigger>
-                </MenubarMenu>
-              ) : (
-                // Trial User
-                <MenubarMenu>
-                  <MenubarTrigger aria-label="Trial user menu">
-                    <User />
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <Link
-                      href={`/#${HeaderNavItems.Pricing}`}
-                      onClick={() => setActiveSection(HeaderNavItems.Pricing)}
-                    >
-                      <MenubarItem>Buy License</MenubarItem>
-                    </Link>
-
-                    <MenubarItem onClick={handleRegisterClick}>
-                      Register License...
-                    </MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-              )}
-
               {/* Theam toggle---------------------- */}
               <MenubarMenu>
                 {mounted ? (
@@ -208,11 +168,6 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
           </div>
         </nav>
       </header>
-      {/* License Registration Modal */}
-      <LicenseRegisterDialog
-        showRegisterLicenseDialog={showDialog}
-        setShowRegisterLicenseDialog={setShowDialog}
-      ></LicenseRegisterDialog>
     </Fragment>
   );
 }
