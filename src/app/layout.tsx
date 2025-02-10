@@ -10,7 +10,6 @@ import { ActiveSectionProvider } from "@/context/active-section-context";
 import Header from "@/components/header";
 import { PageOnTopProvider } from "@/context/page-on-top-context";
 import { Toaster } from "@/components/ui/toaster";
-import { UserProvider } from "@/context/user-context";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -45,20 +44,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <UserProvider>
-            <ActiveSectionProvider>
-              <PageOnTopProvider>
-                <ScrollTop />
-                <Header />
-                {children}
-                <Footer
-                  companyName={companyName}
-                  copyrightYear={copyrightYear}
-                />
-                <Toaster />
-              </PageOnTopProvider>
-            </ActiveSectionProvider>
-          </UserProvider>
+          <ActiveSectionProvider>
+            <PageOnTopProvider>
+              <ScrollTop />
+              <Header />
+              {children}
+              <Footer companyName={companyName} copyrightYear={copyrightYear} />
+              <Toaster />
+            </PageOnTopProvider>
+          </ActiveSectionProvider>
         </ThemeProvider>
       </body>
     </html>
