@@ -3,7 +3,7 @@
 //External  imports
 import React, { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
-import { EllipsisVertical, Sun, Moon, User, UserCheck } from "lucide-react";
+import { EllipsisVertical, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 //Internal imports
@@ -29,10 +29,7 @@ interface HeaderProps {
 export default function Header({ defaultActiveSection = "" }: HeaderProps) {
   const { activeSection, setActiveSection } = useActiveSection();
   const { pageOnTop, setPageOnTop } = usePageOnTop();
-  const [showDialog, setShowDialog] = useState(false);
-  const handleRegisterClick = () => setShowDialog(true);
   const { setTheme, systemTheme, theme } = useTheme();
-
   const { toast } = useToast();
 
   const [mounted, setMounted] = useState(false);
