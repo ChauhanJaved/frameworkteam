@@ -26,17 +26,6 @@ const config: Config = {
       },
       colors: {
         "blue-dark-imperial": "#012970", // Dark Imperial Blue
-        "blue-ultramarine": "#4154F1", // Ultramarine Blue
-        "white-snow": "#f7f7f7", // Use for page backgrounds
-        "black-900": "#1a1a1a", // WCAG-compliant
-        "black-800": "#333333", // WCAG-compliant
-        "black-700": "#4d4d4d", // WCAG-compliant
-        "black-600": "#666666", // WCAG-compliant for large text
-        "black-500": "#808080", // Use sparingly for less important text
-        "black-400": "#999999", // Not recommended for body text
-        "black-300": "#b3b3b3", // Not recommended for body text
-        "black-200": "#cccccc", // Use for very subtle text
-        "black-100": "#e6e6e6", // Use for background or non-essential
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

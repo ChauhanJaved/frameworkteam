@@ -14,6 +14,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import BreadcrumbNextLink from "@/components/breadcrumb-next-link";
+import { Button } from "@/components/ui/button";
 
 const pageName = "Privacy Policy";
 
@@ -155,16 +156,16 @@ export default function page() {
           <Link
             href={"https://home.bluesnap.com/privacy-policy/"}
             target="_blank"
-            className="mt-5 text-blue-ultramarine hover:opacity-90 active:opacity-90"
+            className="mt-5"
           >
-            BlueSnap&#39;s Privacy Policy
+            <Button variant={"link"} className="h-auto lg:px-0 lg:py-0">
+              BlueSnap&#39;s Privacy Policy
+            </Button>
           </Link>
-          <Link
-            href={"https://fastspring.com/privacy/"}
-            target="_blank"
-            className="text-blue-ultramarine hover:opacity-90 active:opacity-90"
-          >
-            Fastspring&#39;s Privacy Policy
+          <Link href={"https://fastspring.com/privacy/"} target="_blank">
+            <Button variant={"link"} className="h-auto lg:px-0 lg:py-0">
+              Fastspring&#39;s Privacy Policy
+            </Button>
           </Link>
           <p className="mt-5">
             {" "}

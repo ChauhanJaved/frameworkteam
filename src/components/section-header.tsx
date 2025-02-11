@@ -1,5 +1,5 @@
 //External imports
-import { poppins, raleway } from "@/lib/font";
+import { poppins } from "@/lib/font";
 import React from "react";
 //Internal imports
 
@@ -16,7 +16,7 @@ export default function SectionHeader(props: PropsSectionHeader) {
       {React.createElement(
         Element,
         {
-          className: `${Element === "h1" ? "text-4xl font-bold tracking-tight lg:text-5xl" : "text-3xl font-semibold tracking-tight"} flex flex-col items-center text-center  ${poppins.className} text-blue-dark-imperial dark:text-gray-300`,
+          className: `${Element === "h1" ? "text-4xl font-bold tracking-tight lg:text-5xl" : "text-3xl font-semibold tracking-tight"} flex flex-col items-center text-center  ${poppins.className} text-blue-dark-imperial dark:text-foreground`,
         },
         <>
           {props.caption[0].toUpperCase() + props.caption.slice(1)}
