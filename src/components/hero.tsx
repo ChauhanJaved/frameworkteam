@@ -1,19 +1,17 @@
+"use client";
 //External  imports
 import Link from "next/link";
 import Image from "next/image";
 
 //Internal imports
 import { Button } from "@/components/ui/button";
-import {
-  HeaderNavItems,
-  headerNavItems,
-  heroDesc,
-  heroTitle,
-} from "@/data/website-data";
+import { HeaderNavItems, heroDesc, heroTitle } from "@/data/website-data";
 import { ArrowDown } from "lucide-react";
 import { nunito } from "@/lib/font";
+import { useActiveSection } from "@/context/active-section-context";
 
-const Hero = () => {
+export default function Hero() {
+  const { setActiveSection } = useActiveSection();
   return (
     <section
       id={HeaderNavItems.Home}
@@ -49,7 +47,13 @@ const Hero = () => {
           <p className="mt-1 bg-transparent text-lg md:text-xl lg:text-2xl">
             {heroDesc}
           </p>
-          <Link href={`#${headerNavItems[1]}`} className="mt-5">
+          <Link
+            href={`#${HeaderNavItems.Services}`}
+            className="mt-5"
+            onClick={() => {
+              setActiveSection(HeaderNavItems.Services);
+            }}
+          >
             <Button className="py-5 text-base">
               <ArrowDown />
               Read More
@@ -59,5 +63,4 @@ const Hero = () => {
       </div>
     </section>
   );
-};
-export default Hero;
+}
