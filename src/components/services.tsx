@@ -6,17 +6,17 @@ export default function Services() {
   return (
     <section
       id={HeaderNavItems.Services}
-      className="container scroll-m-20 px-5 pt-10 text-lg lg:px-10 lg:pt-20 xl:max-w-screen-xl"
+      className="container scroll-m-20 px-5 pt-10 lg:px-10 lg:pt-20 xl:max-w-screen-xl"
     >
       <SectionHeader
         caption="services"
         desc="Empowering Digital Excellence | Cutting-Edge Web Apps & Windows Apps | Robust Solutions Tailored to Your Needs"
         element="h2"
       />
-      <h3 className="mt-10 text-lg md:text-xl">
+      <h3 className="mt-10">
         <b>Web Application Development</b>
       </h3>
-      <div className="text-base md:text-lg">
+      <div>
         <p className="mt-3">
           At FrameworkTeam Softwares, we specialize in developing feature-rich,
           high-performance web applications using the latest technologies. Our
@@ -51,10 +51,10 @@ export default function Services() {
           ever-evolving digital world.
         </p>
       </div>
-      <h3 className="mt-10 text-lg md:text-xl">
+      <h3 className="mt-10">
         <b>Windows Application Development</b>
       </h3>
-      <div className="text-base md:text-lg">
+      <div>
         <p className="mt-3">
           Our expertise in Windows Desktop Application development using .NET
           and C# empowers us to create robust, high-performing, and feature-rich
