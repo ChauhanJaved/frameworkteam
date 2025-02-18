@@ -16,7 +16,7 @@ export enum HeaderNavItems {
 export const heroTitle: string =
   "We offer cutting-edge solutions to grow your business";
 export const heroDesc: string =
-  "We are team of talented professionals creating feature-rich Web Apps and Desktop Apps.";
+  "We are a team of skilled professionals dedicated to developing high-performance Web Apps and Desktop Apps, packed with powerful features to streamline your workflow, enhance productivity, and accelerate business growth.";
 export const headerNavItems: string[] = [
   HeaderNavItems.Home,
   HeaderNavItems.Services,

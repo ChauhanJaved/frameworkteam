@@ -39,7 +39,7 @@ export default function Contact() {
             Copy Email
           </Button>
         </div>
-        <p className={`mt-5 text-lg`}>
+        <p className={`mt-5 text-base lg:text-lg`}>
           Feel free to contact us if you encounter an issue with our product,
           have questions about our product, purchase inquiries, or are
           interested in development services. For licensed users, please include
