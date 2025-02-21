@@ -9,7 +9,7 @@ interface PropsFooter {
 export default function Footer(props: PropsFooter) {
   return (
     <footer className="mt-10 border-t">
-      <div className="mx-5 mb-16 mt-5 flex flex-col items-center gap-1 text-center sm:mx-7 md:mx-9 lg:mx-11">
+      <div className="mx-5 mb-16 mt-5 flex flex-col items-center gap-1 text-center text-base sm:mx-7 md:mx-9 lg:mx-11">
         <p>
           © {props.copyrightYear}
           {", "}
