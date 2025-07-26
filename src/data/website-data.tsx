@@ -73,10 +73,12 @@ export const categoryList: string[] = [
 
 export enum ProductIDs {
   JPGtoPDFConverterWeb = "jpg-to-pdf-converter",
+  PNGtoPDFConverterWeb = "png-to-pdf-converter",
+  TIFFtoPDFConverterWeb = "tiff-to-pdf-converter",
 
   JPGtoPDFConverterDesktop = "jpg-to-pdf-converter-desktop",
-  TIFFtoPDFConverter = "tiff-to-pdf-converter",
-  PNGtoPDFConverter = "png-to-pdf-converter",
+  TIFFtoPDFConverterDesktop = "tiff-to-pdf-converter-desktop",
+  PNGtoPDFConverterDesktop = "png-to-pdf-converter-desktop",
 
   PDFtoJPGConverter = "pdf-to-jpg-converter",
   PDFtoTIFFConverter = "pdf-to-tiff-converter",
@@ -98,10 +100,12 @@ export enum ProductIDs {
 
 enum ProductTitles {
   JPGtoPDFConverterWeb = "JPG to PDF Converter",
+  PNGtoPDFConverterWeb = "PNG to PDF Converter",
+  TIFFtoPDFConverterWeb = "TIFF to PDF Converter",
 
   JPGtoPDFConverterDesktop = "JPG to PDF Converter",
-  TIFFtoPDFConverter = "TIFF to PDF Converter",
-  PNGtoPDFConverter = "PNG to PDF Converter",
+  TIFFtoPDFConverterDesktop = "TIFF to PDF Converter",
+  PNGtoPDFConverterDesktop = "PNG to PDF Converter",
 
   PDFtoJPGConverter = "PDF to JPG Converter",
   PDFtoTIFFConverter = "PDF to TIFF Converter",
@@ -121,11 +125,13 @@ enum ProductTitles {
   WebsitesScreenshot = "Websites Screenshot",
 }
 enum ProductSubTitles {
-  JPGtoPDFConverterWeb = "Combine All JPGs into a Single PDF | Convert Each JPG to a Separate PDF | Easily Adjust Orientation, Page Size, and Margins",
+  JPGtoPDFConverterWeb = "Online Tool to Convert & Merge JPG to PDF – Secure & Private, Your Files Never Leave Your Device",
+  PNGtoPDFConverterWeb = "Online Tool to Convert & Merge PNG to PDF – Secure & Private, Your Files Never Leave Your Device",
+  TIFFtoPDFConverterWeb = "Online Tool to Convert, Split & Merge TIFF to PDF – Secure & Private, Your Files Never Leave Your Device",
 
   JPGtoPDFConverterDesktop = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
-  TIFFtoPDFConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
-  PNGtoPDFConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  TIFFtoPDFConverterDesktop = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  PNGtoPDFConverterDesktop = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
 
   PDFtoJPGConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
   PDFtoTIFFConverter = "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
@@ -146,11 +152,13 @@ enum ProductSubTitles {
 }
 
 enum ProductWebsites {
-  JPGtoPDFConverterWeb = "https://www.jpg-to-pdf-converter.com/",
+  JPGtoPDFConverterWeb = "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter",
+  PNGtoPDFConverterWeb = "https://www.pdf-tiff-tools.com/png-to-pdf-converter",
+  TIFFtoPDFConverterWeb = "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter",
 
-  JPGtoPDFConverterDesktop = "https://www.jpg-to-pdf-converter.com/desktop.html",
-  TIFFtoPDFConverter = "https://www.tiff-to-pdf-converter.com/",
-  PNGtoPDFConverter = "https://www.png-to-pdf-converter.com/",
+  JPGtoPDFConverterDesktop = "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter-desktop",
+  PNGtoPDFConverterDesktop = "https://www.pdf-tiff-tools.com/png-to-pdf-converter-desktop",
+  TIFFtoPDFConverterDesktop = "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter-desktop",
 
   PDFtoJPGConverter = "https://www.pdf-to-jpg-converter.com/",
   PDFtoTIFFConverter = "https://www.pdf-to-tiff-converter.com/",
@@ -172,8 +180,8 @@ enum ProductWebsites {
 
 enum ProductDownloadLinks {
   JPGtoPDFConverterDesktop = "https://jpg-to-pdf-converter.com/downloads/jpg-to-pdf-converter-setup.exe",
-  TIFFtoPDFConverter = "https://tiff-to-pdf-converter.com/downloads/tiff-to-pdf-converter-setup.exe",
-  PNGtoPDFConverter = "https://png-to-pdf-converter.com/downloads/png-to-pdf-converter-setup.exe",
+  TIFFtoPDFConverterDesktop = "https://tiff-to-pdf-converter.com/downloads/tiff-to-pdf-converter-setup.exe",
+  PNGtoPDFConverterDesktop = "https://png-to-pdf-converter.com/downloads/png-to-pdf-converter-setup.exe",
 
   PDFtoJPGConverter = "https://pdf-to-jpg-converter.com/downloads/pdf-to-jpg-converter-setup.exe",
   PDFtoTIFFConverter = "https://pdf-to-tiff-converter.com/downloads/pdf-to-tiff-converter-setup.exe",
@@ -195,22 +203,32 @@ enum ProductDownloadLinks {
 
 const productImages = {
   JPGtoPDFConverterWeb: {
-    imgName: "jpg-to-pdf-converter-web",
-    width: 1170,
-    height: 2532,
+    imgName: "jpg-to-pdf-converter-web-icon",
+    width: 1024,
+    height: 1024,
+  },
+  PNGtoPDFConverterWeb: {
+    imgName: "png-to-pdf-converter-web-icon",
+    width: 1024,
+    height: 1024,
+  },
+  TIFFtoPDFConverterWeb: {
+    imgName: "tiff-to-pdf-converter-web-icon",
+    width: 1024,
+    height: 1024,
   },
   JPGtoPDFConverterDesktop: {
     imgName: "jpg-to-pdf-converter",
     width: 756,
     height: 463,
   },
-  TIFFtoPDFConverter: {
-    imgName: "tiff-to-pdf-converter",
+  PNGtoPDFConverterDesktop: {
+    imgName: "png-to-pdf-converter",
     width: 756,
     height: 463,
   },
-  PNGtoPDFConverter: {
-    imgName: "png-to-pdf-converter",
+  TIFFtoPDFConverterDesktop: {
+    imgName: "tiff-to-pdf-converter",
     width: 756,
     height: 463,
   },
@@ -601,18 +619,18 @@ export const portfolioItems: portfolioItem[] = [
       },
     },
   },
-  // ***** TIFF to PDF Converter ****
+  // ***** TIFF to PDF Converter Desktop****
   {
-    id: ProductIDs.TIFFtoPDFConverter,
-    title: ProductTitles.TIFFtoPDFConverter,
-    subtitle: ProductSubTitles.TIFFtoPDFConverter,
-    src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverter.imgName.toLowerCase()}`,
-    width: productImages.TIFFtoPDFConverter.width,
-    height: productImages.TIFFtoPDFConverter.height,
+    id: ProductIDs.TIFFtoPDFConverterDesktop,
+    title: ProductTitles.TIFFtoPDFConverterDesktop,
+    subtitle: ProductSubTitles.TIFFtoPDFConverterDesktop,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterDesktop.imgName.toLowerCase()}`,
+    width: productImages.TIFFtoPDFConverterDesktop.width,
+    height: productImages.TIFFtoPDFConverterDesktop.height,
     categories: [Categories.All, Categories.DesktopApp],
-    pageLink: `/${ProductIDs.TIFFtoPDFConverter}`,
-    productWebsite: ProductWebsites.TIFFtoPDFConverter,
-    downloadLink: ProductDownloadLinks.TIFFtoPDFConverter,
+    pageLink: `/${ProductIDs.TIFFtoPDFConverterDesktop}`,
+    productWebsite: ProductWebsites.TIFFtoPDFConverterDesktop,
+    downloadLink: ProductDownloadLinks.TIFFtoPDFConverterDesktop,
     features: [
       "Convert Locally with Complete Offline Security",
       "Experience Ultra-Fast Conversion",
@@ -711,29 +729,29 @@ export const portfolioItems: portfolioItem[] = [
       </div>
     ),
     metaData: {
-      title: `Free ${ProductTitles.TIFFtoPDFConverter} for Windows | Fast & Secure TIFF to PDF Tool`,
+      title: `Free ${ProductTitles.TIFFtoPDFConverterDesktop} for Windows | Fast & Secure TIFF to PDF Tool`,
       keywords:
         "TIFF to PDF Converter, Convert TIFF to PDF, Batch TIFF to PDF, Windows PDF Converter, Image to PDF Tool, TIFF Compression",
       description:
         "Convert TIFF files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
       alternates: {
-        canonical: ProductWebsites.TIFFtoPDFConverter,
+        canonical: ProductWebsites.TIFFtoPDFConverterDesktop,
       },
       openGraph: {
-        title: `Free ${ProductTitles.TIFFtoPDFConverter} for Windows |  Fast & Secure TIFF to PDF Tool`,
+        title: `Free ${ProductTitles.TIFFtoPDFConverterDesktop} for Windows |  Fast & Secure TIFF to PDF Tool`,
         description:
           "Convert TIFF files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
-        url: `https://www.frameworkteam.com/${ProductIDs.TIFFtoPDFConverter}.html`,
-        siteName: `${ProductTitles.TIFFtoPDFConverter} for Windows`,
+        url: `https://www.frameworkteam.com/${ProductIDs.TIFFtoPDFConverterDesktop}.html`,
+        siteName: `${ProductTitles.TIFFtoPDFConverterDesktop} for Windows`,
         images: [
           {
             url: cloudinaryLoader({
-              src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverter.imgName.toLowerCase()}`,
-              width: productImages.TIFFtoPDFConverter.width,
+              src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterDesktop.imgName.toLowerCase()}`,
+              width: productImages.TIFFtoPDFConverterDesktop.width,
             }),
-            width: productImages.TIFFtoPDFConverter.width,
-            height: productImages.TIFFtoPDFConverter.height,
-            alt: `Free ${ProductTitles.TIFFtoPDFConverter} for Windows`,
+            width: productImages.TIFFtoPDFConverterDesktop.width,
+            height: productImages.TIFFtoPDFConverterDesktop.height,
+            alt: `Free ${ProductTitles.TIFFtoPDFConverterDesktop} for Windows`,
           },
         ],
         locale: "en_US",
@@ -741,18 +759,141 @@ export const portfolioItems: portfolioItem[] = [
       },
     },
   },
-  // ***** PNG to PDF Converter *****
+  // ***** TIFF to PDF Converter Web****
   {
-    id: ProductIDs.PNGtoPDFConverter,
-    title: ProductTitles.PNGtoPDFConverter,
-    subtitle: ProductSubTitles.PNGtoPDFConverter,
-    src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverter.imgName.toLowerCase()}`,
-    width: productImages.PNGtoPDFConverter.width,
-    height: productImages.PNGtoPDFConverter.height,
+    id: ProductIDs.TIFFtoPDFConverterWeb,
+    title: ProductTitles.TIFFtoPDFConverterWeb,
+    subtitle: ProductSubTitles.TIFFtoPDFConverterWeb,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterWeb.imgName.toLowerCase()}`,
+    width: productImages.TIFFtoPDFConverterWeb.width,
+    height: productImages.TIFFtoPDFConverterWeb.height,
+    categories: [Categories.All, Categories.WebApp],
+    pageLink: `/${ProductIDs.TIFFtoPDFConverterWeb}`,
+    productWebsite: ProductWebsites.TIFFtoPDFConverterWeb,
+    features: [
+      "Secure Web App for TIFF to PDF Conversion",
+      "Offline Processing – Files Never Leave Your Device",
+      "Convert Multi-Page or Single TIFF Files Easily",
+      "Custom Orientation, Page Size, and Margins",
+      "User-Friendly Interface with Drag-and-Drop Support",
+    ],
+    description: (
+      <div className="flex flex-col">
+        <strong className="mt-10">
+          Local and Private Conversion in Your Browser
+        </strong>
+        <p className="mt-2">
+          Our TIFF to PDF converter works entirely within your browser, keeping
+          your files safe and secure on your device. There are no uploads or
+          external server processing, ensuring your sensitive files stay private
+          and under your control.
+        </p>
+        <strong className="mt-10">
+          100% Offline – No Uploads or Internet Required
+        </strong>
+        <p className="mt-2">
+          Unlike many web apps that rely on cloud servers, our converter
+          performs all operations locally. Enjoy fast, secure, and offline
+          conversions without worrying about data breaches or internet
+          connectivity.
+        </p>
+        <strong className="mt-10">
+          Supports Multi-Page and Single TIFF Files
+        </strong>
+        <p className="mt-2">
+          Easily convert both multi-page TIFF documents and individual TIFF
+          images to PDFs. Whether you&apos;re working with scanned documents or
+          high-quality image sequences, our tool handles all TIFF formats
+          seamlessly.
+        </p>
+        <strong className="mt-10">Combine or Split TIFF Pages in PDF</strong>
+        <p className="mt-2">
+          Choose to combine all pages of a multi-page TIFF into one PDF or
+          create separate PDFs for each image. This flexibility is ideal for
+          archiving, organizing, or sharing content based on your needs.
+        </p>
+        <strong className="mt-10">
+          Custom Page Settings for a Perfect Output
+        </strong>
+        <p className="mt-2">
+          Personalize your PDF output with layout settings: Orientation: Choose
+          portrait or landscape to fit your layout. Page Size: Select A4, US
+          Letter, or auto-fit for accurate scaling. Margins: Customize spacing
+          to optimize readability and formatting.
+        </p>
+        <strong className="mt-10">Ready for Print or Sharing</strong>
+        <p className="mt-2">
+          Generate high-quality PDFs suitable for professional printing,
+          document submissions, or easy sharing. Our layout tools ensure your
+          output looks sharp and consistent.
+        </p>
+        <strong className="mt-10">Intuitive Drag-and-Drop UI</strong>
+        <p className="mt-2">
+          Quickly load your TIFF files with a simple drag-and-drop interface.
+          Save time and avoid complex upload menus for a seamless conversion
+          experience.
+        </p>
+        <strong className="mt-10">
+          Fast, Efficient TIFF to PDF Conversion
+        </strong>
+        <p className="mt-2">
+          Optimized for performance, our converter processes files quickly
+          without sacrificing quality. Perfect for high-volume users and
+          time-sensitive tasks.
+        </p>
+        <strong className="mt-10">
+          Accessible on Any Device with a Browser
+        </strong>
+        <p className="mt-2">
+          As a web-based app, you can use the TIFF to PDF converter from any
+          device—desktop, laptop, tablet, or smartphone. No installation needed.
+          Just open the browser and start converting.
+        </p>
+      </div>
+    ),
+    metaData: {
+      title: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online | Secure TIFF to PDF Tool`,
+      keywords:
+        "TIFF to PDF Converter Online, Convert TIFF to PDF Free, Multi-Page TIFF to PDF, Offline TIFF to PDF Tool, Image to PDF Web App, Secure File Converter",
+      description:
+        "Convert TIFF images to PDF securely with our free web app. Process files locally in your browser with no uploads, drag-and-drop support, and full PDF layout control.",
+      alternates: {
+        canonical: ProductWebsites.TIFFtoPDFConverterWeb,
+      },
+      openGraph: {
+        title: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online | Secure TIFF to PDF Tool`,
+        description:
+          "Convert TIFF images to PDF securely with our free web app. Process files locally in your browser with no uploads, drag-and-drop support, and full PDF layout control.",
+        url: ProductWebsites.TIFFtoPDFConverterWeb,
+        siteName: `${ProductTitles.TIFFtoPDFConverterWeb} Online`,
+        images: [
+          {
+            url: cloudinaryLoader({
+              src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterWeb.imgName.toLowerCase()}`,
+              width: productImages.TIFFtoPDFConverterWeb.width,
+            }),
+            width: productImages.TIFFtoPDFConverterWeb.width,
+            height: productImages.TIFFtoPDFConverterWeb.height,
+            alt: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online`,
+          },
+        ],
+        locale: "en_US",
+        type: "website",
+      },
+    },
+  },
+  // ***** PNG to PDF Converter Desktop*****
+  {
+    id: ProductIDs.PNGtoPDFConverterDesktop,
+    title: ProductTitles.PNGtoPDFConverterDesktop,
+    subtitle: ProductSubTitles.PNGtoPDFConverterDesktop,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+    width: productImages.PNGtoPDFConverterDesktop.width,
+    height: productImages.PNGtoPDFConverterDesktop.height,
     categories: [Categories.All, Categories.DesktopApp],
-    pageLink: `/${ProductIDs.PNGtoPDFConverter}`,
-    productWebsite: ProductWebsites.PNGtoPDFConverter,
-    downloadLink: ProductDownloadLinks.PNGtoPDFConverter,
+    pageLink: `/${ProductIDs.PNGtoPDFConverterDesktop}`,
+    productWebsite: ProductWebsites.PNGtoPDFConverterDesktop,
+    downloadLink: ProductDownloadLinks.PNGtoPDFConverterDesktop,
     features: [
       "Private & Secure Offline Processing",
       "Ultra-Fast Conversion Performance",
@@ -845,33 +986,132 @@ export const portfolioItems: portfolioItem[] = [
       </div>
     ),
     metaData: {
-      title: `Free ${ProductTitles.PNGtoPDFConverter} for Windows | Fast & Secure PNG to PDF Tool`,
+      title: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows | Fast & Secure PNG to PDF Tool`,
       keywords:
         "PNG to PDF Converter, Convert PNG to PDF, Batch PNG to PDF, Windows PDF Converter, Image to PDF Tool, PNG Compression",
       description:
         "Convert PNG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
       alternates: {
-        canonical: ProductWebsites.PNGtoPDFConverter,
+        canonical: ProductWebsites.PNGtoPDFConverterDesktop,
       },
       openGraph: {
-        title: `Free ${ProductTitles.PNGtoPDFConverter} for Windows |  Fast & Secure PNG to PDF Tool`,
+        title: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows |  Fast & Secure PNG to PDF Tool`,
         description:
           "Convert PNG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
-        url: `https://www.frameworkteam.com/${ProductIDs.PNGtoPDFConverter}.html`,
-        siteName: `${ProductTitles.PNGtoPDFConverter} for Windows`,
+        url: `https://www.frameworkteam.com/${ProductIDs.PNGtoPDFConverterDesktop}.html`,
+        siteName: `${ProductTitles.PNGtoPDFConverterDesktop} for Windows`,
         images: [
           {
             url: cloudinaryLoader({
-              src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverter.imgName.toLowerCase()}`,
-              width: productImages.PNGtoPDFConverter.width,
+              src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+              width: productImages.PNGtoPDFConverterDesktop.width,
             }),
-            width: productImages.PNGtoPDFConverter.width,
-            height: productImages.PNGtoPDFConverter.height,
-            alt: `Free ${ProductTitles.PNGtoPDFConverter} for Windows`,
+            width: productImages.PNGtoPDFConverterDesktop.width,
+            height: productImages.PNGtoPDFConverterDesktop.height,
+            alt: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows`,
           },
         ],
         locale: "en_US",
         type: "article",
+      },
+    },
+  },
+  // ***** PNG to PDF Converter Web*****
+  {
+    id: ProductIDs.PNGtoPDFConverterWeb,
+    title: ProductTitles.PNGtoPDFConverterWeb,
+    subtitle: ProductSubTitles.PNGtoPDFConverterWeb,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
+    width: productImages.PNGtoPDFConverterWeb.width,
+    height: productImages.PNGtoPDFConverterWeb.height,
+    categories: [Categories.All, Categories.WebApp],
+    pageLink: `/${ProductIDs.PNGtoPDFConverterWeb}`,
+    productWebsite: ProductWebsites.PNGtoPDFConverterWeb,
+    features: [
+      "Free and Fast PNG to PDF Conversion",
+      "Offline Processing for Maximum Privacy",
+      "Combine Multiple PNG Images into a Single PDF",
+      "Customize Page Orientation, Size, and Margins",
+      "Drag, Drop, and Rearrange with Ease",
+    ],
+    description: (
+      <div className="flex flex-col">
+        <strong className="mt-10">Privacy-Focused PNG to PDF Converter</strong>
+        <p className="mt-2">
+          Our PNG to PDF web app runs entirely in your browser, ensuring that no
+          files are uploaded or stored on external servers. Everything is
+          handled locally for complete privacy and data security, making it
+          perfect for sensitive or confidential images.
+        </p>
+        <strong className="mt-10">Fast and Fully Offline Conversion</strong>
+        <p className="mt-2">
+          Unlike traditional web tools that upload your images, this converter
+          processes all files directly in your browser. This ensures
+          lightning-fast performance and 100% control over your data—no internet
+          connection required after loading the app.
+        </p>
+        <strong className="mt-10">Flexible Output Options</strong>
+        <p className="mt-2">
+          Convert multiple PNGs into one neatly compiled PDF or generate
+          separate PDF files for each image. Our tool adapts to your workflow
+          whether you&apos;re archiving, organizing, or sharing visuals.
+        </p>
+        <strong className="mt-10">Complete Layout Control</strong>
+        <p className="mt-2">
+          Choose your page orientation (portrait or landscape), pick from
+          various sizes (A4, Letter, or image-fit), and fine-tune margins to
+          create polished documents ready for print or sharing. Perfect for both
+          casual and professional needs.
+        </p>
+        <strong className="mt-10">Reorder with Drag-and-Drop Simplicity</strong>
+        <p className="mt-2">
+          Drop your PNG files into the interface and rearrange them
+          effortlessly. This visual editor ensures you can preview and organize
+          the flow of your PDF before finalizing.
+        </p>
+        <strong className="mt-10">Professional Results in Seconds</strong>
+        <p className="mt-2">
+          Whether you&apos;re creating digital portfolios, presentation
+          handouts, or reference documents, our tool provides high-quality
+          output with minimal effort—no software installation or technical
+          skills required.
+        </p>
+        <strong className="mt-10">Works on Any Device – Browser-Based</strong>
+        <p className="mt-2">
+          Access the PNG to PDF converter from your desktop, tablet, or mobile
+          browser. As a fully responsive web app, it works seamlessly across
+          devices with no need to install or configure anything.
+        </p>
+      </div>
+    ),
+    metaData: {
+      title: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online | Convert PNG Images to PDF Instantly`,
+      keywords:
+        "PNG to PDF Converter Online, Free PNG to PDF Tool, Convert PNG to PDF Securely, PNG Image to PDF, Batch PNG to PDF Web App, Offline PNG to PDF",
+      description:
+        "Convert PNG images to high-quality PDF files instantly with our free web tool. Enjoy secure, offline processing, drag-and-drop functionality, and complete PDF customization options—all in your browser.",
+      alternates: {
+        canonical: ProductWebsites.PNGtoPDFConverterWeb,
+      },
+      openGraph: {
+        title: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online | Convert PNG Images to PDF Instantly`,
+        description:
+          "Convert PNG images to high-quality PDF files instantly with our free web tool. Enjoy secure, offline processing, drag-and-drop functionality, and complete PDF customization options—all in your browser.",
+        url: ProductWebsites.PNGtoPDFConverterWeb,
+        siteName: `${ProductTitles.PNGtoPDFConverterWeb} Online`,
+        images: [
+          {
+            url: cloudinaryLoader({
+              src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
+              width: productImages.PNGtoPDFConverterWeb.width,
+            }),
+            width: productImages.PNGtoPDFConverterWeb.width,
+            height: productImages.PNGtoPDFConverterWeb.height,
+            alt: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online`,
+          },
+        ],
+        locale: "en_US",
+        type: "website",
       },
     },
   },

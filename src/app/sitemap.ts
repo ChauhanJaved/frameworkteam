@@ -16,11 +16,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.TIFFtoPDFConverter}.html`,
+      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.TIFFtoPDFConverterWeb}.html`,
       lastModified: new Date(),
     },
     {
-      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.PNGtoPDFConverter}.html`,
+      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.TIFFtoPDFConverterDesktop}.html`,
+      lastModified: new Date(),
+    },
+    {
+      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.PNGtoPDFConverterWeb}.html`,
+      lastModified: new Date(),
+    },
+    {
+      url: `https://www.${headerCompanyName.toLowerCase()}.com/${ProductIDs.PNGtoPDFConverterDesktop}.html`,
       lastModified: new Date(),
     },
     {
