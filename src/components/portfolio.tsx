@@ -47,33 +47,34 @@ export default function Portfolio(props: { galleryID: string }) {
         ))}
       </ul>
       {/* ===== End Catagory filter ===== */}
-      <div className="mt-5 flex flex-wrap items-center text-center">
+      <ul className="mt-5 flex flex-wrap items-center text-center">
         {filteredItems.map((item, index) => {
           return (
             // ===== Portfolio Item =====
-            <div
+            <li
               key={index}
-              className="flex w-full flex-col items-center justify-center p-4 md:w-1/2 lg:w-1/3"
+              className="flex w-full flex-col items-center justify-center p-4 sm:w-1/2 md:w-1/3 lg:w-1/4"
             >
               <Link href={item.pageLink}>
-                <div className="flex w-[300px] flex-col items-center justify-center rounded border py-3 hover:shadow-lg active:shadow-lg">
-                  <div className="relative mt-3 flex h-[250px] w-[250px] items-center justify-center overflow-hidden rounded bg-primary-foreground">
+                <div className="flex w-[200px] flex-col items-center justify-center rounded border py-3 shadow-md hover:shadow-lg active:shadow-lg">
+                  <div className="relative mt-3 flex h-[150px] w-[150px] items-center justify-center overflow-hidden rounded-md bg-secondary/70">
                     <Image
                       src={item.src}
                       alt={`${item.title}`}
                       fill
-                      className={`object-contain p-3`}
+                      className={`absolute inset-0 h-full w-full object-contain p-3`}
+                      sizes="(max-width: 150px) 100vw, 150px"
                     />
                   </div>
                   <p className="mt-3 text-xs">{item.categories[1]}</p>
                   <p className="mt-2 text-sm font-bold">{item.title}</p>
                 </div>
               </Link>
-            </div>
+            </li>
             // ===== End Portfolio Item =====
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 }
