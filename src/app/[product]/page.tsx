@@ -104,7 +104,7 @@ export default function Page({ params }: { params: { product: string } }) {
                 )}
               </div>
 
-              <div className="mt-10 flex w-full flex-col md:flex-row">
+              <div className="mt-10 flex w-full flex-col justify-center md:flex-row">
                 {/* ----- Box-1 ----- */}
                 {portfolioItem.categories[1] === Categories.WebApp ? (
                   <ProductImageWebApp
