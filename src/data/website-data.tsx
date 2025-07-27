@@ -469,6 +469,228 @@ export const portfolioItems: portfolioItem[] = [
       },
     },
   },
+  // ***** PNG to PDF Converter Web*****
+  {
+    id: ProductIDs.PNGtoPDFConverterWeb,
+    title: ProductTitles.PNGtoPDFConverterWeb,
+    subtitle: ProductSubTitles.PNGtoPDFConverterWeb,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
+    width: productImages.PNGtoPDFConverterWeb.width,
+    height: productImages.PNGtoPDFConverterWeb.height,
+    categories: [Categories.All, Categories.WebApp],
+    pageLink: `/${ProductIDs.PNGtoPDFConverterWeb}`,
+    productWebsite: ProductWebsites.PNGtoPDFConverterWeb,
+    features: [
+      "Free and Fast PNG to PDF Conversion",
+      "Offline Processing for Maximum Privacy",
+      "Combine Multiple PNG Images into a Single PDF",
+      "Customize Page Orientation, Size, and Margins",
+      "Drag, Drop, and Rearrange with Ease",
+    ],
+    description: (
+      <div className="flex flex-col">
+        <strong className="mt-10">Privacy-Focused PNG to PDF Converter</strong>
+        <p className="mt-2">
+          Our PNG to PDF web app runs entirely in your browser, ensuring that no
+          files are uploaded or stored on external servers. Everything is
+          handled locally for complete privacy and data security, making it
+          perfect for sensitive or confidential images.
+        </p>
+        <strong className="mt-10">Fast and Fully Offline Conversion</strong>
+        <p className="mt-2">
+          Unlike traditional web tools that upload your images, this converter
+          processes all files directly in your browser. This ensures
+          lightning-fast performance and 100% control over your data—no internet
+          connection required after loading the app.
+        </p>
+        <strong className="mt-10">Flexible Output Options</strong>
+        <p className="mt-2">
+          Convert multiple PNGs into one neatly compiled PDF or generate
+          separate PDF files for each image. Our tool adapts to your workflow
+          whether you&apos;re archiving, organizing, or sharing visuals.
+        </p>
+        <strong className="mt-10">Complete Layout Control</strong>
+        <p className="mt-2">
+          Choose your page orientation (portrait or landscape), pick from
+          various sizes (A4, Letter, or image-fit), and fine-tune margins to
+          create polished documents ready for print or sharing. Perfect for both
+          casual and professional needs.
+        </p>
+        <strong className="mt-10">Reorder with Drag-and-Drop Simplicity</strong>
+        <p className="mt-2">
+          Drop your PNG files into the interface and rearrange them
+          effortlessly. This visual editor ensures you can preview and organize
+          the flow of your PDF before finalizing.
+        </p>
+        <strong className="mt-10">Professional Results in Seconds</strong>
+        <p className="mt-2">
+          Whether you&apos;re creating digital portfolios, presentation
+          handouts, or reference documents, our tool provides high-quality
+          output with minimal effort—no software installation or technical
+          skills required.
+        </p>
+        <strong className="mt-10">Works on Any Device – Browser-Based</strong>
+        <p className="mt-2">
+          Access the PNG to PDF converter from your desktop, tablet, or mobile
+          browser. As a fully responsive web app, it works seamlessly across
+          devices with no need to install or configure anything.
+        </p>
+      </div>
+    ),
+    metaData: {
+      title: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online | Convert PNG Images to PDF Instantly`,
+      keywords:
+        "PNG to PDF Converter Online, Free PNG to PDF Tool, Convert PNG to PDF Securely, PNG Image to PDF, Batch PNG to PDF Web App, Offline PNG to PDF",
+      description:
+        "Convert PNG images to high-quality PDF files instantly with our free web tool. Enjoy secure, offline processing, drag-and-drop functionality, and complete PDF customization options—all in your browser.",
+      alternates: {
+        canonical: ProductWebsites.PNGtoPDFConverterWeb,
+      },
+      openGraph: {
+        title: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online | Convert PNG Images to PDF Instantly`,
+        description:
+          "Convert PNG images to high-quality PDF files instantly with our free web tool. Enjoy secure, offline processing, drag-and-drop functionality, and complete PDF customization options—all in your browser.",
+        url: ProductWebsites.PNGtoPDFConverterWeb,
+        siteName: `${ProductTitles.PNGtoPDFConverterWeb} Online`,
+        images: [
+          {
+            url: cloudinaryLoader({
+              src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
+              width: productImages.PNGtoPDFConverterWeb.width,
+            }),
+            width: productImages.PNGtoPDFConverterWeb.width,
+            height: productImages.PNGtoPDFConverterWeb.height,
+            alt: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online`,
+          },
+        ],
+        locale: "en_US",
+        type: "website",
+      },
+    },
+  },
+  // ***** TIFF to PDF Converter Web****
+  {
+    id: ProductIDs.TIFFtoPDFConverterWeb,
+    title: ProductTitles.TIFFtoPDFConverterWeb,
+    subtitle: ProductSubTitles.TIFFtoPDFConverterWeb,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterWeb.imgName.toLowerCase()}`,
+    width: productImages.TIFFtoPDFConverterWeb.width,
+    height: productImages.TIFFtoPDFConverterWeb.height,
+    categories: [Categories.All, Categories.WebApp],
+    pageLink: `/${ProductIDs.TIFFtoPDFConverterWeb}`,
+    productWebsite: ProductWebsites.TIFFtoPDFConverterWeb,
+    features: [
+      "Secure Web App for TIFF to PDF Conversion",
+      "Offline Processing – Files Never Leave Your Device",
+      "Convert Multi-Page or Single TIFF Files Easily",
+      "Custom Orientation, Page Size, and Margins",
+      "User-Friendly Interface with Drag-and-Drop Support",
+    ],
+    description: (
+      <div className="flex flex-col">
+        <strong className="mt-10">
+          Local and Private Conversion in Your Browser
+        </strong>
+        <p className="mt-2">
+          Our TIFF to PDF converter works entirely within your browser, keeping
+          your files safe and secure on your device. There are no uploads or
+          external server processing, ensuring your sensitive files stay private
+          and under your control.
+        </p>
+        <strong className="mt-10">
+          100% Offline – No Uploads or Internet Required
+        </strong>
+        <p className="mt-2">
+          Unlike many web apps that rely on cloud servers, our converter
+          performs all operations locally. Enjoy fast, secure, and offline
+          conversions without worrying about data breaches or internet
+          connectivity.
+        </p>
+        <strong className="mt-10">
+          Supports Multi-Page and Single TIFF Files
+        </strong>
+        <p className="mt-2">
+          Easily convert both multi-page TIFF documents and individual TIFF
+          images to PDFs. Whether you&apos;re working with scanned documents or
+          high-quality image sequences, our tool handles all TIFF formats
+          seamlessly.
+        </p>
+        <strong className="mt-10">Combine or Split TIFF Pages in PDF</strong>
+        <p className="mt-2">
+          Choose to combine all pages of a multi-page TIFF into one PDF or
+          create separate PDFs for each image. This flexibility is ideal for
+          archiving, organizing, or sharing content based on your needs.
+        </p>
+        <strong className="mt-10">
+          Custom Page Settings for a Perfect Output
+        </strong>
+        <p className="mt-2">
+          Personalize your PDF output with layout settings: Orientation: Choose
+          portrait or landscape to fit your layout. Page Size: Select A4, US
+          Letter, or auto-fit for accurate scaling. Margins: Customize spacing
+          to optimize readability and formatting.
+        </p>
+        <strong className="mt-10">Ready for Print or Sharing</strong>
+        <p className="mt-2">
+          Generate high-quality PDFs suitable for professional printing,
+          document submissions, or easy sharing. Our layout tools ensure your
+          output looks sharp and consistent.
+        </p>
+        <strong className="mt-10">Intuitive Drag-and-Drop UI</strong>
+        <p className="mt-2">
+          Quickly load your TIFF files with a simple drag-and-drop interface.
+          Save time and avoid complex upload menus for a seamless conversion
+          experience.
+        </p>
+        <strong className="mt-10">
+          Fast, Efficient TIFF to PDF Conversion
+        </strong>
+        <p className="mt-2">
+          Optimized for performance, our converter processes files quickly
+          without sacrificing quality. Perfect for high-volume users and
+          time-sensitive tasks.
+        </p>
+        <strong className="mt-10">
+          Accessible on Any Device with a Browser
+        </strong>
+        <p className="mt-2">
+          As a web-based app, you can use the TIFF to PDF converter from any
+          device—desktop, laptop, tablet, or smartphone. No installation needed.
+          Just open the browser and start converting.
+        </p>
+      </div>
+    ),
+    metaData: {
+      title: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online | Secure TIFF to PDF Tool`,
+      keywords:
+        "TIFF to PDF Converter Online, Convert TIFF to PDF Free, Multi-Page TIFF to PDF, Offline TIFF to PDF Tool, Image to PDF Web App, Secure File Converter",
+      description:
+        "Convert TIFF images to PDF securely with our free web app. Process files locally in your browser with no uploads, drag-and-drop support, and full PDF layout control.",
+      alternates: {
+        canonical: ProductWebsites.TIFFtoPDFConverterWeb,
+      },
+      openGraph: {
+        title: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online | Secure TIFF to PDF Tool`,
+        description:
+          "Convert TIFF images to PDF securely with our free web app. Process files locally in your browser with no uploads, drag-and-drop support, and full PDF layout control.",
+        url: ProductWebsites.TIFFtoPDFConverterWeb,
+        siteName: `${ProductTitles.TIFFtoPDFConverterWeb} Online`,
+        images: [
+          {
+            url: cloudinaryLoader({
+              src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterWeb.imgName.toLowerCase()}`,
+              width: productImages.TIFFtoPDFConverterWeb.width,
+            }),
+            width: productImages.TIFFtoPDFConverterWeb.width,
+            height: productImages.TIFFtoPDFConverterWeb.height,
+            alt: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online`,
+          },
+        ],
+        locale: "en_US",
+        type: "website",
+      },
+    },
+  },
   // ***** JPG to PDF Converter Desktop*****
   {
     id: ProductIDs.JPGtoPDFConverterDesktop,
@@ -619,6 +841,140 @@ export const portfolioItems: portfolioItem[] = [
       },
     },
   },
+  // ***** PNG to PDF Converter Desktop*****
+  {
+    id: ProductIDs.PNGtoPDFConverterDesktop,
+    title: ProductTitles.PNGtoPDFConverterDesktop,
+    subtitle: ProductSubTitles.PNGtoPDFConverterDesktop,
+    src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+    width: productImages.PNGtoPDFConverterDesktop.width,
+    height: productImages.PNGtoPDFConverterDesktop.height,
+    categories: [Categories.All, Categories.DesktopApp],
+    pageLink: `/${ProductIDs.PNGtoPDFConverterDesktop}`,
+    productWebsite: ProductWebsites.PNGtoPDFConverterDesktop,
+    downloadLink: ProductDownloadLinks.PNGtoPDFConverterDesktop,
+    features: [
+      "Private & Secure Offline Processing",
+      "Ultra-Fast Conversion Performance",
+      "Convenient Batch Processing",
+      "User-Friendly Drag-and-Drop Interface",
+      "Adaptable Conversion Options",
+      "Effortless Image Order Adjustment",
+    ],
+    description: (
+      <div className="flex flex-col">
+        <strong className="mt-10">
+          Presenting the Ultimate PNG to PDF Converter for Windows
+        </strong>
+        <p className="mt-2">
+          Effortlessly transform your PNG files into PDFs with our robust
+          desktop software, crafted specifically for Windows users. Operating
+          entirely offline, our converter ensures that your data stays private
+          and secure. With all conversions performed on your local machine,
+          there&rsquo;s no need for an internet connection, greatly reducing the
+          risk of data breaches or unauthorized access.
+        </p>
+        <strong className="mt-10">Swift and Reliable Conversions</strong>
+        <p className="mt-2">
+          Enjoy rapid and trustworthy PNG to PDF conversions using our software.
+          Whether you&#39;re at home, in the office, or on the go, this tool is
+          designed to deliver fast results without relying on an internet
+          connection. Convert your PNG files into PDF format in mere seconds,
+          ensuring a seamless workflow.
+        </p>
+        <strong className="mt-10">Streamlined Batch Conversion</strong>
+        <p className="mt-2">
+          Save valuable time by converting multiple PNG images to PDFs in one
+          simple operation. Our batch processing feature efficiently handles
+          large volumes of files, so you don&#39;t have to convert images
+          individually. Whether you&#39;re managing a handful of files or
+          processing thousands, our software simplifies bulk conversion with
+          ease.
+        </p>
+        <strong className="mt-10">Easy Drag-and-Drop Interface</strong>
+        <p className="mt-2">
+          Benefit from a straightforward interface that makes file conversion
+          easy, even for those new to the process. Simply drag and drop your PNG
+          files into the software, and you&#39;re ready to start converting.
+          This intuitive feature streamlines your work, allowing you to focus on
+          what matters most.
+        </p>
+        <strong className="mt-10">Customizable Conversion Modes</strong>
+        <p className="mt-2">
+          Tailor your PDF output with easy-to-use options. Choose between
+          converting each PNG file into an individual PDF or merging all your
+          PNG images into a single, multi-page PDF document. These flexible
+          modes cater to your basic conversion needs without unnecessary
+          complications.
+        </p>
+        <strong className="mt-10">Optimized for High-Volume Conversions</strong>
+        <p className="mt-2">
+          Need to convert a large number of PNG files quickly? Our PNG to PDF
+          Converter is among the fastest and most versatile tools available.
+          Perfect for both professionals and casual users, this software lets
+          you batch process extensive collections of PNG files with just a few
+          clicks. Launch the converter, drag and drop your files or folders,
+          adjust your settings, and click &#34;Convert&#34;—your images will be
+          swiftly transformed into high-quality PDF documents.
+        </p>
+        <strong className="mt-10">User-Friendly with Essential Features</strong>
+        <p className="mt-2">
+          Our PNG to PDF Converter combines speed and ease of use with essential
+          features for those who require greater control over the conversion
+          process. Select from various conversion modes to ensure the final PDF
+          meets your exact specifications.
+        </p>
+        <strong className="mt-10">Why Convert PNG to PDF?</strong>
+        <p className="mt-2">
+          While PNG (Portable Network Graphics) is a popular format for
+          high-quality images, it can be inconvenient for sharing and printing.
+          Converting PNG files to PDF (Portable Document Format) guarantees
+          compatibility across devices while preserving image quality. PDFs are
+          ideal for sharing, printing, and archiving, offering a versatile
+          solution for your PNG files.
+        </p>
+        <strong className="mt-10">Conclusion</strong>
+        <p className="mt-2">
+          Our PNG to PDF Converter for Windows is the perfect tool for
+          converting images to PDF quickly, securely, and with ease. Whether
+          you&#39;re handling a few files or processing thousands, this software
+          offers the speed, flexibility, and user-friendly features you need.
+          Don&#39;t compromise—download the best PNG to PDF Converter for
+          Windows today and experience effortless file conversion at its finest.
+        </p>
+      </div>
+    ),
+    metaData: {
+      title: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows | Fast & Secure PNG to PDF Tool`,
+      keywords:
+        "PNG to PDF Converter, Convert PNG to PDF, Batch PNG to PDF, Windows PDF Converter, Image to PDF Tool, PNG Compression",
+      description:
+        "Convert PNG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
+      alternates: {
+        canonical: ProductWebsites.PNGtoPDFConverterDesktop,
+      },
+      openGraph: {
+        title: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows |  Fast & Secure PNG to PDF Tool`,
+        description:
+          "Convert PNG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
+        url: `https://www.frameworkteam.com/${ProductIDs.PNGtoPDFConverterDesktop}.html`,
+        siteName: `${ProductTitles.PNGtoPDFConverterDesktop} for Windows`,
+        images: [
+          {
+            url: cloudinaryLoader({
+              src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+              width: productImages.PNGtoPDFConverterDesktop.width,
+            }),
+            width: productImages.PNGtoPDFConverterDesktop.width,
+            height: productImages.PNGtoPDFConverterDesktop.height,
+            alt: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows`,
+          },
+        ],
+        locale: "en_US",
+        type: "article",
+      },
+    },
+  },
   // ***** TIFF to PDF Converter Desktop****
   {
     id: ProductIDs.TIFFtoPDFConverterDesktop,
@@ -756,362 +1112,6 @@ export const portfolioItems: portfolioItem[] = [
         ],
         locale: "en_US",
         type: "article",
-      },
-    },
-  },
-  // ***** TIFF to PDF Converter Web****
-  {
-    id: ProductIDs.TIFFtoPDFConverterWeb,
-    title: ProductTitles.TIFFtoPDFConverterWeb,
-    subtitle: ProductSubTitles.TIFFtoPDFConverterWeb,
-    src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterWeb.imgName.toLowerCase()}`,
-    width: productImages.TIFFtoPDFConverterWeb.width,
-    height: productImages.TIFFtoPDFConverterWeb.height,
-    categories: [Categories.All, Categories.WebApp],
-    pageLink: `/${ProductIDs.TIFFtoPDFConverterWeb}`,
-    productWebsite: ProductWebsites.TIFFtoPDFConverterWeb,
-    features: [
-      "Secure Web App for TIFF to PDF Conversion",
-      "Offline Processing – Files Never Leave Your Device",
-      "Convert Multi-Page or Single TIFF Files Easily",
-      "Custom Orientation, Page Size, and Margins",
-      "User-Friendly Interface with Drag-and-Drop Support",
-    ],
-    description: (
-      <div className="flex flex-col">
-        <strong className="mt-10">
-          Local and Private Conversion in Your Browser
-        </strong>
-        <p className="mt-2">
-          Our TIFF to PDF converter works entirely within your browser, keeping
-          your files safe and secure on your device. There are no uploads or
-          external server processing, ensuring your sensitive files stay private
-          and under your control.
-        </p>
-        <strong className="mt-10">
-          100% Offline – No Uploads or Internet Required
-        </strong>
-        <p className="mt-2">
-          Unlike many web apps that rely on cloud servers, our converter
-          performs all operations locally. Enjoy fast, secure, and offline
-          conversions without worrying about data breaches or internet
-          connectivity.
-        </p>
-        <strong className="mt-10">
-          Supports Multi-Page and Single TIFF Files
-        </strong>
-        <p className="mt-2">
-          Easily convert both multi-page TIFF documents and individual TIFF
-          images to PDFs. Whether you&apos;re working with scanned documents or
-          high-quality image sequences, our tool handles all TIFF formats
-          seamlessly.
-        </p>
-        <strong className="mt-10">Combine or Split TIFF Pages in PDF</strong>
-        <p className="mt-2">
-          Choose to combine all pages of a multi-page TIFF into one PDF or
-          create separate PDFs for each image. This flexibility is ideal for
-          archiving, organizing, or sharing content based on your needs.
-        </p>
-        <strong className="mt-10">
-          Custom Page Settings for a Perfect Output
-        </strong>
-        <p className="mt-2">
-          Personalize your PDF output with layout settings: Orientation: Choose
-          portrait or landscape to fit your layout. Page Size: Select A4, US
-          Letter, or auto-fit for accurate scaling. Margins: Customize spacing
-          to optimize readability and formatting.
-        </p>
-        <strong className="mt-10">Ready for Print or Sharing</strong>
-        <p className="mt-2">
-          Generate high-quality PDFs suitable for professional printing,
-          document submissions, or easy sharing. Our layout tools ensure your
-          output looks sharp and consistent.
-        </p>
-        <strong className="mt-10">Intuitive Drag-and-Drop UI</strong>
-        <p className="mt-2">
-          Quickly load your TIFF files with a simple drag-and-drop interface.
-          Save time and avoid complex upload menus for a seamless conversion
-          experience.
-        </p>
-        <strong className="mt-10">
-          Fast, Efficient TIFF to PDF Conversion
-        </strong>
-        <p className="mt-2">
-          Optimized for performance, our converter processes files quickly
-          without sacrificing quality. Perfect for high-volume users and
-          time-sensitive tasks.
-        </p>
-        <strong className="mt-10">
-          Accessible on Any Device with a Browser
-        </strong>
-        <p className="mt-2">
-          As a web-based app, you can use the TIFF to PDF converter from any
-          device—desktop, laptop, tablet, or smartphone. No installation needed.
-          Just open the browser and start converting.
-        </p>
-      </div>
-    ),
-    metaData: {
-      title: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online | Secure TIFF to PDF Tool`,
-      keywords:
-        "TIFF to PDF Converter Online, Convert TIFF to PDF Free, Multi-Page TIFF to PDF, Offline TIFF to PDF Tool, Image to PDF Web App, Secure File Converter",
-      description:
-        "Convert TIFF images to PDF securely with our free web app. Process files locally in your browser with no uploads, drag-and-drop support, and full PDF layout control.",
-      alternates: {
-        canonical: ProductWebsites.TIFFtoPDFConverterWeb,
-      },
-      openGraph: {
-        title: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online | Secure TIFF to PDF Tool`,
-        description:
-          "Convert TIFF images to PDF securely with our free web app. Process files locally in your browser with no uploads, drag-and-drop support, and full PDF layout control.",
-        url: ProductWebsites.TIFFtoPDFConverterWeb,
-        siteName: `${ProductTitles.TIFFtoPDFConverterWeb} Online`,
-        images: [
-          {
-            url: cloudinaryLoader({
-              src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFtoPDFConverterWeb.imgName.toLowerCase()}`,
-              width: productImages.TIFFtoPDFConverterWeb.width,
-            }),
-            width: productImages.TIFFtoPDFConverterWeb.width,
-            height: productImages.TIFFtoPDFConverterWeb.height,
-            alt: `Free ${ProductTitles.TIFFtoPDFConverterWeb} Online`,
-          },
-        ],
-        locale: "en_US",
-        type: "website",
-      },
-    },
-  },
-  // ***** PNG to PDF Converter Desktop*****
-  {
-    id: ProductIDs.PNGtoPDFConverterDesktop,
-    title: ProductTitles.PNGtoPDFConverterDesktop,
-    subtitle: ProductSubTitles.PNGtoPDFConverterDesktop,
-    src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
-    width: productImages.PNGtoPDFConverterDesktop.width,
-    height: productImages.PNGtoPDFConverterDesktop.height,
-    categories: [Categories.All, Categories.DesktopApp],
-    pageLink: `/${ProductIDs.PNGtoPDFConverterDesktop}`,
-    productWebsite: ProductWebsites.PNGtoPDFConverterDesktop,
-    downloadLink: ProductDownloadLinks.PNGtoPDFConverterDesktop,
-    features: [
-      "Private & Secure Offline Processing",
-      "Ultra-Fast Conversion Performance",
-      "Convenient Batch Processing",
-      "User-Friendly Drag-and-Drop Interface",
-      "Adaptable Conversion Options",
-      "Effortless Image Order Adjustment",
-    ],
-    description: (
-      <div className="flex flex-col">
-        <strong className="mt-10">
-          Presenting the Ultimate PNG to PDF Converter for Windows
-        </strong>
-        <p className="mt-2">
-          Effortlessly transform your PNG files into PDFs with our robust
-          desktop software, crafted specifically for Windows users. Operating
-          entirely offline, our converter ensures that your data stays private
-          and secure. With all conversions performed on your local machine,
-          there&rsquo;s no need for an internet connection, greatly reducing the
-          risk of data breaches or unauthorized access.
-        </p>
-        <strong className="mt-10">Swift and Reliable Conversions</strong>
-        <p className="mt-2">
-          Enjoy rapid and trustworthy PNG to PDF conversions using our software.
-          Whether you&#39;re at home, in the office, or on the go, this tool is
-          designed to deliver fast results without relying on an internet
-          connection. Convert your PNG files into PDF format in mere seconds,
-          ensuring a seamless workflow.
-        </p>
-        <strong className="mt-10">Streamlined Batch Conversion</strong>
-        <p className="mt-2">
-          Save valuable time by converting multiple PNG images to PDFs in one
-          simple operation. Our batch processing feature efficiently handles
-          large volumes of files, so you don&#39;t have to convert images
-          individually. Whether you&#39;re managing a handful of files or
-          processing thousands, our software simplifies bulk conversion with
-          ease.
-        </p>
-        <strong className="mt-10">Easy Drag-and-Drop Interface</strong>
-        <p className="mt-2">
-          Benefit from a straightforward interface that makes file conversion
-          easy, even for those new to the process. Simply drag and drop your PNG
-          files into the software, and you&#39;re ready to start converting.
-          This intuitive feature streamlines your work, allowing you to focus on
-          what matters most.
-        </p>
-        <strong className="mt-10">Customizable Conversion Modes</strong>
-        <p className="mt-2">
-          Tailor your PDF output with easy-to-use options. Choose between
-          converting each PNG file into an individual PDF or merging all your
-          PNG images into a single, multi-page PDF document. These flexible
-          modes cater to your basic conversion needs without unnecessary
-          complications.
-        </p>
-        <strong className="mt-10">Optimized for High-Volume Conversions</strong>
-        <p className="mt-2">
-          Need to convert a large number of PNG files quickly? Our PNG to PDF
-          Converter is among the fastest and most versatile tools available.
-          Perfect for both professionals and casual users, this software lets
-          you batch process extensive collections of PNG files with just a few
-          clicks. Launch the converter, drag and drop your files or folders,
-          adjust your settings, and click &#34;Convert&#34;—your images will be
-          swiftly transformed into high-quality PDF documents.
-        </p>
-        <strong className="mt-10">User-Friendly with Essential Features</strong>
-        <p className="mt-2">
-          Our PNG to PDF Converter combines speed and ease of use with essential
-          features for those who require greater control over the conversion
-          process. Select from various conversion modes to ensure the final PDF
-          meets your exact specifications.
-        </p>
-        <strong className="mt-10">Why Convert PNG to PDF?</strong>
-        <p className="mt-2">
-          While PNG (Portable Network Graphics) is a popular format for
-          high-quality images, it can be inconvenient for sharing and printing.
-          Converting PNG files to PDF (Portable Document Format) guarantees
-          compatibility across devices while preserving image quality. PDFs are
-          ideal for sharing, printing, and archiving, offering a versatile
-          solution for your PNG files.
-        </p>
-        <strong className="mt-10">Conclusion</strong>
-        <p className="mt-2">
-          Our PNG to PDF Converter for Windows is the perfect tool for
-          converting images to PDF quickly, securely, and with ease. Whether
-          you&#39;re handling a few files or processing thousands, this software
-          offers the speed, flexibility, and user-friendly features you need.
-          Don&#39;t compromise—download the best PNG to PDF Converter for
-          Windows today and experience effortless file conversion at its finest.
-        </p>
-      </div>
-    ),
-    metaData: {
-      title: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows | Fast & Secure PNG to PDF Tool`,
-      keywords:
-        "PNG to PDF Converter, Convert PNG to PDF, Batch PNG to PDF, Windows PDF Converter, Image to PDF Tool, PNG Compression",
-      description:
-        "Convert PNG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
-      alternates: {
-        canonical: ProductWebsites.PNGtoPDFConverterDesktop,
-      },
-      openGraph: {
-        title: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows |  Fast & Secure PNG to PDF Tool`,
-        description:
-          "Convert PNG files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
-        url: `https://www.frameworkteam.com/${ProductIDs.PNGtoPDFConverterDesktop}.html`,
-        siteName: `${ProductTitles.PNGtoPDFConverterDesktop} for Windows`,
-        images: [
-          {
-            url: cloudinaryLoader({
-              src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
-              width: productImages.PNGtoPDFConverterDesktop.width,
-            }),
-            width: productImages.PNGtoPDFConverterDesktop.width,
-            height: productImages.PNGtoPDFConverterDesktop.height,
-            alt: `Free ${ProductTitles.PNGtoPDFConverterDesktop} for Windows`,
-          },
-        ],
-        locale: "en_US",
-        type: "article",
-      },
-    },
-  },
-  // ***** PNG to PDF Converter Web*****
-  {
-    id: ProductIDs.PNGtoPDFConverterWeb,
-    title: ProductTitles.PNGtoPDFConverterWeb,
-    subtitle: ProductSubTitles.PNGtoPDFConverterWeb,
-    src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
-    width: productImages.PNGtoPDFConverterWeb.width,
-    height: productImages.PNGtoPDFConverterWeb.height,
-    categories: [Categories.All, Categories.WebApp],
-    pageLink: `/${ProductIDs.PNGtoPDFConverterWeb}`,
-    productWebsite: ProductWebsites.PNGtoPDFConverterWeb,
-    features: [
-      "Free and Fast PNG to PDF Conversion",
-      "Offline Processing for Maximum Privacy",
-      "Combine Multiple PNG Images into a Single PDF",
-      "Customize Page Orientation, Size, and Margins",
-      "Drag, Drop, and Rearrange with Ease",
-    ],
-    description: (
-      <div className="flex flex-col">
-        <strong className="mt-10">Privacy-Focused PNG to PDF Converter</strong>
-        <p className="mt-2">
-          Our PNG to PDF web app runs entirely in your browser, ensuring that no
-          files are uploaded or stored on external servers. Everything is
-          handled locally for complete privacy and data security, making it
-          perfect for sensitive or confidential images.
-        </p>
-        <strong className="mt-10">Fast and Fully Offline Conversion</strong>
-        <p className="mt-2">
-          Unlike traditional web tools that upload your images, this converter
-          processes all files directly in your browser. This ensures
-          lightning-fast performance and 100% control over your data—no internet
-          connection required after loading the app.
-        </p>
-        <strong className="mt-10">Flexible Output Options</strong>
-        <p className="mt-2">
-          Convert multiple PNGs into one neatly compiled PDF or generate
-          separate PDF files for each image. Our tool adapts to your workflow
-          whether you&apos;re archiving, organizing, or sharing visuals.
-        </p>
-        <strong className="mt-10">Complete Layout Control</strong>
-        <p className="mt-2">
-          Choose your page orientation (portrait or landscape), pick from
-          various sizes (A4, Letter, or image-fit), and fine-tune margins to
-          create polished documents ready for print or sharing. Perfect for both
-          casual and professional needs.
-        </p>
-        <strong className="mt-10">Reorder with Drag-and-Drop Simplicity</strong>
-        <p className="mt-2">
-          Drop your PNG files into the interface and rearrange them
-          effortlessly. This visual editor ensures you can preview and organize
-          the flow of your PDF before finalizing.
-        </p>
-        <strong className="mt-10">Professional Results in Seconds</strong>
-        <p className="mt-2">
-          Whether you&apos;re creating digital portfolios, presentation
-          handouts, or reference documents, our tool provides high-quality
-          output with minimal effort—no software installation or technical
-          skills required.
-        </p>
-        <strong className="mt-10">Works on Any Device – Browser-Based</strong>
-        <p className="mt-2">
-          Access the PNG to PDF converter from your desktop, tablet, or mobile
-          browser. As a fully responsive web app, it works seamlessly across
-          devices with no need to install or configure anything.
-        </p>
-      </div>
-    ),
-    metaData: {
-      title: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online | Convert PNG Images to PDF Instantly`,
-      keywords:
-        "PNG to PDF Converter Online, Free PNG to PDF Tool, Convert PNG to PDF Securely, PNG Image to PDF, Batch PNG to PDF Web App, Offline PNG to PDF",
-      description:
-        "Convert PNG images to high-quality PDF files instantly with our free web tool. Enjoy secure, offline processing, drag-and-drop functionality, and complete PDF customization options—all in your browser.",
-      alternates: {
-        canonical: ProductWebsites.PNGtoPDFConverterWeb,
-      },
-      openGraph: {
-        title: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online | Convert PNG Images to PDF Instantly`,
-        description:
-          "Convert PNG images to high-quality PDF files instantly with our free web tool. Enjoy secure, offline processing, drag-and-drop functionality, and complete PDF customization options—all in your browser.",
-        url: ProductWebsites.PNGtoPDFConverterWeb,
-        siteName: `${ProductTitles.PNGtoPDFConverterWeb} Online`,
-        images: [
-          {
-            url: cloudinaryLoader({
-              src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
-              width: productImages.PNGtoPDFConverterWeb.width,
-            }),
-            width: productImages.PNGtoPDFConverterWeb.width,
-            height: productImages.PNGtoPDFConverterWeb.height,
-            alt: `Free ${ProductTitles.PNGtoPDFConverterWeb} Online`,
-          },
-        ],
-        locale: "en_US",
-        type: "website",
       },
     },
   },
