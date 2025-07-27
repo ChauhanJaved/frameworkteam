@@ -8,7 +8,11 @@ import {
 } from "lucide-react";
 
 //Internal Imports
-import { HeaderNavItems, portfolioItems } from "@/data/website-data";
+import {
+  Categories,
+  HeaderNavItems,
+  portfolioItems,
+} from "@/data/website-data";
 import SectionHeader from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import ProductImage from "@/components/product-image";
@@ -20,6 +24,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import BreadcrumbNextLink from "@/components/breadcrumb-next-link";
+import ProductImageWebApp from "@/components/product-image-web-app";
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ product: item.id }));
@@ -101,13 +106,24 @@ export default function Page({ params }: { params: { product: string } }) {
 
               <div className="mt-10 flex w-full flex-col md:flex-row">
                 {/* ----- Box-1 ----- */}
-                <ProductImage
-                  src={portfolioItem.src}
-                  width={portfolioItem.width}
-                  height={portfolioItem.height}
-                  alt={portfolioItem.title}
-                  galleryID="product-image"
-                />
+                {portfolioItem.categories[1] === Categories.WebApp ? (
+                  <ProductImageWebApp
+                    src={portfolioItem.src}
+                    width={portfolioItem.width}
+                    height={portfolioItem.height}
+                    alt={portfolioItem.title}
+                    productWebsite={portfolioItem.productWebsite}
+                  />
+                ) : (
+                  <ProductImage
+                    src={portfolioItem.src}
+                    width={portfolioItem.width}
+                    height={portfolioItem.height}
+                    alt={portfolioItem.title}
+                    galleryID="product-image"
+                  />
+                )}
+
                 {/* ----- Box-2 ----- */}
                 <div className="mt-5 md:ml-3 md:mt-0 md:w-1/3">
                   <div className="flex flex-col text-center">
