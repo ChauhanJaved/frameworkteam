@@ -2,7 +2,6 @@
 import Image from "next/image";
 
 import Link from "next/link";
-import cloudinaryLoader from "@/lib/cloudinary-loader";
 import { Categories } from "@/data/website-data";
 
 interface ProductImageWebAppProps {
@@ -14,7 +13,7 @@ interface ProductImageWebAppProps {
 }
 export default function ProductImageWebApp(props: ProductImageWebAppProps) {
   return (
-    <div className="flex w-full flex-col items-center rounded-sm border shadow-sm md:w-2/3">
+    <div className="flex w-full flex-col items-center rounded-sm border shadow-sm md:w-1/3">
       <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden">
         <Link href={props.productWebsite} target="_blank">
           <div className="flex w-[200px] flex-col items-center justify-center rounded border bg-secondary/70 py-3 shadow-md hover:shadow-lg active:shadow-lg">
