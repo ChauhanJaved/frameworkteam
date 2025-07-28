@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import Link from "next/link";
-import cloudinaryLoader from "@/lib/cloudinary-loader";
+import cloudinaryLoader from "cloudinary-loader";
 
 interface ProductImageProps {
   src: string;
@@ -62,7 +62,7 @@ export default function ProductImage(props: ProductImageProps) {
       id={props.galleryID}
       className="flex w-full flex-col items-center shadow-sm md:w-2/3"
     >
-      <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden bg-primary-foreground">
+      <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden bg-secondary/50">
         <Link
           id={"image-1"}
           href={cloudinaryLoader({
