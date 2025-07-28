@@ -8,11 +8,8 @@ import {
 } from "lucide-react";
 
 //Internal Imports
-import {
-  Categories,
-  HeaderNavItems,
-  portfolioItems,
-} from "@/data/website-data";
+import { Categories, HeaderNavItems } from "@/data/website-data";
+import { portfolioItems } from "@/data/portfolio-items";
 import SectionHeader from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import ProductImage from "@/components/product-image";

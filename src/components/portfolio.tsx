@@ -6,7 +6,7 @@ import React, { useState } from "react";
 //Internal imports
 import SectionHeader from "@/components/section-header";
 import { Categories, categoryList, HeaderNavItems } from "@/data/website-data";
-import { portfolioItems } from "@/data/website-data";
+import { portfolioItems } from "@/data/portfolio-items";
 import { Button } from "@/components/ui/button";
 import { poppins } from "@/lib/font";
 
