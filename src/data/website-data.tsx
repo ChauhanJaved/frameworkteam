@@ -1,5 +1,4 @@
 //External imports
-import cloudinaryLoader from "@/lib/cloudinary-loader";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 

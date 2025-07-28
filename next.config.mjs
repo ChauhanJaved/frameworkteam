@@ -4,7 +4,7 @@ const nextConfig = {
   output: "export",
   images: {
     loader: "custom",
-    loaderFile: "./src/lib/cloudinary-loader.ts",
+    loaderFile: "./cloudinary-loader.ts",
   },
 };
 

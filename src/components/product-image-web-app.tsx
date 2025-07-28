@@ -13,11 +13,11 @@ interface ProductImageWebAppProps {
 }
 export default function ProductImageWebApp(props: ProductImageWebAppProps) {
   return (
-    <div className="flex w-full flex-col items-center rounded-sm border shadow-sm md:w-1/3">
+    <div className="flex w-full flex-col items-center bg-secondary/50 shadow-sm md:w-2/3">
       <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden">
         <Link href={props.productWebsite} target="_blank">
-          <div className="flex w-[200px] flex-col items-center justify-center rounded border bg-secondary/70 py-3 shadow-md hover:shadow-lg active:shadow-lg">
-            <div className="relative mt-3 flex h-[150px] w-[150px] items-center justify-center overflow-hidden rounded-md">
+          <div className="flex w-[200px] flex-col items-center justify-center py-3">
+            <div className="relative mt-3 flex h-[250px] w-[250px] items-center justify-center overflow-hidden rounded-md">
               <Image
                 src={props.src}
                 alt={props.alt}
@@ -26,8 +26,6 @@ export default function ProductImageWebApp(props: ProductImageWebAppProps) {
                 sizes="(max-width: 150px) 100vw, 150px"
               />
             </div>
-            <p className="mt-3 text-xs">{Categories.WebApp}</p>
-            <p className="mt-2 text-sm font-bold">{props.alt}</p>
           </div>
         </Link>
       </div>
