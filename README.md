@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 FrameworkTeam.com
 
-## Getting Started
+**FrameworkTeam Softwares – Professional Web & Desktop App Development Services**  
+A modern, responsive showcase website built with **Next.js** to present our full suite of web and desktop application development services. Designed for speed, scalability, and seamless user experience, this site reflects our technical expertise and design sensibilities.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🧱 Frontend Framework
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** – React framework with App Router, supporting Server-Side Rendering (SSR) and Static Site Generation (SSG)
+- **React.js** – Component-based UI library with modern hooks and patterns
+- **TypeScript** – Strongly-typed JavaScript for improved reliability and DX
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 🎨 UI & Styling
 
-## Learn More
+- **shadcn/ui** – Accessible component library built on top of Radix UI
+- **Tailwind CSS** – Utility-first CSS framework for fast and flexible styling
+- **Radix UI** – Unstyled, accessible UI primitives
+- **Lucide React** – Elegant, customizable SVG icon set for React
 
-To learn more about Next.js, take a look at the following resources:
+### 🛠️ Development & Build Tools
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **ESLint** – Code linting and formatting to enforce consistency
+- **PostCSS** – CSS transformations and optimizations
+- **Node.js** – JavaScript runtime environment
+- **npm / yarn** – Dependency and package management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### ⚡ Performance & SEO
 
-## Deploy on Vercel
+- **Next.js Image Optimization** – Smart image loading and optimization for performance
+- **Next.js Metadata API** – SEO-friendly metadata and Open Graph support
+- **Static Site Generation (SSG)** – Pre-rendered HTML for faster load times and better indexing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📌 About
+
+This website is a digital presence for [FrameworkTeam Softwares](https://frameworkteam.com), showcasing our custom-built solutions, portfolio, and development services across web and desktop platforms.
