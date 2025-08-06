@@ -164,25 +164,22 @@ export const productWebsites = {
   PNGtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/png-to-pdf-converter",
   TIFFtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter",
 
-  JPGtoPDFConverterDesktop:
-    "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter-desktop",
-  PNGtoPDFConverterDesktop:
-    "https://www.pdf-tiff-tools.com/png-to-pdf-converter-desktop",
-  TIFFtoPDFConverterDesktop:
-    "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter-desktop",
+  JPGtoPDFConverterDesktop: "https://www.jpg-to-pdf-converter.com",
+  PNGtoPDFConverterDesktop: "https://www.png-to-pdf-converter.com",
+  TIFFtoPDFConverterDesktop: "https://www.tiff-to-pdf-converter.com",
 
-  PDFtoJPGConverter: "https://www.pdf-tiff-tools.com/pdf-to-jpg-converter",
-  PDFtoTIFFConverter: "https://www.pdf-tiff-tools.com/pdf-to-tiff-converter",
-  PDFtoPNGConverter: "https://www.pdf-tiff-tools.com/pdf-to-png-converter",
-  PDFtoImageConverter: "https://www.pdf-tiff-tools.com/pdf-to-image-converter",
+  PDFtoJPGConverter: "https://www.pdf-to-jpg-converter.com",
+  PDFtoTIFFConverter: "https://www.pdf-to-tiff-converter.com",
+  PDFtoPNGConverter: "https://www.pdf-to-png-converter.com",
+  PDFtoImageConverter: "https://www.pdf-to-image-converter.com",
 
-  TIFFSplitter: "https://www.pdf-tiff-tools.com/tiff-splitter",
-  TIFFCombiner: "https://www.pdf-tiff-tools.com/tiff-combiner",
-  TIFFSplitMerge: "https://www.pdf-tiff-tools.com/tiff-split-merge",
+  TIFFSplitter: "https://www.tiff-split-combine.com/tiff-splitter.html",
+  TIFFCombiner: "https://www.tiff-split-combine.com/tiff-combiner.html",
+  TIFFSplitMerge: "https://www.tiff-split-combine.com/tiff-split-merge.html",
 
-  PDFSplitter: "https://www.pdf-tiff-tools.com/pdf-splitter",
-  PDFCombiner: "https://www.pdf-tiff-tools.com/pdf-combiner",
-  PDFSplitMerge: "https://www.pdf-tiff-tools.com/pdf-split-merge",
+  PDFSplitter: "https://pdf-split-merge.com/pdf-splitter.html",
+  PDFCombiner: "https://pdf-split-merge.com/pdf-combiner.html",
+  PDFSplitMerge: "https://pdf-split-merge.com/pdf-split-merge.html",
 
   WebpageThumbnailer: "https://www.webpagethumbnailer.com/",
   ConvertHTMLtoImage: "https://www.converthtmltoimage.com/",
