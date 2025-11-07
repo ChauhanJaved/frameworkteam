@@ -107,7 +107,7 @@ export const PDFSplitter: portfolioItem = {
       title: `Free ${productTitles.PDFSplitter} for Windows | Fast & Reliable PDF Splitting Tool`,
       description:
         "Easily split large PDF files with our fast and free Windows software. Enjoy an intuitive interface, batch processing, and customizable splitting options for precise document control.",
-      url: `https://www.frameworkteam.com/${ProductIDs.PDFSplitter}.html`,
+      url: productWebsites.PDFSplitter,
       siteName: `${productTitles.PDFSplitter} for Windows`,
       images: [
         {

@@ -124,7 +124,7 @@ export const TIFFSplitMerge: portfolioItem = {
       title: `Free ${productTitles.TIFFSplitMerge} for Windows | Fast & Reliable TIFF Splitting & Merging Tool`,
       description:
         "Effortlessly split and merge multi-page TIFF files with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable options for precise file management.",
-      url: `https://www.frameworkteam.com/${ProductIDs.TIFFSplitMerge}.html`,
+      url: productWebsites.TIFFSplitMerge,
       siteName: `${productTitles.TIFFSplitMerge} for Windows`,
       images: [
         {

@@ -97,7 +97,7 @@ export const WebsitesScreenshotDLL: portfolioItem = {
       title: `Free ${productTitles.WebsitesScreenshot} for Windows | Capture Full-Page Screenshots and Thumbnails with .NET DLL`,
       description:
         "Capture full-page website screenshots, generate thumbnail previews, and convert HTML to image formats with the fast and free WebsitesScreenshot .NET DLL component. Use in your .NET applications to automate web page image captures with batch processing support.",
-      url: `https://www.frameworkteam.com/${ProductIDs.WebsitesScreenshot}.html`,
+      url: productWebsites.WebsitesScreenshot,
       siteName: `${productTitles.WebsitesScreenshot} for Windows`,
       images: [
         {

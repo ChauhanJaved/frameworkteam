@@ -110,7 +110,7 @@ export const TIFFSplitter: portfolioItem = {
       title: `Free ${productTitles.TIFFSplitter} for Windows | Fast & Reliable TIFF Splitting Tool`,
       description:
         "Effortlessly split multi-page TIFF files with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable splitting options for precise control.",
-      url: `https://www.frameworkteam.com/${ProductIDs.TIFFSplitter}.html`,
+      url: productWebsites.TIFFSplitter,
       siteName: `${productTitles.TIFFSplitter} for Windows`,
       images: [
         {

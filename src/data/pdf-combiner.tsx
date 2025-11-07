@@ -113,7 +113,7 @@ export const PDFCombiner: portfolioItem = {
       title: `Free ${productTitles.PDFCombiner} for Windows | Fast & Reliable PDF Combining Tool`,
       description:
         "Easily combine multiple PDF files with our fast and free Windows software. Enjoy an intuitive interface, batch processing, and customizable combining options for complete document control.",
-      url: `https://www.frameworkteam.com/${ProductIDs.PDFCombiner}.html`,
+      url: productWebsites.PDFCombiner,
       siteName: `${productTitles.PDFCombiner} for Windows`,
       images: [
         {

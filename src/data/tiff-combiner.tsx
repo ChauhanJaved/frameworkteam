@@ -117,7 +117,7 @@ export const TIFFCombiner: portfolioItem = {
       title: `Free ${productTitles.TIFFCombiner} for Windows | Fast & Reliable TIFF Combining Tool`,
       description:
         "Effortlessly combine multi-page TIFF files with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and customizable combining options for precise control.",
-      url: `https://www.frameworkteam.com/${ProductIDs.TIFFCombiner}.html`,
+      url: productWebsites.TIFFCombiner,
       siteName: `${productTitles.TIFFCombiner} for Windows`,
       images: [
         {

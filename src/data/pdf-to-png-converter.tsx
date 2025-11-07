@@ -124,7 +124,7 @@ export const PDFtoPNGConverter: portfolioItem = {
       title: `Free ${productTitles.PDFtoPNGConverter} for Windows | Fast & Secure PDF to PNG Tool`,
       description:
         "Effortlessly convert PDF files to PNG with our fast and free Windows software. Experience a user-friendly interface, batch processing, and customizable settings for superior image quality.",
-      url: `https://www.frameworkteam.com/${ProductIDs.PDFtoPNGConverter}.html`,
+      url: productWebsites.PDFtoPNGConverter,
       siteName: `${productTitles.PDFtoPNGConverter} for Windows`,
       images: [
         {

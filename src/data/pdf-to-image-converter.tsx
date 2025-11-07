@@ -113,7 +113,7 @@ export const PDFtoImageConverter: portfolioItem = {
       title: `Free ${productTitles.PDFtoImageConverter} for Windows | Fast & Versatile PDF to Image Tool`,
       description:
         "Effortlessly convert PDF files to various image formats with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, and advanced settings for optimal image quality.",
-      url: `https://www.frameworkteam.com/${ProductIDs.PDFtoImageConverter}.html`,
+      url: productWebsites.PDFtoImageConverter,
       siteName: `${productTitles.PDFtoImageConverter} for Windows`,
       images: [
         {

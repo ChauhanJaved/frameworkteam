@@ -131,7 +131,7 @@ export const TIFFtoPDFConverterDesktop: portfolioItem = {
       title: `Free ${productTitles.TIFFtoPDFConverterDesktop} for Windows |  Fast & Secure TIFF to PDF Tool`,
       description:
         "Convert TIFF files to PDF with our fast and free Windows software. Enjoy a user-friendly interface, batch processing, advanced compression settings, and customizable options to ensure top-quality PDF output.",
-      url: `https://www.frameworkteam.com/${ProductIDs.TIFFtoPDFConverterDesktop}.html`,
+      url: productWebsites.TIFFtoPDFConverterDesktop,
       siteName: `${productTitles.TIFFtoPDFConverterDesktop} for Windows`,
       images: [
         {

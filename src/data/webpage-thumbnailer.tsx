@@ -166,7 +166,7 @@ export const WebpageThumbnailer: portfolioItem = {
       title: `Free ${productTitles.WebpageThumbnailer} for Windows | Fast & Efficient Web Page Screenshot and Thumbnail Tool`,
       description:
         "Capture full-length web page screenshots and generate thumbnail previews with our fast and free Webpage Thumbnailer for Windows. Convert MHTML and HTML files to images, schedule automatic captures, and enjoy batch processing for large volumes of websites.",
-      url: `https://www.frameworkteam.com/${ProductIDs.WebpageThumbnailer}.html`,
+      url: productWebsites.WebpageThumbnailer,
       siteName: `${productTitles.WebpageThumbnailer} for Windows`,
       images: [
         {

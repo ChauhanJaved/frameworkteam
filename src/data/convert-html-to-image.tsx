@@ -137,7 +137,7 @@ export const ConvertHTMLtoImage: portfolioItem = {
       title: `Free ${productTitles.ConvertHTMLtoImage} for Windows | Convert HTML & MHTML to Images, Screenshots, and Thumbnails`,
       description:
         "Easily convert HTML and MHTML files to images, capture full-length website screenshots, and generate thumbnail previews with our fast and free ConvertHTMLtoImage command line tool for Windows. Schedule automatic captures and process multiple websites in batch mode.",
-      url: `https://www.frameworkteam.com/${ProductIDs.ConvertHTMLtoImage}.html`,
+      url: productWebsites.ConvertHTMLtoImage,
       siteName: `${productTitles.ConvertHTMLtoImage} for Windows`,
       images: [
         {

@@ -107,7 +107,7 @@ export const PDFSplitMerge: portfolioItem = {
       title: `Free ${productTitles.PDFSplitMerge} for Windows | Fast & Reliable PDF Splitting and Merging Tool`,
       description:
         "Effortlessly split and merge PDF files with our fast and free Windows software. Enjoy an intuitive interface, batch processing, and customizable splitting and merging options for complete document control.",
-      url: `https://www.frameworkteam.com/${ProductIDs.PDFSplitMerge}.html`,
+      url: productWebsites.PDFSplitMerge,
       siteName: `${productTitles.PDFSplitMerge} for Windows`,
       images: [
         {
