@@ -31,7 +31,7 @@ export const indexMetadata: Metadata = {
   openGraph: {
     title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
     description: `${heroTitle}. ${heroDesc}`,
-    url: "https://frameworkteam.com",
+    url: "https://www.frameworkteam.com/",
     siteName: `${companyName} - India`,
     images: [
       {
@@ -193,32 +193,34 @@ export type ProductWebsite =
 
 export const productDownloadLinks = {
   JPGtoPDFConverter:
-    "https://jpg-to-pdf-converter.com/downloads/jpg-to-pdf-converter-setup.exe",
+    "https://www.jpg-to-pdf-converter.com/downloads/jpg-to-pdf-converter-setup.exe",
   TIFFtoPDFConverter:
-    "https://tiff-to-pdf-converter.com/downloads/tiff-to-pdf-converter-setup.exe",
+    "https://www.tiff-to-pdf-converter.com/downloads/tiff-to-pdf-converter-setup.exe",
   PNGtoPDFConverter:
-    "https://png-to-pdf-converter.com/downloads/png-to-pdf-converter-setup.exe",
+    "https://www.png-to-pdf-converter.com/downloads/png-to-pdf-converter-setup.exe",
 
   PDFtoJPGConverter:
-    "https://pdf-to-jpg-converter.com/downloads/pdf-to-jpg-converter-setup.exe",
+    "https://www.pdf-to-jpg-converter.com/downloads/pdf-to-jpg-converter-setup.exe",
   PDFtoTIFFConverter:
-    "https://pdf-to-tiff-converter.com/downloads/pdf-to-tiff-converter-setup.exe",
+    "https://www.pdf-to-tiff-converter.com/downloads/pdf-to-tiff-converter-setup.exe",
   PDFtoPNGConverter:
-    "https://pdf-to-png-converter.com/downloads/pdf-to-png-converter-setup.exe",
+    "https://www.pdf-to-png-converter.com/downloads/pdf-to-png-converter-setup.exe",
   PDFtoImageConverter:
-    "https://pdf-to-image-converter.com/downloads/pdf-to-image-converter-setup.exe",
+    "https://www.pdf-to-image-converter.com/downloads/pdf-to-image-converter-setup.exe",
 
   TIFFSplitter:
-    "https://tiff-split-combine.com/downloads/tiff-splitter-setup.exe",
+    "https://www.tiff-split-combine.com/downloads/tiff-splitter-setup.exe",
   TIFFCombiner:
-    "https://tiff-split-combine.com/downloads/tiff-combiner-setup.exe",
+    "https://www.tiff-split-combine.com/downloads/tiff-combiner-setup.exe",
   TIFFSplitMerge:
-    "https://tiff-split-combine.com/downloads/tiff-split-merge-setup.exe",
+    "https://www.tiff-split-combine.com/downloads/tiff-split-merge-setup.exe",
 
-  PDFSplitter: "https://pdf-split-merge.com/downloads/pdf-splitter-setup.exe",
-  PDFCombiner: "https://pdf-split-merge.com/downloads/pdf-combiner-setup.exe",
+  PDFSplitter:
+    "https://www.pdf-split-merge.com/downloads/pdf-splitter-setup.exe",
+  PDFCombiner:
+    "https://www.pdf-split-merge.com/downloads/pdf-combiner-setup.exe",
   PDFSplitMerge:
-    "https://pdf-split-merge.com/downloads/pdf-split-merge-setup.exe",
+    "https://www.pdf-split-merge.com/downloads/pdf-split-merge-setup.exe",
 
   WebpageThumbnailer:
     "https://www.webpagethumbnailer.com/media/download/webpagethumbnailer_setup.exe",
