@@ -27,15 +27,37 @@ export function hrefValue(item: string): string {
 }
 export const indexMetadata: Metadata = {
   title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
+  keywords: [
+    "Web app development",
+    "Windows app development",
+    "Software development company",
+    "Custom applications",
+    "Desktop app development",
+    `${companyName}`,
+  ],
   description: `${heroTitle}. ${heroDesc}`,
+  authors: [
+    {
+      name: companyName,
+      url: `https://www.${headerCompanyName.toLowerCase()}.com/`,
+    },
+  ],
+  creator: companyName,
+  publisher: companyName,
+  category: "Software Development",
+  metadataBase: new URL(`https://www.${headerCompanyName.toLowerCase()}.com/`),
+
+  alternates: {
+    canonical: `https://www.${headerCompanyName.toLowerCase()}.com/`,
+  },
   openGraph: {
     title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
     description: `${heroTitle}. ${heroDesc}`,
-    url: "https://www.frameworkteam.com/",
+    url: `https://www.${headerCompanyName.toLowerCase()}.com/`,
     siteName: `${companyName} - India`,
     images: [
       {
-        url: "https://res.cloudinary.com/dgq2mp4fs/image/upload/v1721890438/frameworkteam/hero-img.png", // Must be an absolute URL
+        url: "https://res.cloudinary.com/dgq2mp4fs/image/upload/v1721890438/frameworkteam/hero-img.png",
         width: 539,
         height: 438,
         alt: `${companyName} - India`,
@@ -43,6 +65,14 @@ export const indexMetadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
+    description: `${heroTitle}. ${heroDesc}`,
+    images: [
+      "https://res.cloudinary.com/dgq2mp4fs/image/upload/v1721890438/frameworkteam/hero-img.png",
+    ],
   },
   robots: {
     index: true,
@@ -52,6 +82,9 @@ export const indexMetadata: Metadata = {
       index: true,
       follow: true,
       noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
