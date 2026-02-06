@@ -208,31 +208,32 @@ export const productSubTitles = {
 export type ProductSubTitles =
   (typeof productSubTitles)[keyof typeof productSubTitles];
 export const productWebsites = {
-  JPGtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter",
-  PNGtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/png-to-pdf-converter",
-  TIFFtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter",
-  TIFFSplitterWeb: "https://www.pdf-tiff-tools.com/tiff-splitter",
-  TIFFMergerWeb: "https://www.pdf-tiff-tools.com/tiff-merger",
+  JPGtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter/",
+  PNGtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/png-to-pdf-converter/",
+  TIFFtoPDFConverterWeb:
+    "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter/",
+  TIFFSplitterWeb: "https://www.pdf-tiff-tools.com/tiff-splitter/",
+  TIFFMergerWeb: "https://www.pdf-tiff-tools.com/tiff-merger/",
 
   JPGtoPDFConverterDesktop:
-    "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter-desktop",
+    "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter-desktop/",
   PNGtoPDFConverterDesktop:
-    "https://www.pdf-tiff-tools.com/png-to-pdf-converter-desktop",
+    "https://www.pdf-tiff-tools.com/png-to-pdf-converter-desktop/",
   TIFFtoPDFConverterDesktop:
-    "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter-desktop",
+    "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter-desktop/",
 
-  PDFtoJPGConverter: "https://www.pdf-tiff-tools.com/pdf-to-jpg-converter",
-  PDFtoTIFFConverter: "https://www.pdf-tiff-tools.com/pdf-to-tiff-converter",
-  PDFtoPNGConverter: "https://www.pdf-tiff-tools.com/pdf-to-png-converter",
-  PDFtoImageConverter: "https://www.pdf-tiff-tools.com/pdf-to-image-converter",
+  PDFtoJPGConverter: "https://www.pdf-tiff-tools.com/pdf-to-jpg-converter/",
+  PDFtoTIFFConverter: "https://www.pdf-tiff-tools.com/pdf-to-tiff-converter/",
+  PDFtoPNGConverter: "https://www.pdf-tiff-tools.com/pdf-to-png-converter/",
+  PDFtoImageConverter: "https://www.pdf-tiff-tools.com/pdf-to-image-converter/",
 
-  TIFFSplitterDesktop: "https://www.pdf-tiff-tools.com/tiff-splitter-desktop",
-  TIFFCombiner: "https://www.pdf-tiff-tools.com/tiff-combiner",
-  TIFFSplitMerge: "https://www.pdf-tiff-tools.com/tiff-split-merge",
+  TIFFSplitterDesktop: "https://www.pdf-tiff-tools.com/tiff-splitter-desktop/",
+  TIFFCombiner: "https://www.pdf-tiff-tools.com/tiff-combiner/",
+  TIFFSplitMerge: "https://www.pdf-tiff-tools.com/tiff-split-merge/",
 
-  PDFSplitter: "https://www.pdf-tiff-tools.com/pdf-splitter",
-  PDFCombiner: "https://www.pdf-tiff-tools.com/pdf-combiner",
-  PDFSplitMerge: "https://www.pdf-tiff-tools.com/pdf-split-merge",
+  PDFSplitter: "https://www.pdf-tiff-tools.com/pdf-splitter/",
+  PDFCombiner: "https://www.pdf-tiff-tools.com/pdf-combiner/",
+  PDFSplitMerge: "https://www.pdf-tiff-tools.com/pdf-split-merge/",
 
   WebpageThumbnailer: "https://www.webpagethumbnailer.com/",
   ConvertHTMLtoImage: "https://www.converthtmltoimage.com/",

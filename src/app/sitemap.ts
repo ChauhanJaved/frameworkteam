@@ -10,95 +10,95 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.JPGtoPDFConverterWeb}`,
+      url: `${websiteURL}/${ProductIDs.JPGtoPDFConverterWeb}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PNGtoPDFConverterWeb}`,
+      url: `${websiteURL}/${ProductIDs.PNGtoPDFConverterWeb}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.TIFFtoPDFConverterWeb}`,
+      url: `${websiteURL}/${ProductIDs.TIFFtoPDFConverterWeb}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.TIFFSplitterWeb}`,
+      url: `${websiteURL}/${ProductIDs.TIFFSplitterWeb}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.TIFFMergerWeb}`,
+      url: `${websiteURL}/${ProductIDs.TIFFMergerWeb}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.JPGtoPDFConverterDesktop}`,
+      url: `${websiteURL}/${ProductIDs.JPGtoPDFConverterDesktop}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PNGtoPDFConverterDesktop}`,
+      url: `${websiteURL}/${ProductIDs.PNGtoPDFConverterDesktop}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.TIFFtoPDFConverterDesktop}`,
+      url: `${websiteURL}/${ProductIDs.TIFFtoPDFConverterDesktop}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PDFtoJPGConverter}`,
+      url: `${websiteURL}/${ProductIDs.PDFtoJPGConverter}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PDFtoTIFFConverter}`,
+      url: `${websiteURL}/${ProductIDs.PDFtoTIFFConverter}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PDFtoPNGConverter}`,
+      url: `${websiteURL}/${ProductIDs.PDFtoPNGConverter}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PDFtoImageConverter}`,
+      url: `${websiteURL}/${ProductIDs.PDFtoImageConverter}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.TIFFSplitterDesktop}`,
+      url: `${websiteURL}/${ProductIDs.TIFFSplitterDesktop}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.TIFFCombiner}`,
+      url: `${websiteURL}/${ProductIDs.TIFFCombiner}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.TIFFSplitMerge}`,
+      url: `${websiteURL}/${ProductIDs.TIFFSplitMerge}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PDFSplitter}`,
+      url: `${websiteURL}/${ProductIDs.PDFSplitter}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PDFCombiner}`,
+      url: `${websiteURL}/${ProductIDs.PDFCombiner}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.PDFSplitMerge}`,
+      url: `${websiteURL}/${ProductIDs.PDFSplitMerge}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.WebpageThumbnailer}`,
+      url: `${websiteURL}/${ProductIDs.WebpageThumbnailer}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.ConvertHTMLtoImage}`,
+      url: `${websiteURL}/${ProductIDs.ConvertHTMLtoImage}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/${ProductIDs.WebsitesScreenshot}`,
+      url: `${websiteURL}/${ProductIDs.WebsitesScreenshot}/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/privacy-policy`,
+      url: `${websiteURL}/privacy-policy/`,
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/terms-of-use`,
+      url: `${websiteURL}/terms-of-use/`,
       lastModified: lastModified,
     },
   ];

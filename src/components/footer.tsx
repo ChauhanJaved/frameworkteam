@@ -31,7 +31,7 @@ export default function Footer(props: PropsFooter) {
             className="h-auto px-0 py-0"
             aria-label="Go to company website for terms of use"
           >
-            <Link href="/terms-of-use">Terms of Use</Link>
+            <Link href="/terms-of-use/">Terms of Use</Link>
           </Button>
           <span className="mx-2">|</span>
           <Button
@@ -40,7 +40,7 @@ export default function Footer(props: PropsFooter) {
             aria-label="Go to company website for privacy policy"
             asChild
           >
-            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/privacy-policy/">Privacy Policy</Link>
           </Button>
         </div>
       </div>
