@@ -1,6 +1,5 @@
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -9,15 +8,15 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const JPGtoPDFConverterDesktop: portfolioItem = {
   id: ProductIDs.JPGtoPDFConverterDesktop,
   title: productTitles.JPGtoPDFConverterDesktop,
   subtitle: productSubTitles.JPGtoPDFConverterDesktop,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.JPGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+  src: productImages.JPGtoPDFConverterDesktop.imgName,
   width: productImages.JPGtoPDFConverterDesktop.width,
   height: productImages.JPGtoPDFConverterDesktop.height,
-  categories: [Categories.All, Categories.DesktopApp],
+  categories: [Categories.All, Categories.DesktopApp, Categories.Converter],
   pageLink: `/${ProductIDs.JPGtoPDFConverterDesktop}`,
   productWebsite: productWebsites.JPGtoPDFConverterDesktop,
   downloadLink: productDownloadLinks.JPGtoPDFConverter,
@@ -143,7 +142,7 @@ export const JPGtoPDFConverterDesktop: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLowerCase()}/${productImages.JPGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+            src: productImages.JPGtoPDFConverterDesktop.imgName,
             width: productImages.JPGtoPDFConverterDesktop.width,
           }),
           width: productImages.JPGtoPDFConverterDesktop.width,

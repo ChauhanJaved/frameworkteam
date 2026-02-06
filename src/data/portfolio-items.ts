@@ -1,6 +1,8 @@
 import { JPGtoPDFConverterWeb } from "@/data/jpg-to-pdf-converter-web";
 import { PNGtoPDFConverterWeb } from "@/data/png-to-pdf-converter-web";
 import { TIFFtoPDFConverterWeb } from "@/data/tiff-to-pdf-converter-web";
+import { TIFFSplitterWeb } from "@/data/tiff-splitter-web";
+import { TIFFMergerWeb } from "@/data/tiff-merger-web";
 import { JPGtoPDFConverterDesktop } from "@/data/jpg-to-pdf-converter-desktop";
 import { TIFFtoPDFConverterDesktop } from "@/data/tiff-to-pdf-converter-desktop";
 import { PNGtoPDFConverterDesktop } from "@/data/png-to-pdf-converter-desktop";
@@ -8,7 +10,7 @@ import { PDFtoJPGConverter } from "@/data/pdf-to-jpg-converter";
 import { PDFtoTIFFConverter } from "@/data/pdf-to-tiff-converter";
 import { PDFtoPNGConverter } from "@/data/pdf-to-png-converter";
 import { PDFtoImageConverter } from "@/data/pdf-to-image-converter";
-import { TIFFSplitter } from "@/data/tiff-splitter";
+import { TIFFSplitterDesktop } from "@/data/tiff-splitter-desktop";
 import { TIFFCombiner } from "@/data/tiff-combiner";
 import { TIFFSplitMerge } from "@/data/tiff-split-merge";
 import { PDFSplitter } from "@/data/pdf-splitter";
@@ -23,6 +25,8 @@ export const portfolioItems: portfolioItem[] = [
   JPGtoPDFConverterWeb,
   PNGtoPDFConverterWeb,
   TIFFtoPDFConverterWeb,
+  TIFFSplitterWeb,
+  TIFFMergerWeb,
 
   JPGtoPDFConverterDesktop,
   PNGtoPDFConverterDesktop,
@@ -33,7 +37,7 @@ export const portfolioItems: portfolioItem[] = [
   PDFtoPNGConverter,
   PDFtoImageConverter,
 
-  TIFFSplitter,
+  TIFFSplitterDesktop,
   TIFFCombiner,
   TIFFSplitMerge,
 

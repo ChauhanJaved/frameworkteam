@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const headerCompanyName: string = "FrameworkTeam";
+export const websiteURL: string = "https://www.frameworkteam.com";
 export const companyName: string = "FrameworkTeam Softwares";
 export const email: string = "support@frameworkteam.com";
 export const copyrightYear: string = new Date().getFullYear().toString();
@@ -39,21 +40,21 @@ export const indexMetadata: Metadata = {
   authors: [
     {
       name: companyName,
-      url: `https://www.${headerCompanyName.toLowerCase()}.com/`,
+      url: `${websiteURL}/`,
     },
   ],
   creator: companyName,
   publisher: companyName,
   category: "Software Development",
-  metadataBase: new URL(`https://www.${headerCompanyName.toLowerCase()}.com/`),
+  metadataBase: new URL(`${websiteURL}/`),
 
   alternates: {
-    canonical: `https://www.${headerCompanyName.toLowerCase()}.com/`,
+    canonical: `${websiteURL}/`,
   },
   openGraph: {
     title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
     description: `${heroTitle}. ${heroDesc}`,
-    url: `https://www.${headerCompanyName.toLowerCase()}.com/`,
+    url: `${websiteURL}/`,
     siteName: `${companyName} - India`,
     images: [
       {
@@ -92,6 +93,9 @@ export enum Categories {
   All = "All",
   WebApp = "Web App",
   DesktopApp = "Desktop App",
+  Converter = "Converter",
+  Splitter = "Splitter",
+  Merger = "Merger",
   CommandLine = "Command Line",
   Library = ".NET Library",
 }
@@ -99,6 +103,9 @@ export const categoryList: string[] = [
   Categories.All,
   Categories.WebApp,
   Categories.DesktopApp,
+  Categories.Converter,
+  Categories.Splitter,
+  Categories.Merger,
   Categories.CommandLine,
   Categories.Library,
 ];
@@ -107,17 +114,18 @@ export enum ProductIDs {
   JPGtoPDFConverterWeb = "jpg-to-pdf-converter",
   PNGtoPDFConverterWeb = "png-to-pdf-converter",
   TIFFtoPDFConverterWeb = "tiff-to-pdf-converter",
+  TIFFSplitterWeb = "tiff-splitter",
+  TIFFMergerWeb = "tiff-merger",
 
   JPGtoPDFConverterDesktop = "jpg-to-pdf-converter-desktop",
-  TIFFtoPDFConverterDesktop = "tiff-to-pdf-converter-desktop",
   PNGtoPDFConverterDesktop = "png-to-pdf-converter-desktop",
-
+  TIFFtoPDFConverterDesktop = "tiff-to-pdf-converter-desktop",
   PDFtoJPGConverter = "pdf-to-jpg-converter",
   PDFtoTIFFConverter = "pdf-to-tiff-converter",
   PDFtoPNGConverter = "pdf-to-png-converter",
   PDFtoImageConverter = "pdf-to-image-converter",
 
-  TIFFSplitter = "tiff-splitter",
+  TIFFSplitterDesktop = "tiff-splitter-desktop",
   TIFFCombiner = "tiff-combiner",
   TIFFSplitMerge = "tiff-split-merge",
 
@@ -133,6 +141,8 @@ export const productTitles = {
   JPGtoPDFConverterWeb: "JPG to PDF Converter",
   PNGtoPDFConverterWeb: "PNG to PDF Converter",
   TIFFtoPDFConverterWeb: "TIFF to PDF Converter",
+  TIFFSplitterWeb: "TIFF Splitter",
+  TIFFMergerWeb: "TIFF Merger",
 
   JPGtoPDFConverterDesktop: "JPG to PDF Converter",
   PNGtoPDFConverterDesktop: "PNG to PDF Converter",
@@ -143,7 +153,7 @@ export const productTitles = {
   PDFtoPNGConverter: "PDF to PNG Converter",
   PDFtoImageConverter: "PDF to Image Converter",
 
-  TIFFSplitter: "TIFF Splitter",
+  TIFFSplitterDesktop: "TIFF Splitter",
   TIFFCombiner: "TIFF Combiner",
   TIFFSplitMerge: "TIFF Split Merge",
 
@@ -164,6 +174,10 @@ export const productSubTitles = {
     "Online Tool to Convert & Merge PNG to PDF – Secure & Private, Your Files Never Leave Your Device",
   TIFFtoPDFConverterWeb:
     "Online Tool to Convert & Merge TIFF to PDF – Secure & Private, Your Files Never Leave Your Device",
+  TIFFSplitterWeb:
+    "Secure Online TIFF Splitter – 100% Private, No Uploads Required",
+  TIFFMergerWeb:
+    "Secure Online TIFF Merger – 100% Private, No Uploads Required",
 
   JPGtoPDFConverterDesktop:
     "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
@@ -178,7 +192,8 @@ export const productSubTitles = {
   PDFtoImageConverter:
     "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
 
-  TIFFSplitter: "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
+  TIFFSplitterDesktop:
+    "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
   TIFFCombiner: "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
   TIFFSplitMerge: "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
 
@@ -196,6 +211,8 @@ export const productWebsites = {
   JPGtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter",
   PNGtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/png-to-pdf-converter",
   TIFFtoPDFConverterWeb: "https://www.pdf-tiff-tools.com/tiff-to-pdf-converter",
+  TIFFSplitterWeb: "https://www.pdf-tiff-tools.com/tiff-splitter",
+  TIFFMergerWeb: "https://www.pdf-tiff-tools.com/tiff-merger",
 
   JPGtoPDFConverterDesktop:
     "https://www.pdf-tiff-tools.com/jpg-to-pdf-converter-desktop",
@@ -209,7 +226,7 @@ export const productWebsites = {
   PDFtoPNGConverter: "https://www.pdf-tiff-tools.com/pdf-to-png-converter",
   PDFtoImageConverter: "https://www.pdf-tiff-tools.com/pdf-to-image-converter",
 
-  TIFFSplitter: "https://www.pdf-tiff-tools.com/tiff-splitter-desktop",
+  TIFFSplitterDesktop: "https://www.pdf-tiff-tools.com/tiff-splitter-desktop",
   TIFFCombiner: "https://www.pdf-tiff-tools.com/tiff-combiner",
   TIFFSplitMerge: "https://www.pdf-tiff-tools.com/tiff-split-merge",
 
@@ -267,101 +284,133 @@ export type ProductDownloadLinks =
 
 export const productImages = {
   JPGtoPDFConverterWeb: {
-    imgName: "jpg-to-pdf-converter-web-icon",
-    width: 1024,
-    height: 1024,
+    title: "JPG to PDF Converter Online",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"jpg-to-pdf-converter-web-icon".toLowerCase()}`,
+    width: 1170,
+    height: 2532,
   },
   PNGtoPDFConverterWeb: {
-    imgName: "png-to-pdf-converter-web-icon",
+    title: "PNG to PDF Converter Online",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"png-to-pdf-converter-web-icon".toLowerCase()}`,
     width: 1024,
     height: 1024,
   },
   TIFFtoPDFConverterWeb: {
-    imgName: "tiff-to-pdf-converter-web-icon",
+    title: "TIFF to PDF Converter Online",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"tiff-to-pdf-converter-web-icon".toLowerCase()}`,
     width: 1024,
     height: 1024,
   },
+  TIFFSplitterWeb: {
+    title: "TIFF Splitter Online",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"tiff-splitter-web-icon".toLowerCase()}`,
+    width: 1024,
+    height: 1024,
+  },
+  TIFFMergerWeb: {
+    title: "TIFF Merger Online",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"tiff-merger-web-icon".toLowerCase()}`,
+    width: 1024,
+    height: 1024,
+  },
+
   JPGtoPDFConverterDesktop: {
-    imgName: "jpg-to-pdf-converter",
+    title: "JPG to PDF Converter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"jpg-to-pdf-converter".toLowerCase()}`,
     width: 756,
     height: 463,
   },
   PNGtoPDFConverterDesktop: {
-    imgName: "png-to-pdf-converter",
+    title: "PNG to PDF Converter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"png-to-pdf-converter".toLowerCase()}`,
     width: 756,
     height: 463,
   },
   TIFFtoPDFConverterDesktop: {
-    imgName: "tiff-to-pdf-converter",
+    title: "TIFF to PDF Converter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"tiff-to-pdf-converter".toLowerCase()}`,
     width: 756,
     height: 463,
   },
 
   PDFtoJPGConverter: {
-    imgName: "pdf-to-jpg-converter",
+    title: "PDF to JPG Converter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"pdf-to-jpg-converter".toLowerCase()}`,
     width: 756,
     height: 463,
   },
-  PDFtoTIFFConverter: {
-    imgName: "pdf-to-tiff-converter",
+  PDFtoPNGConverter: {
+    title: "PDF to PNG Converter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"pdf-to-png-converter".toLowerCase()}`,
     width: 739,
     height: 469,
   },
-  PDFtoPNGConverter: {
-    imgName: "pdf-to-png-converter",
+  PDFtoTIFFConverter: {
+    title: "PDF to TIFF Converter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"pdf-to-tiff-converter".toLowerCase()}`,
     width: 739,
     height: 469,
   },
   PDFtoImageConverter: {
-    imgName: "pdf-to-image-converter",
+    title: "PDF to Image Converter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"pdf-to-image-converter".toLowerCase()}`,
     width: 739,
     height: 469,
   },
 
-  TIFFSplitter: {
-    imgName: "tiff-splitter",
+  TIFFSplitterDesktop: {
+    title: "TIFF Splitter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"tiff-splitter".toLowerCase()}`,
     width: 739,
     height: 469,
   },
   TIFFCombiner: {
-    imgName: "tiff-combiner",
+    title: "TIFF Combiner",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"tiff-combiner".toLowerCase()}`,
     width: 739,
     height: 469,
   },
   TIFFSplitMerge: {
-    imgName: "tiff-split-merge",
+    title: "TIFF Split & Merge",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"tiff-split-merge".toLowerCase()}`,
     width: 739,
     height: 469,
   },
 
   PDFSplitter: {
-    imgName: "pdf-splitter",
+    title: "PDF Splitter",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"pdf-splitter".toLowerCase()}`,
     width: 739,
     height: 469,
   },
   PDFCombiner: {
-    imgName: "pdf-combiner",
+    title: "PDF Combiner",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"pdf-combiner".toLowerCase()}`,
     width: 739,
     height: 469,
   },
   PDFSplitMerge: {
-    imgName: "pdf-split-merge",
+    title: "PDF Split Merge",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"pdf-split-merge".toLowerCase()}`,
     width: 739,
     height: 469,
   },
 
   WebpageThumbnailer: {
-    imgName: "webpage-thumbnailer",
+    title: "Webpage Thumbnailer",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"webpage-thumbnailer".toLowerCase()}`,
     width: 520,
     height: 349,
   },
   ConvertHTMLtoImage: {
-    imgName: "convert-html-to-image",
+    title: "Convert HTML to Image",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"convert-html-to-image".toLowerCase()}`,
     width: 429,
     height: 271,
   },
   WebsitesScreenshot: {
-    imgName: "websites-screenshot",
+    title: "Websites Screenshot",
+    imgName: `/${headerCompanyName.toLowerCase()}/${"websites-screenshot".toLowerCase()}`,
     width: 543,
     height: 295,
   },

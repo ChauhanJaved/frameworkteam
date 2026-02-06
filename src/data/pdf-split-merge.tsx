@@ -1,6 +1,5 @@
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -9,15 +8,20 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const PDFSplitMerge: portfolioItem = {
   id: ProductIDs.PDFSplitMerge,
   title: productTitles.PDFSplitMerge,
   subtitle: productSubTitles.PDFSplitMerge,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFSplitMerge.imgName.toLowerCase()}`,
+  src: productImages.PDFSplitMerge.imgName,
   width: productImages.PDFSplitMerge.width,
   height: productImages.PDFSplitMerge.height,
-  categories: [Categories.All, Categories.DesktopApp],
+  categories: [
+    Categories.All,
+    Categories.DesktopApp,
+    Categories.Splitter,
+    Categories.Merger,
+  ],
   pageLink: `/${ProductIDs.PDFSplitMerge}`,
   productWebsite: productWebsites.PDFSplitMerge,
   downloadLink: productDownloadLinks.PDFSplitMerge,
@@ -112,7 +116,7 @@ export const PDFSplitMerge: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFSplitMerge.imgName.toLowerCase()}`,
+            src: productImages.PDFSplitMerge.imgName,
             width: productImages.PDFSplitMerge.width,
           }),
           width: productImages.PDFSplitMerge.width,

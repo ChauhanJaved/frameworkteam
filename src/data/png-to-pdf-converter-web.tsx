@@ -1,6 +1,5 @@
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -8,15 +7,15 @@ import {
   productTitles,
   productWebsites,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const PNGtoPDFConverterWeb: portfolioItem = {
   id: ProductIDs.PNGtoPDFConverterWeb,
   title: productTitles.PNGtoPDFConverterWeb,
   subtitle: productSubTitles.PNGtoPDFConverterWeb,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
+  src: productImages.PNGtoPDFConverterWeb.imgName,
   width: productImages.PNGtoPDFConverterWeb.width,
   height: productImages.PNGtoPDFConverterWeb.height,
-  categories: [Categories.All, Categories.WebApp],
+  categories: [Categories.All, Categories.WebApp, Categories.Converter],
   pageLink: `/${ProductIDs.PNGtoPDFConverterWeb}`,
   productWebsite: productWebsites.PNGtoPDFConverterWeb,
   features: [
@@ -93,7 +92,7 @@ export const PNGtoPDFConverterWeb: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterWeb.imgName.toLowerCase()}`,
+            src: productImages.PNGtoPDFConverterWeb.imgName,
             width: productImages.PNGtoPDFConverterWeb.width,
           }),
           width: productImages.PNGtoPDFConverterWeb.width,

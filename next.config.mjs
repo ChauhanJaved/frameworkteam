@@ -2,9 +2,10 @@
 
 const nextConfig = {
   output: "export",
+  trailingSlash: true,
   images: {
     loader: "custom",
-    loaderFile: "./cloudinary-loader.ts",
+    loaderFile: "src/lib/cloudinary-loader.ts",
   },
 };
 

@@ -1,6 +1,6 @@
-import { headerCompanyName } from "@/data/website-data";
+import { headerCompanyName, websiteURL } from "@/data/website-data";
 import type { MetadataRoute } from "next";
-
+export const dynamic = "force-static";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: `https://www.${headerCompanyName.toLowerCase()}.com/sitemap.xml`,
+    sitemap: `${websiteURL}/sitemap.xml`,
   };
 }

@@ -1,6 +1,5 @@
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -9,15 +8,15 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const PNGtoPDFConverterDesktop: portfolioItem = {
   id: ProductIDs.PNGtoPDFConverterDesktop,
   title: productTitles.PNGtoPDFConverterDesktop,
   subtitle: productSubTitles.PNGtoPDFConverterDesktop,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+  src: productImages.PNGtoPDFConverterDesktop.imgName,
   width: productImages.PNGtoPDFConverterDesktop.width,
   height: productImages.PNGtoPDFConverterDesktop.height,
-  categories: [Categories.All, Categories.DesktopApp],
+  categories: [Categories.All, Categories.DesktopApp, Categories.Converter],
   pageLink: `/${ProductIDs.PNGtoPDFConverterDesktop}`,
   productWebsite: productWebsites.PNGtoPDFConverterDesktop,
   downloadLink: productDownloadLinks.PNGtoPDFConverter,
@@ -128,7 +127,7 @@ export const PNGtoPDFConverterDesktop: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLowerCase()}/${productImages.PNGtoPDFConverterDesktop.imgName.toLowerCase()}`,
+            src: productImages.PNGtoPDFConverterDesktop.imgName,
             width: productImages.PNGtoPDFConverterDesktop.width,
           }),
           width: productImages.PNGtoPDFConverterDesktop.width,

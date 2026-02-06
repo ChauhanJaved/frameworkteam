@@ -1,6 +1,5 @@
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -9,15 +8,20 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const TIFFSplitMerge: portfolioItem = {
   id: ProductIDs.TIFFSplitMerge,
   title: productTitles.TIFFSplitMerge,
   subtitle: productSubTitles.TIFFSplitMerge,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFSplitMerge.imgName.toLowerCase()}`,
+  src: productImages.TIFFSplitMerge.imgName,
   width: productImages.TIFFSplitMerge.width,
   height: productImages.TIFFSplitMerge.height,
-  categories: [Categories.All, Categories.DesktopApp],
+  categories: [
+    Categories.All,
+    Categories.DesktopApp,
+    Categories.Splitter,
+    Categories.Merger,
+  ],
   pageLink: `/${ProductIDs.TIFFSplitMerge}`,
   productWebsite: productWebsites.TIFFSplitMerge,
   downloadLink: productDownloadLinks.TIFFSplitMerge,
@@ -129,7 +133,7 @@ export const TIFFSplitMerge: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLowerCase()}/${productImages.TIFFSplitMerge.imgName.toLowerCase()}`,
+            src: productImages.TIFFSplitMerge.imgName,
             width: productImages.TIFFSplitMerge.width,
           }),
           width: productImages.TIFFSplitMerge.width,

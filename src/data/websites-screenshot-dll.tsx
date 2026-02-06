@@ -9,12 +9,12 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const WebsitesScreenshotDLL: portfolioItem = {
   id: ProductIDs.WebsitesScreenshot,
   title: productTitles.WebsitesScreenshot,
   subtitle: productSubTitles.WebsitesScreenshot,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.WebsitesScreenshot.imgName.toLowerCase()}`,
+  src: productImages.WebsitesScreenshot.imgName,
   width: productImages.WebsitesScreenshot.width,
   height: productImages.WebsitesScreenshot.height,
   categories: [Categories.All, Categories.Library],
@@ -102,7 +102,7 @@ export const WebsitesScreenshotDLL: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLowerCase()}/${productImages.WebsitesScreenshot.imgName.toLowerCase()}`,
+            src: productImages.WebsitesScreenshot.imgName,
             width: productImages.WebsitesScreenshot.width,
           }),
           width: productImages.WebsitesScreenshot.width,

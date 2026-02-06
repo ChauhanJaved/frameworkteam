@@ -1,6 +1,5 @@
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -9,15 +8,15 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const PDFtoTIFFConverter: portfolioItem = {
   id: ProductIDs.PDFtoTIFFConverter,
   title: productTitles.PDFtoTIFFConverter,
   subtitle: productSubTitles.PDFtoTIFFConverter,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFtoTIFFConverter.imgName.toLowerCase()}`,
+  src: productImages.PDFtoTIFFConverter.imgName,
   width: productImages.PDFtoTIFFConverter.width,
   height: productImages.PDFtoTIFFConverter.height,
-  categories: [Categories.All, Categories.DesktopApp],
+  categories: [Categories.All, Categories.DesktopApp, Categories.Converter],
   pageLink: `/${ProductIDs.PDFtoTIFFConverter}`,
   productWebsite: productWebsites.PDFtoTIFFConverter,
   downloadLink: productDownloadLinks.PDFtoTIFFConverter,
@@ -129,7 +128,7 @@ export const PDFtoTIFFConverter: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLocaleLowerCase()}/${productImages.PDFtoTIFFConverter.imgName.toLocaleLowerCase()}`,
+            src: productImages.PDFtoTIFFConverter.imgName,
             width: productImages.PDFtoTIFFConverter.width,
           }),
           width: productImages.PDFtoTIFFConverter.width,

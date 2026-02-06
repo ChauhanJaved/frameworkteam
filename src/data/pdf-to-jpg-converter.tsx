@@ -1,6 +1,6 @@
+// src/data/pdf-to-jpg-converter.tsx
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -9,15 +9,15 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const PDFtoJPGConverter: portfolioItem = {
   id: ProductIDs.PDFtoJPGConverter,
   title: productTitles.PDFtoJPGConverter,
   subtitle: productSubTitles.PDFtoJPGConverter,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.PDFtoJPGConverter.imgName.toLowerCase()}`,
+  src: productImages.PDFtoJPGConverter.imgName,
   width: productImages.PDFtoJPGConverter.width,
   height: productImages.PDFtoJPGConverter.height,
-  categories: [Categories.All, Categories.DesktopApp],
+  categories: [Categories.All, Categories.DesktopApp, Categories.Converter],
   pageLink: `/${ProductIDs.PDFtoJPGConverter}`,
   productWebsite: productWebsites.PDFtoJPGConverter,
   downloadLink: productDownloadLinks.PDFtoJPGConverter,
@@ -125,7 +125,7 @@ export const PDFtoJPGConverter: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLocaleLowerCase()}/${productImages.PDFtoJPGConverter.imgName.toLocaleLowerCase()}`,
+            src: productImages.PDFtoJPGConverter.imgName,
             width: productImages.PDFtoJPGConverter.width,
           }),
           width: productImages.PDFtoJPGConverter.width,

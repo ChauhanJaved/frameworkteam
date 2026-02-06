@@ -22,21 +22,24 @@ import {
 } from "@/components/ui/breadcrumb";
 import BreadcrumbNextLink from "@/components/breadcrumb-next-link";
 import ProductImageWebApp from "@/components/product-image-web-app";
+import { Metadata } from "next";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return portfolioItems.map((item) => ({ product: item.id }));
 }
-export function generateMetadata({ params }: { params: { product: string } }) {
-  const portfolioItem = portfolioItems.find(
-    (item) => item.id === params.product,
-  );
-  return portfolioItem?.metaData;
+type Props = {
+  params: Promise<{ product: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { product } = await params;
+  const portfolioItem = portfolioItems.find((item) => item.id === product);
+  return portfolioItem?.metaData ?? {};
 }
 
-export default function Page({ params }: { params: { product: string } }) {
-  const portfolioItem = portfolioItems.find(
-    (item) => item.id === params.product,
-  );
+export default async function Page({ params }: Props) {
+  const { product } = await params;
+  const portfolioItem = portfolioItems.find((item) => item.id === product);
   return (
     <>
       <div className="px-5 pt-24">

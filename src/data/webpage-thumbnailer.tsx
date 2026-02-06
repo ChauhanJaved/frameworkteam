@@ -1,6 +1,5 @@
 import {
   Categories,
-  headerCompanyName,
   portfolioItem,
   ProductIDs,
   productImages,
@@ -9,12 +8,12 @@ import {
   productWebsites,
   productDownloadLinks,
 } from "@/data/website-data";
-import cloudinaryLoader from "cloudinary-loader";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 export const WebpageThumbnailer: portfolioItem = {
   id: ProductIDs.WebpageThumbnailer,
   title: productTitles.WebpageThumbnailer,
   subtitle: productSubTitles.WebpageThumbnailer,
-  src: `/${headerCompanyName.toLowerCase()}/${productImages.WebpageThumbnailer.imgName.toLowerCase()}`,
+  src: productImages.WebpageThumbnailer.imgName,
   width: productImages.WebpageThumbnailer.width,
   height: productImages.WebpageThumbnailer.height,
   categories: [Categories.All, Categories.DesktopApp],
@@ -171,7 +170,7 @@ export const WebpageThumbnailer: portfolioItem = {
       images: [
         {
           url: cloudinaryLoader({
-            src: `/${headerCompanyName.toLowerCase()}/${productImages.WebpageThumbnailer.imgName.toLowerCase()}`,
+            src: productImages.WebpageThumbnailer.imgName,
             width: productImages.WebpageThumbnailer.width,
           }),
           width: productImages.WebpageThumbnailer.width,
