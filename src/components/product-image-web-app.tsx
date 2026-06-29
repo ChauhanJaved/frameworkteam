@@ -13,7 +13,7 @@ interface ProductImageWebAppProps {
 }
 export default function ProductImageWebApp(props: ProductImageWebAppProps) {
   return (
-    <div className="flex w-full flex-col items-center bg-secondary/50 shadow-sm md:w-2/3">
+    <div className="flex w-full flex-col items-center justify-center bg-secondary/50 shadow-sm md:w-2/3">
       <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden">
         <Link href={props.productWebsite} target="_blank">
           <div className="flex w-[200px] flex-col items-center justify-center py-3">
