@@ -19,9 +19,12 @@ import { PDFSplitMerge } from "@/data/pdf-split-merge";
 import { WebpageThumbnailer } from "@/data/webpage-thumbnailer";
 import { ConvertHTMLtoImage } from "@/data/convert-html-to-image";
 import { WebsitesScreenshotDLL } from "@/data/websites-screenshot-dll";
+import { FTQR } from "@/data/ftqr";
 import { portfolioItem } from "@/data/website-data";
 
 export const portfolioItems: portfolioItem[] = [
+  FTQR,
+
   JPGtoPDFConverterWeb,
   PNGtoPDFConverterWeb,
   TIFFtoPDFConverterWeb,

@@ -94,6 +94,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModified,
     },
     {
+      url: `${websiteURL}/${ProductIDs.FTQR}/`,
+      lastModified: lastModified,
+    },
+    {
       url: `${websiteURL}/privacy-policy/`,
       lastModified: lastModified,
     },

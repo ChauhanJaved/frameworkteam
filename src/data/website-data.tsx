@@ -136,6 +136,7 @@ export enum ProductIDs {
   WebpageThumbnailer = "webpage-thumbnailer",
   ConvertHTMLtoImage = "convert-html-to-image",
   WebsitesScreenshot = "websites-screenshot",
+  FTQR = "free-qr-code-generator",
 }
 export const productTitles = {
   JPGtoPDFConverterWeb: "JPG to PDF Converter",
@@ -164,6 +165,7 @@ export const productTitles = {
   WebpageThumbnailer: "Webpage Thumbnailer",
   ConvertHTMLtoImage: "Convert HTML to Image",
   WebsitesScreenshot: "Websites Screenshot",
+  FTQR: "FTQR",
 } as const;
 
 export type ProductTitles = (typeof productTitles)[keyof typeof productTitles];
@@ -204,6 +206,7 @@ export const productSubTitles = {
   WebpageThumbnailer: "Windows 11/10/8/7 | Fully Functional 15 Days Free Trial",
   ConvertHTMLtoImage: "Windows 11/10/8/7 | Command Line Tool",
   WebsitesScreenshot: "Windows 11/10/8/7 | .NET Component",
+  FTQR: "Free QR Code Generator | Custom QR Codes with Logo, UPI & More",
 } as const;
 export type ProductSubTitles =
   (typeof productSubTitles)[keyof typeof productSubTitles];
@@ -238,6 +241,7 @@ export const productWebsites = {
   WebpageThumbnailer: "https://www.webpagethumbnailer.com/",
   ConvertHTMLtoImage: "https://www.converthtmltoimage.com/",
   WebsitesScreenshot: "https://www.websitesscreenshot.com/",
+  FTQR: "https://qr.frameworkteam.com/",
 } as const;
 export type ProductWebsite =
   (typeof productWebsites)[keyof typeof productWebsites];
@@ -414,6 +418,12 @@ export const productImages = {
     imgName: `/${headerCompanyName.toLowerCase()}/${"websites-screenshot".toLowerCase()}`,
     width: 543,
     height: 295,
+  },
+  FTQR: {
+    title: "FTQR - Free QR Code Generator Preview",
+    imgName: `/${headerCompanyName.toLowerCase()}/ftqr-preview`,
+    width: 1024,
+    height: 1024,
   },
 };
 export type ProductImage = (typeof productImages)[keyof typeof productImages];
