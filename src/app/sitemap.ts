@@ -1,10 +1,13 @@
 import { ProductIDs, websiteURL } from "@/data/website-data";
+import { serviceItems } from "@/data/services-items";
 import type { MetadataRoute } from "next";
+
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  return [
+  
+  const staticAndProductEntries: MetadataRoute.Sitemap = [
     {
       url: `${websiteURL}/`,
       lastModified: lastModified,
@@ -106,4 +109,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModified,
     },
   ];
+
+  // Dynamically map over all service items to register their sitemap URLs
+  const serviceEntries: MetadataRoute.Sitemap = serviceItems.map((item) => ({
+    url: `${websiteURL}/${item.id}/`,
+    lastModified: lastModified,
+  }));
+
+  return [...staticAndProductEntries, ...serviceEntries];
 }

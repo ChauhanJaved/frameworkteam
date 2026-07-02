@@ -14,9 +14,9 @@ export enum HeaderNavItems {
   Contact = "contact",
 }
 export const heroTitle: string =
-  "We offer cutting-edge solutions to grow your business";
+  "We Design & Build Scalable Custom Software for Growth-Minded Businesses";
 export const heroDesc: string =
-  "We are a team of skilled professionals dedicated to developing high-performance Web Apps and Desktop Apps, packed with powerful features to streamline your workflow, enhance productivity, and accelerate business growth.";
+  "FrameworkTeam Softwares is a premium software engineering agency. We build fast, secure, and intuitive web platforms, custom dashboards, internal tools, and SaaS products that streamline operations and help businesses scale with confidence.";
 export const headerNavItems: string[] = [
   HeaderNavItems.Home,
   HeaderNavItems.Services,
@@ -27,13 +27,23 @@ export function hrefValue(item: string): string {
   return `/#${item}`;
 }
 export const indexMetadata: Metadata = {
-  title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
+  title: `${companyName} | Custom Software & Web Application Development Agency`,
   keywords: [
-    "Web app development",
-    "Windows app development",
+    "custom software development",
+    "web application development",
+    "enterprise software development",
+    "SaaS development agency",
+    "custom CRM developers",
+    "startup MVP development",
+    "business software solutions",
+    "digital transformation agency",
+    "full-stack software company",
+    "custom dashboard development",
+    "web app development",
+    "Custom web applications",
+    "Full-stack web development",
+    "SaaS development",
     "Software development company",
-    "Custom applications",
-    "Desktop app development",
     `${companyName}`,
   ],
   description: `${heroTitle}. ${heroDesc}`,
@@ -45,14 +55,14 @@ export const indexMetadata: Metadata = {
   ],
   creator: companyName,
   publisher: companyName,
-  category: "Software Development",
+  category: "Web Application Development",
   metadataBase: new URL(`${websiteURL}/`),
 
   alternates: {
     canonical: `${websiteURL}/`,
   },
   openGraph: {
-    title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
+    title: `${companyName} | Custom Software & Web Application Development Agency`,
     description: `${heroTitle}. ${heroDesc}`,
     url: `${websiteURL}/`,
     siteName: `${companyName} - India`,
@@ -69,7 +79,7 @@ export const indexMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${companyName} - India | Web Apps Development | Windows Apps Development`,
+    title: `${companyName} | Custom Software & Web Application Development Agency`,
     description: `${heroTitle}. ${heroDesc}`,
     images: [
       "https://res.cloudinary.com/dgq2mp4fs/image/upload/v1721890438/frameworkteam/hero-img.png",

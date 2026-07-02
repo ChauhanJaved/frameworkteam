@@ -38,11 +38,11 @@ export default function Hero() {
         {/* BOX-----2 */}
         <div className="flex flex-col bg-transparent pb-7 pt-5 md:w-1/2 md:items-start md:pb-0 md:pt-0">
           {/* Hero Title */}
-          <h2
+          <h1
             className={`${nunito.className} bg-transparent text-3xl font-bold text-blue-dark-imperial dark:text-foreground md:text-4xl lg:text-5xl`}
           >
             {heroTitle}
-          </h2>
+          </h1>
           {/* Hero description */}
           <p className="mt-1 bg-transparent text-base lg:text-lg">{heroDesc}</p>
           <Link
