@@ -14,9 +14,9 @@ export enum HeaderNavItems {
   Contact = "contact",
 }
 export const heroTitle: string =
-  "We Design & Build Scalable Custom Software for Growth-Minded Businesses";
+  "We Design & Build Scalable Web Applications That Help Your Business Grow";
 export const heroDesc: string =
-  "FrameworkTeam Softwares is a premium software engineering agency. We build fast, secure, and intuitive web platforms, custom dashboards, internal tools, and SaaS products that streamline operations and help businesses scale with confidence.";
+  "FrameworkTeam Softwares is a web application development agency that creates fast, secure, and scalable digital products. From SaaS platforms and custom dashboards to client portals and business applications, we build solutions that streamline operations, improve user experiences, and support long-term growth.";
 export const headerNavItems: string[] = [
   HeaderNavItems.Home,
   HeaderNavItems.Services,
@@ -27,23 +27,15 @@ export function hrefValue(item: string): string {
   return `/#${item}`;
 }
 export const indexMetadata: Metadata = {
-  title: `${companyName} | Custom Software & Web Application Development Agency`,
+  title: `${companyName} | Premium Web Development & Web Application Agency`,
   keywords: [
-    "custom software development",
+    "web development agency",
     "web application development",
-    "enterprise software development",
-    "SaaS development agency",
-    "custom CRM developers",
-    "startup MVP development",
-    "business software solutions",
-    "digital transformation agency",
-    "full-stack software company",
+    "SaaS web development",
+    "custom web app developers",
+    "full-stack web development",
     "custom dashboard development",
-    "web app development",
-    "Custom web applications",
-    "Full-stack web development",
-    "SaaS development",
-    "Software development company",
+    "modern web applications",
     `${companyName}`,
   ],
   description: `${heroTitle}. ${heroDesc}`,
@@ -62,7 +54,7 @@ export const indexMetadata: Metadata = {
     canonical: `${websiteURL}/`,
   },
   openGraph: {
-    title: `${companyName} | Custom Software & Web Application Development Agency`,
+    title: `${companyName} | Premium Web Development & Web Application Agency`,
     description: `${heroTitle}. ${heroDesc}`,
     url: `${websiteURL}/`,
     siteName: `${companyName} - India`,
@@ -79,7 +71,7 @@ export const indexMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${companyName} | Custom Software & Web Application Development Agency`,
+    title: `${companyName} | Premium Web Development & Web Application Agency`,
     description: `${heroTitle}. ${heroDesc}`,
     images: [
       "https://res.cloudinary.com/dgq2mp4fs/image/upload/v1721890438/frameworkteam/hero-img.png",
