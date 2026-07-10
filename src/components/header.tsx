@@ -106,7 +106,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                 </li>
               ))}
             </ul>
-            <Menubar>
+            <Menubar className="border-none bg-transparent shadow-none p-0">
               {/* Theam toggle---------------------- */}
               <MenubarMenu>
                 {mounted ? (
@@ -121,7 +121,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                   </MenubarTrigger>
                 )}
 
-                <MenubarContent>
+                <MenubarContent className={pageOnTop ? "bg-popover/80 backdrop-blur-md" : ""}>
                   <MenubarRadioGroup value={theme}>
                     <MenubarRadioItem
                       onClick={() => setTheme("light")}
@@ -149,7 +149,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                 <MenubarTrigger className="md:hidden" aria-label="Open menu">
                   <EllipsisVertical />
                 </MenubarTrigger>
-                <MenubarContent>
+                <MenubarContent className={pageOnTop ? "bg-popover/80 backdrop-blur-md" : ""}>
                   {headerNavItems.map((item) => (
                     <Link
                       key={item}
