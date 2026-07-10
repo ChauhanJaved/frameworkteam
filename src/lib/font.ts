@@ -5,4 +5,7 @@ export const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 export const raleway = Raleway({ subsets: ["latin"] });
-export const poppins = Poppins({ subsets: ["latin"], weight: "600" });
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+});
