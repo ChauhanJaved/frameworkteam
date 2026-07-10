@@ -1,6 +1,7 @@
 // Vendor Imports
 import Link from "next/link";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import {
   CircleCheck,
   Download,
@@ -112,15 +113,7 @@ export default async function Page({ params }: Props) {
   const serviceItem = serviceItems.find((item) => item.id === slug);
 
   if (!portfolioItem && !serviceItem) {
-    return (
-      <div className="container mx-auto px-5 py-32 text-center">
-        <h1 className="text-3xl font-bold">Page Not Found</h1>
-        <p className="mt-4">The requested page does not exist.</p>
-        <Link href={`/#${HeaderNavItems.Home}`} className="mt-6 inline-block text-primary underline">
-          Back to Home
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   // ----------------------------------------------------
