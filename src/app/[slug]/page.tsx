@@ -328,10 +328,8 @@ export default async function Page({ params }: Props) {
                 })()}
               </div>
               <SectionHeader
-                caption="Our Service"
-                desc={serviceItem.title}
+                caption={serviceItem.title}
               />
-              <h1 className="sr-only">{serviceItem.title}</h1>
               <p className="mt-6 text-xl text-muted-foreground max-w-3xl leading-relaxed">
                 {serviceItem.shortDesc}
               </p>
