@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id={HeaderNavItems.Home}
-      className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden py-20 md:min-h-screen"
+      className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden pt-32 pb-20 md:min-h-screen md:py-20"
     >
       {/* Premium backdrop grid & glows */}
       <div className="absolute inset-0 -z-10 bg-background">
