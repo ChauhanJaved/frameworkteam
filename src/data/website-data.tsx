@@ -10,7 +10,7 @@ export const copyrightYear: string = new Date().getFullYear().toString();
 export enum HeaderNavItems {
   Home = "home",
   Services = "services",
-  Portfolio = "portfolio",
+  Portfolio = "products",
   Contact = "contact",
 }
 export const heroTitle: string =

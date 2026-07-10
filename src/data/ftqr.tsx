@@ -34,7 +34,7 @@ export const FTQR: portfolioItem = {
       </strong>
 
       <p className="mt-2">
-        FTQR is a next-generation online tool that lets you design and download customized QR codes for any purpose. Whether you need a quick scan link for your personal portfolio, a table-top menu for a restaurant, a WiFi connector card, an event invitation, or an instant UPI payment link for a retail checkout, FTQR offers high-performance dynamic customization without requiring a subscription.
+        FTQR is a next-generation online tool that lets you design and download customized QR codes for any purpose. Whether you need a quick scan link for your personal website or products, a table-top menu for a restaurant, a WiFi connector card, an event invitation, or an instant UPI payment link for a retail checkout, FTQR offers high-performance dynamic customization without requiring a subscription.
       </p>
 
       <p className="mt-2">

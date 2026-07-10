@@ -14,7 +14,7 @@ export default async function Home() {
     <main id="main">
       <Hero />
       <Services />
-      <Portfolio galleryID="portfolio" />
+      <Portfolio galleryID="products" />
       <Contact />
     </main>
   );

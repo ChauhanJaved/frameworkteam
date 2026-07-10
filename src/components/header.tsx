@@ -49,6 +49,9 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
   }, [defaultActiveSection, setActiveSection]);
 
   function getManuItem(item: string) {
+    if (item === HeaderNavItems.Portfolio) {
+      return "Products";
+    }
     return capitalizeWords(item);
   }
   function getCurrentTheme() {

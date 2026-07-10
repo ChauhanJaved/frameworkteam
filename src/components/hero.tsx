@@ -5,7 +5,7 @@ import Link from "next/link";
 //Internal imports
 import { Button } from "@/components/ui/button";
 import { HeaderNavItems, heroDesc, heroTitle } from "@/data/website-data";
-import { ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { poppins } from "@/lib/font";
 import { useActiveSection } from "@/context/active-section-context";
 
@@ -80,8 +80,7 @@ export default function Hero() {
               variant="outline"
               className="w-full border-2 px-8 py-6 text-base font-semibold transition-all hover:scale-105 duration-200 sm:w-auto dark:hover:bg-accent"
             >
-              View Portfolio
-              <Briefcase className="ml-2 h-5 w-5 text-muted-foreground" />
+              View Products
             </Button>
           </Link>
         </div>

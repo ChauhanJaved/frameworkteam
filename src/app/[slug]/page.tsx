@@ -216,10 +216,7 @@ export default async function Page({ params }: Props) {
             {portfolioItem ? (
               <BreadcrumbItem>
                 <BreadcrumbNextLink
-                  linkName={
-                    HeaderNavItems.Portfolio[0].toUpperCase() +
-                    HeaderNavItems.Portfolio.slice(1)
-                  }
+                  linkName="Products"
                   hrefActiveSection={`/#${HeaderNavItems.Portfolio}`}
                   headerActiveSection={HeaderNavItems.Portfolio}
                 />

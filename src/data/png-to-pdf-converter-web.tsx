@@ -62,7 +62,7 @@ export const PNGtoPDFConverterWeb: portfolioItem = {
       </p>
       <strong className="mt-10">Professional Results in Seconds</strong>
       <p className="mt-2">
-        Whether you&apos;re creating digital portfolios, presentation handouts,
+        Whether you&apos;re creating digital product showcases, presentation handouts,
         or reference documents, our tool provides high-quality output with
         minimal effort—no software installation or technical skills required.
       </p>

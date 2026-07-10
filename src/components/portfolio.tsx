@@ -1,8 +1,9 @@
 "use client";
 //External imports
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { ArrowRight } from "lucide-react";
+
 //Internal imports
 import SectionHeader from "@/components/section-header";
 import { Categories, categoryList, HeaderNavItems } from "@/data/website-data";
@@ -24,14 +25,15 @@ export default function Portfolio(props: { galleryID: string }) {
   return (
     <section
       id={HeaderNavItems.Portfolio}
-      className={`container scroll-m-20 px-5 pt-10 text-lg lg:px-10 lg:pt-20 xl:max-w-screen-xl`}
+      className="container scroll-m-20 px-5 pt-10 lg:px-10 lg:pt-20 xl:max-w-screen-xl mx-auto"
     >
       <SectionHeader
-        caption="portfolio"
+        caption="products"
         desc="Showcasing Innovation | Expertise in Web Apps & Windows Apps | Proven Success in Digital Solutions"
         element="h2"
       />
-      {/* ===== Catagory filter ===== */}
+
+      {/* ===== Category filter ===== */}
       <ul
         className={`${poppins.className} mt-10 flex flex-wrap items-center justify-center gap-3`}
       >
@@ -46,35 +48,47 @@ export default function Portfolio(props: { galleryID: string }) {
           </li>
         ))}
       </ul>
-      {/* ===== End Catagory filter ===== */}
-      <ul className="mt-5 flex flex-wrap items-center text-center">
+      {/* ===== End Category filter ===== */}
+
+      {/* Products Cards Grid */}
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredItems.map((item, index) => {
+          const displayCategory = item.categories.find((c) => c !== Categories.All) || Categories.WebApp;
+
           return (
-            // ===== Portfolio Item =====
-            <li
+            <Link
+              href={item.pageLink}
               key={index}
-              className="flex w-full flex-col items-center justify-center p-4 sm:w-1/2 md:w-1/3 lg:w-1/4"
+              className="group block h-full focus:outline-none"
             >
-              <Link href={item.pageLink}>
-                <div className="flex w-[200px] flex-col items-center justify-center rounded border py-3 shadow-md hover:shadow-lg active:shadow-lg">
-                  <div className="relative mt-3 flex h-[150px] w-[150px] items-center justify-center overflow-hidden rounded-md bg-secondary/70">
-                    <Image
-                      src={item.src}
-                      alt={`${item.title}`}
-                      fill
-                      className={`absolute inset-0 h-full w-full object-contain p-3`}
-                      sizes="(max-width: 150px) 100vw, 150px"
-                    />
+              <div className="flex h-full flex-col justify-between rounded-2xl border border-t-2 border-t-primary/25 bg-card/40 p-6 md:p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-primary/45 hover:border-t-primary hover:bg-card">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    {/* Category Tag */}
+                    <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">
+                      {displayCategory}
+                    </span>
                   </div>
-                  <p className="mt-3 text-xs">{item.categories[1]}</p>
-                  <p className="mt-2 text-sm font-bold">{item.title}</p>
+                  {/* Product Title */}
+                  <h3 className="text-lg font-bold group-hover:text-primary transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  {/* Product Subtitle */}
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    {item.subtitle}
+                  </p>
                 </div>
-              </Link>
-            </li>
-            // ===== End Portfolio Item =====
+                
+                {/* Explore Product Interactive Link */}
+                <div className="mt-6 flex items-center text-xs font-semibold text-primary/90 group-hover:text-primary transition-colors">
+                  <span>Explore Product</span>
+                  <ArrowRight className="ml-1 size-3.5 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
           );
         })}
-      </ul>
+      </div>
     </section>
   );
 }
