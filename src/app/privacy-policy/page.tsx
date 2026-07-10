@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <>
-      <div className="px-5 pt-24">
+      <div className="container mx-auto px-5 pt-24 xl:max-w-screen-xl">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>

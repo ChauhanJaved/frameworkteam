@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <>
-      <div className="px-5 pt-24">
+      <div className="container mx-auto px-5 pt-24 xl:max-w-screen-xl">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -47,7 +47,7 @@ export default function page() {
         </Breadcrumb>
       </div>
       <main id="main" className="text-lg">
-        <div className="container mx-auto flex flex-col justify-center px-3 py-10 xl:max-w-screen-xl">
+        <div className="container mx-auto flex flex-col justify-center px-5 py-10 xl:max-w-screen-xl">
           <SectionHeader caption={pageName} />
           <p className="mt-10">
             By using the {companyName}&#39;s websites, you agree to these terms

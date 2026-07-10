@@ -197,7 +197,7 @@ export default async function Page({ params }: Props) {
       )}
 
       {/* Unified Breadcrumbs */}
-      <div className="px-5 pt-24 max-w-screen-xl mx-auto">
+      <div className="container mx-auto px-5 pt-24 xl:max-w-screen-xl">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
