@@ -108,6 +108,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${websiteURL}/terms-of-use/`,
       lastModified: lastModified,
     },
+    {
+      url: `${websiteURL}/mvp/`,
+      lastModified: lastModified,
+    },
   ];
 
   // Dynamically map over all service items to register their sitemap URLs

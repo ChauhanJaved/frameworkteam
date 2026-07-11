@@ -42,6 +42,15 @@ export default function Footer(props: PropsFooter) {
           >
             <Link href="/privacy-policy/">Privacy Policy</Link>
           </Button>
+          <span className="mx-2">|</span>
+          <Button
+            variant={"link"}
+            className="h-auto px-0 py-0"
+            aria-label="Go to MVP planning blueprint offer"
+            asChild
+          >
+            <Link href="/mvp/">MVP Offer</Link>
+          </Button>
         </div>
       </div>
     </footer>
