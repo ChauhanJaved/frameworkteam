@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 import { websiteURL, companyName } from "@/data/website-data";
 
 export interface FAQItem {
@@ -257,6 +258,9 @@ export const serviceItems: ServiceItem[] = [
           We avoid over-engineering while ensuring that the base code is clean and scalable. By leveraging frameworks like 
           Next.js, Tailwind CSS, and Supabase, we give you a launchpad that is ready to receive feedback and scale seamlessly 
           upon finding product-market fit.
+        </p>
+        <p className="mt-4 pt-4 border-t border-border/50 text-sm">
+          Not ready to write code yet? Get a structured plan first! Try our <Link href="/mvp" className="text-primary font-semibold hover:underline">MVP Planning &amp; Architectural Blueprint</Link> service to design your database schema, wireframes, and developer prompts before coding.
         </p>
       </div>
     ),

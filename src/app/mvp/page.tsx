@@ -34,7 +34,6 @@ export default function MVPMarketingPage() {
   
   // State for AI prompt generator
   const [appIdea, setAppIdea] = useState("");
-  const [selectedStack, setSelectedStack] = useState("nextjs-supabase-stripe");
   const [isCopiedPrompt, setIsCopiedPrompt] = useState(false);
 
   // State for Form submission
@@ -51,9 +50,7 @@ export default function MVPMarketingPage() {
   // Master Prompt Template Generator
   const generateMasterPrompt = () => {
     const techStackDescription = 
-      selectedStack === "nextjs-supabase-stripe"
-        ? "Frontend: React/Next.js, Backend Database & Auth: Supabase, Payments/Subscriptions: Stripe."
-        : "Frontend: React/Next.js, Backend Database & Auth: Supabase, Payments/Subscriptions: FastSpring.";
+      "Frontend: React/Next.js, Backend Database & Auth: Supabase, Payments/Subscriptions: Stripe.";
 
     const ideaPart = appIdea.trim() 
       ? `Here is my application idea:\n"${appIdea.trim()}"` 
@@ -171,7 +168,7 @@ Keep your response extremely organized, utilizing clear headings, bullet points,
 === NEW MVP BLUEPRINT REQUEST ($199 OFFER) ===
 Client Email: ${clientEmail}
 Project Name: ${appName || "Unnamed Project"}
-Primary Tech Stack Choice: ${selectedStack === "nextjs-supabase-stripe" ? "Next.js + Supabase + Stripe" : "Next.js + Supabase + FastSpring"}
+Primary Tech Stack Choice: Next.js + Supabase + Stripe
 
 --- AI GENERATED APP SPECIFICATION ---
 ${aiSpecification}
@@ -294,7 +291,7 @@ ${aiSpecification}
               </span>
               <div className="h-4 w-px bg-border hidden sm:block"></div>
               <span className="flex items-center gap-2">
-                <CreditCard className="size-5 text-purple-500" /> Stripe & FastSpring
+                <CreditCard className="size-5 text-purple-500" /> Stripe Payments
               </span>
             </div>
           </header>
@@ -313,11 +310,11 @@ ${aiSpecification}
                   <div className="flex-shrink-0 size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
                     1
                   </div>
-                  <h2 className="text-xl font-bold">Customize Your AI Prompt</h2>
+                  <h2 className="text-xl font-bold">Step 1: Describe Your App</h2>
                 </div>
                 
                 <p className="text-muted-foreground text-sm mb-6 leading-normal">
-                  Describe your application idea below and select your preferred payment gateway. We will automatically inject these into a professional architect prompt.
+                  Write a brief description of the product you want to build. We will automatically inject a standard Next.js, Supabase, and Stripe integration blueprint setup into the prompt.
                 </p>
 
                 <div className="space-y-4">
@@ -331,92 +328,92 @@ ${aiSpecification}
                       value={appIdea}
                       onChange={(e) => setAppIdea(e.target.value)}
                       placeholder="e.g., A client booking system for freelance photographers with calendar integrations and deposit payments..."
-                      rows={3}
+                      rows={4}
                       className="flex w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
                     />
-                  </div>
-
-                  {/* Tech Stack Options */}
-                  <div className="space-y-2">
-                    <span className="text-sm font-semibold text-foreground block">
-                      Preferred Billing Gateway:
-                    </span>
-                    <div className="grid grid-cols-2 gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedStack("nextjs-supabase-stripe")}
-                        className={`flex flex-col items-start p-3 rounded-lg border text-left transition-all ${
-                          selectedStack === "nextjs-supabase-stripe"
-                            ? "border-primary bg-primary/5 ring-1 ring-primary"
-                            : "border-border hover:bg-muted/50"
-                        }`}
-                      >
-                        <span className="text-sm font-bold flex items-center gap-1.5">
-                          Stripe Integration
-                        </span>
-                        <span className="text-xs text-muted-foreground mt-1">
-                          Standard SaaS billing
-                        </span>
-                      </button>
-                      
-                      <button
-                        type="button"
-                        onClick={() => setSelectedStack("nextjs-supabase-fastspring")}
-                        className={`flex flex-col items-start p-3 rounded-lg border text-left transition-all ${
-                          selectedStack === "nextjs-supabase-fastspring"
-                            ? "border-primary bg-primary/5 ring-1 ring-primary"
-                            : "border-border hover:bg-muted/50"
-                        }`}
-                      >
-                        <span className="text-sm font-bold flex items-center gap-1.5">
-                          FastSpring Integration
-                        </span>
-                        <span className="text-xs text-muted-foreground mt-1">
-                          Merchant of Record (global VAT)
-                        </span>
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Box 2: Generated Prompt Codeblock */}
-              <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 shadow-md relative group">
-                <div className="flex items-center justify-between mb-4 border-b border-neutral-800 pb-3">
-                  <div className="flex items-center gap-2">
-                    <Cpu className="size-4 text-primary" />
-                    <span className="text-xs font-mono text-neutral-400">master_prompt_template.txt</span>
+              <div className="bg-card/50 border rounded-2xl p-6 backdrop-blur-md shadow-sm relative overflow-hidden flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                    2
                   </div>
-                  
-                  <button
-                    type="button"
-                    onClick={handleCopyPrompt}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-800 hover:bg-neutral-700 px-2.5 py-1 rounded transition-colors"
-                  >
-                    {isCopiedPrompt ? (
-                      <>
-                        <Check className="size-3 text-emerald-500" />
-                        Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="size-3" />
-                        Copy Prompt
-                      </>
-                    )}
-                  </button>
+                  <h2 className="text-xl font-bold">Step 2: Copy Prompt &amp; Run in AI Chat</h2>
                 </div>
 
-                <div className="max-h-[300px] overflow-y-auto font-mono text-xs text-neutral-300 leading-relaxed whitespace-pre-wrap select-all pr-2">
-                  {masterPromptText}
+                <p className="text-muted-foreground text-sm mb-6 leading-normal">
+                  Copy the master prompt generated below, open your preferred AI assistant (like Claude or ChatGPT), and paste the prompt. The AI will analyze your idea and write a highly detailed, professional project specification for you.
+                </p>
+
+                {/* Prompt block with black background */}
+                <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-5 mb-6 relative group shadow-inner">
+                  <div className="flex items-center justify-between mb-4 border-b border-neutral-800 pb-3">
+                    <div className="flex items-center gap-2">
+                      <Cpu className="size-4 text-primary" />
+                      <span className="text-xs font-mono text-neutral-400">master_prompt_template.txt</span>
+                    </div>
+                    
+                    <button
+                      type="button"
+                      onClick={handleCopyPrompt}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-800 hover:bg-neutral-700 px-3 py-1.5 rounded-lg transition-colors"
+                    >
+                      {isCopiedPrompt ? (
+                        <>
+                          <Check className="size-3 text-emerald-500" />
+                          Copied!
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="size-3" />
+                          Copy Prompt
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  <div className="max-h-[220px] overflow-y-auto font-mono text-xs text-neutral-300 leading-relaxed whitespace-pre-wrap select-all pr-2">
+                    {masterPromptText}
+                  </div>
                 </div>
 
-                {/* Helpful Instruction Tip */}
-                <div className="mt-4 pt-3 border-t border-neutral-800 flex items-start gap-2.5 text-xs text-neutral-400">
-                  <Info className="size-4 text-primary shrink-0 mt-0.5" />
-                  <p>
-                    **Next Step:** Copy the prompt, open an AI model like <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-0.5">Claude <ExternalLink className="size-2.5" /></a> or <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-0.5">ChatGPT <ExternalLink className="size-2.5" /></a>, paste it, and run it. The AI will output structured specs.
-                  </p>
+                {/* Helpful Instruction Tip & Shortcuts */}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-2.5 text-xs text-muted-foreground">
+                    <Info className="size-4 text-primary shrink-0 mt-0.5" />
+                    <p>
+                      Click <strong>Copy Prompt</strong> above, open an AI chat assistant from the shortcuts below, paste it, run it, and copy the full response text.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5">
+                    <a
+                      href="https://claude.ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground hover:text-primary bg-background hover:bg-muted border border-border rounded-xl px-4 py-2 transition-all shadow-sm"
+                    >
+                      Claude AI <ExternalLink className="size-3 text-muted-foreground" />
+                    </a>
+                    <a
+                      href="https://chatgpt.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground hover:text-primary bg-background hover:bg-muted border border-border rounded-xl px-4 py-2 transition-all shadow-sm"
+                    >
+                      ChatGPT <ExternalLink className="size-3 text-muted-foreground" />
+                    </a>
+                    <a
+                      href="https://gemini.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground hover:text-primary bg-background hover:bg-muted border border-border rounded-xl px-4 py-2 transition-all shadow-sm"
+                    >
+                      Gemini <ExternalLink className="size-3 text-muted-foreground" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -426,9 +423,9 @@ ${aiSpecification}
               <div className="bg-card/70 border rounded-2xl p-6 md:p-8 backdrop-blur-md shadow-xl relative">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex-shrink-0 size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
-                    2
+                    3
                   </div>
-                  <h2 className="text-xl font-bold">Submit App Requirements</h2>
+                  <h2 className="text-xl font-bold">Step 3: Paste Specs &amp; Submit</h2>
                 </div>
 
                 {isSuccess ? (
@@ -574,7 +571,7 @@ ${aiSpecification}
                 </div>
                 <h3 className="font-bold text-lg mb-2">3. Payment Strategy</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Integration layout for Stripe subscriptions or FastSpring global sales, detailing customer portal flows and webhooks mappings.
+                  Integration layout for Stripe subscriptions, detailing customer portal flows, invoice webhooks, and billing cycle mappings.
                 </p>
               </div>
 
@@ -597,7 +594,7 @@ ${aiSpecification}
             <div className="flex flex-col gap-3 max-w-2xl text-center lg:text-left">
               <h2 className="text-2xl md:text-3xl font-extrabold">Build on the Best Foundation</h2>
               <p className="text-muted-foreground leading-relaxed">
-                By standardizing on **Next.js** for client-side speed, **Supabase** for database auto-syncing, and **Stripe/FastSpring** for monetization, we ensure your MVP isn't a throwaway prototype. It is built to grow into a fully scaled product.
+                By standardizing on **Next.js** for client-side speed, **Supabase** for database auto-syncing, and **Stripe** for monetization, we ensure your MVP isn't a throwaway prototype. It is built to grow into a fully scaled product.
               </p>
             </div>
             
@@ -631,7 +628,7 @@ ${aiSpecification}
                   For $199, you will receive a comprehensive design and tech architectural package: 
                   (1) Wireframe mapping of all core screens in your app, 
                   (2) A complete SQL schema database diagram designed for Supabase/PostgreSQL, 
-                  (3) Checkout and licensing design mappings for Stripe or FastSpring, and 
+                  (3) Checkout and licensing design mappings for Stripe, and 
                   (4) A detailed technical engineering prompt that you can feed into AI code generation engines (Cursor, Bolt.new, v0) to build the app code.
                 </p>
               </details>
