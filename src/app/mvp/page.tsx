@@ -350,7 +350,7 @@ ${aiSpecification}
 
                 {/* Prompt block with black background */}
                 <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-5 mb-6 relative group shadow-inner">
-                  <div className="flex items-center justify-between mb-4 border-b border-neutral-800 pb-3">
+                  <div className="flex flex-col items-start sm:flex-row sm:items-center justify-between gap-3 mb-4 border-b border-neutral-800 pb-3">
                     <div className="flex items-center gap-2">
                       <Cpu className="size-4 text-primary" />
                       <span className="text-xs font-mono text-neutral-400">master_prompt_template.txt</span>
