@@ -186,6 +186,7 @@ ${aiSpecification}
           subject: subject,
           message: emailBody,
           token: turnstileToken,
+          sourceApp: "MVP Planner",
         }),
       });
 
