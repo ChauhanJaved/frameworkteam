@@ -163,16 +163,20 @@ Keep your response extremely organized, utilizing clear headings, bullet points,
       }
 
       // Build structured email message body
-      const subject = `[LinkedIn MVP Request] ${appName || "New App idea"}`;
+      const subject = `LinkedIn Request: ${appName || "New App idea"}`;
       const emailBody = `
 === NEW MVP BLUEPRINT REQUEST ($199 OFFER) ===
 Client Email: ${clientEmail}
 Project Name: ${appName || "Unnamed Project"}
 Primary Tech Stack Choice: Next.js + Supabase + Stripe
 
---- AI GENERATED APP SPECIFICATION ---
-${aiSpecification}
+The full AI-generated specification has been attached to this email as a markdown file.
       `;
+
+      const attachmentFilename = `${(appName || "unnamed-project")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") || "project"}-specification.md`;
 
       // Call the Supabase Edge Function directly via fetch
       const response = await fetch(`${supabaseUrl}/functions/v1/send-support-email`, {
@@ -187,6 +191,8 @@ ${aiSpecification}
           message: emailBody,
           token: turnstileToken,
           sourceApp: "MVP Planner",
+          attachmentText: aiSpecification,
+          attachmentFilename: attachmentFilename,
         }),
       });
 
@@ -429,105 +435,108 @@ ${aiSpecification}
                   <h2 className="text-xl font-bold">Step 3: Paste Specs &amp; Submit</h2>
                 </div>
 
-                {isSuccess ? (
-                  <div className="text-center py-10 animate-fade-in">
-                    <div className="mx-auto w-12 h-12 bg-emerald-100 dark:bg-emerald-950/45 rounded-full flex items-center justify-center mb-4">
-                      <CheckCircle2 className="size-6 text-emerald-600 dark:text-emerald-400" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-2 text-foreground">Blueprint Submitted!</h3>
-                    <p className="text-sm text-muted-foreground mb-6 max-w-xs mx-auto">
-                      Thank you for submitting your app details. We have received your requirements and will contact you at your email address to kickstart the wireframe design!
-                    </p>
-                    <Button 
-                      onClick={() => setIsSuccess(false)}
-                      variant="outline"
-                      className="w-full text-sm"
-                    >
-                      Submit Another Idea
-                    </Button>
+                <div className={isSuccess ? "text-center py-10 animate-fade-in block" : "hidden"}>
+                  <div className="mx-auto w-12 h-12 bg-emerald-100 dark:bg-emerald-950/45 rounded-full flex items-center justify-center mb-4">
+                    <CheckCircle2 className="size-6 text-emerald-600 dark:text-emerald-400" />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    
-                    {/* User Email */}
-                    <div className="space-y-1.5">
-                      <label htmlFor="email" className="text-sm font-semibold flex items-center gap-1.5">
-                        <Mail className="size-3.5 text-muted-foreground" /> Your Email Address
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        required
-                        value={clientEmail}
-                        onChange={(e) => setClientEmail(e.target.value)}
-                        placeholder="you@example.com"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-0"
-                      />
-                    </div>
+                  <h3 className="text-lg font-bold mb-2 text-foreground">Blueprint Submitted!</h3>
+                  <p className="text-sm text-muted-foreground mb-6 max-w-xs mx-auto">
+                    Thank you for submitting your app details. We have received your requirements and will contact you at your email address to kickstart the wireframe design!
+                  </p>
+                  <Button 
+                    onClick={() => {
+                      setIsSuccess(false);
+                      if (typeof window !== "undefined" && (window as any).turnstile && widgetIdRef.current) {
+                        (window as any).turnstile.reset(widgetIdRef.current);
+                      }
+                    }}
+                    variant="outline"
+                    className="w-full text-sm"
+                  >
+                    Submit Another Idea
+                  </Button>
+                </div>
 
-                    {/* App Name */}
-                    <div className="space-y-1.5">
-                      <label htmlFor="app-name" className="text-sm font-semibold flex items-center gap-1.5">
-                        <FileText className="size-3.5 text-muted-foreground" /> App Name (Optional)
-                      </label>
-                      <input
-                        id="app-name"
-                        type="text"
-                        value={appName}
-                        onChange={(e) => setAppName(e.target.value)}
-                        placeholder="e.g., TrainerPulse SaaS"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                      />
-                    </div>
+                <form onSubmit={handleSubmit} className={isSuccess ? "hidden" : "space-y-4"}>
+                  
+                  {/* User Email */}
+                  <div className="space-y-1.5">
+                    <label htmlFor="email" className="text-sm font-semibold flex items-center gap-1.5">
+                      <Mail className="size-3.5 text-muted-foreground" /> Your Email Address
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={clientEmail}
+                      onChange={(e) => setClientEmail(e.target.value)}
+                      placeholder="you@example.com"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-0"
+                    />
+                  </div>
 
-                    {/* AI Paste Textarea */}
-                    <div className="space-y-1.5">
-                      <label htmlFor="ai-spec" className="text-sm font-semibold block">
-                        Paste the AI-Generated Output:
-                      </label>
-                      <textarea
-                        id="ai-spec"
-                        required
-                        value={aiSpecification}
-                        onChange={(e) => setAiSpecification(e.target.value)}
-                        placeholder="Paste the user journeys, features, and database requirements generated by ChatGPT or Claude..."
-                        rows={8}
-                        className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary font-mono text-xs"
-                      />
-                    </div>
+                  {/* App Name */}
+                  <div className="space-y-1.5">
+                    <label htmlFor="app-name" className="text-sm font-semibold flex items-center gap-1.5">
+                      <FileText className="size-3.5 text-muted-foreground" /> App Name (Optional)
+                    </label>
+                    <input
+                      id="app-name"
+                      type="text"
+                      value={appName}
+                      onChange={(e) => setAppName(e.target.value)}
+                      placeholder="e.g., TrainerPulse SaaS"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    />
+                  </div>
 
-                    {/* Turnstile Verification */}
-                    <div className="flex justify-center py-2">
-                      <div ref={turnstileContainerRef} id="turnstile-container" className="cf-turnstile"></div>
-                    </div>
+                  {/* AI Paste Textarea */}
+                  <div className="space-y-1.5">
+                    <label htmlFor="ai-spec" className="text-sm font-semibold block">
+                      Paste the AI-Generated Output:
+                    </label>
+                    <textarea
+                      id="ai-spec"
+                      required
+                      value={aiSpecification}
+                      onChange={(e) => setAiSpecification(e.target.value)}
+                      placeholder="Paste the user journeys, features, and database requirements generated by ChatGPT or Claude..."
+                      rows={8}
+                      className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary font-mono text-xs"
+                    />
+                  </div>
 
-                    {/* Submit Button */}
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-5 text-sm font-semibold"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="size-4 animate-spin mr-2" />
-                          Sending Blueprint...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="size-4 mr-2" />
-                          Submit Blueprint
-                        </>
-                      )}
-                    </Button>
+                  {/* Turnstile Verification */}
+                  <div className="flex justify-center py-2">
+                    <div ref={turnstileContainerRef} id="turnstile-container" className="cf-turnstile"></div>
+                  </div>
 
-                    <p className="text-center text-xs text-muted-foreground mt-3">
-                      Problems submitting? Email details directly to{" "}
-                      <a href={`mailto:${email}`} className="text-primary hover:underline font-semibold">
-                        {email}
-                      </a>
-                    </p>
-                  </form>
-                )}
+                  {/* Submit Button */}
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-5 text-sm font-semibold"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="size-4 animate-spin mr-2" />
+                        Sending Blueprint...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="size-4 mr-2" />
+                        Submit Blueprint
+                      </>
+                    )}
+                  </Button>
+
+                  <p className="text-center text-xs text-muted-foreground mt-3">
+                    Problems submitting? Email details directly to{" "}
+                    <a href={`mailto:${email}`} className="text-primary hover:underline font-semibold">
+                      {email}
+                    </a>
+                  </p>
+                </form>
               </div>
             </div>
           </section>

@@ -52,7 +52,7 @@ Deno.serve(async (req) => {
       throw new Error('Invalid JSON request body');
     }
 
-    const { replyToEmail, subject, message, token, sourceApp } = body;
+    const { replyToEmail, subject, message, token, sourceApp, attachmentText, attachmentFilename } = body;
 
     if (!replyToEmail || !subject || !message || !token) {
       throw new Error('Missing required fields');
@@ -63,6 +63,8 @@ Deno.serve(async (req) => {
     const trimmedSubject = subject.trim();
     const trimmedMessage = message.trim();
     const trimmedSourceApp = sourceApp ? String(sourceApp).trim() : '';
+    const trimmedAttachmentText = attachmentText ? String(attachmentText).trim() : '';
+    const trimmedAttachmentFilename = attachmentFilename ? String(attachmentFilename).trim() : 'specification.md';
 
     // Email format validation (RFC-compliant regex)
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -82,6 +84,10 @@ Deno.serve(async (req) => {
     }
     if (trimmedMessage.length > 25000) {
       throw new Error('Message is too long (maximum 25,000 characters)');
+    }
+
+    if (trimmedAttachmentText && trimmedAttachmentText.length > 100000) {
+      throw new Error('Attachment content is too long (maximum 100,000 characters)');
     }
 
     // Rate Limiting & IP Tracking
@@ -147,8 +153,32 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Construct customizable sender name based on the client parameter
-    const fromName = trimmedSourceApp ? `${trimmedSourceApp} Support` : 'FrameworkTeam Support';
+    // Construct customizable sender name to display client's email in the inbox list view
+    const displayFrom = `"${trimmedReplyTo}" <support@frameworkteam.com>`;
+
+    const emailPayload: Record<string, any> = {
+      from: displayFrom,
+      reply_to: trimmedReplyTo,
+      to: ['support@frameworkteam.com'],
+      subject: `[${trimmedSourceApp || 'Support'}] ${trimmedSubject}`,
+      text: `From: ${trimmedReplyTo}\n\n${trimmedMessage}`,
+    };
+
+    if (trimmedAttachmentText) {
+      const bytes = new TextEncoder().encode(trimmedAttachmentText);
+      let binary = "";
+      for (let i = 0; i < bytes.byteLength; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+      const base64Content = btoa(binary);
+
+      emailPayload.attachments = [
+        {
+          content: base64Content,
+          filename: trimmedAttachmentFilename,
+        }
+      ];
+    }
 
     const emailRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -156,13 +186,7 @@ Deno.serve(async (req) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${resendApiKey}`,
       },
-      body: JSON.stringify({
-        from: `${fromName} <support@frameworkteam.com>`, // Verified domain
-        reply_to: trimmedReplyTo,
-        to: ['support@frameworkteam.com'],
-        subject: `[${trimmedSourceApp || 'Support'}] ${trimmedSubject}`,
-        text: `From: ${trimmedReplyTo}\n\n${trimmedMessage}`,
-      }),
+      body: JSON.stringify(emailPayload),
     });
 
     if (!emailRes.ok) {
