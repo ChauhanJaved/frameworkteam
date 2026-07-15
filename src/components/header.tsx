@@ -5,6 +5,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import { EllipsisVertical, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 
 //Internal imports
 import {
@@ -27,10 +28,13 @@ interface HeaderProps {
   defaultActiveSection?: string;
 }
 export default function Header({ defaultActiveSection = "" }: HeaderProps) {
+  const pathname = usePathname();
   const { activeSection, setActiveSection } = useActiveSection();
   const { pageOnTop, setPageOnTop } = usePageOnTop();
   const { setTheme, systemTheme, theme } = useTheme();
   const { toast } = useToast();
+
+  const isTransparent = pageOnTop && pathname === "/";
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -45,6 +49,8 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
       }
     } else if (pathName === `/`) {
       setActiveSection(HeaderNavItems.Home);
+    } else if (pathName === `/contact` || pathName === `/contact/`) {
+      setActiveSection(HeaderNavItems.Contact);
     }
   }, [defaultActiveSection, setActiveSection]);
 
@@ -66,7 +72,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
     <Fragment>
       <header>
         <nav
-          className={`${pageOnTop ? "bg-transparent" : "border-b bg-background shadow-sm"} fixed left-0 right-0 top-0 z-40 flex h-20 w-full items-center justify-between px-3`}
+          className={`${isTransparent ? "bg-transparent" : "border-b bg-background shadow-sm"} fixed left-0 right-0 top-0 z-40 flex h-20 w-full items-center justify-between px-3`}
           aria-label="Main navigation"
         >
           {/* Box-1 for company name/logo */}
@@ -121,7 +127,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                   </MenubarTrigger>
                 )}
 
-                <MenubarContent className={pageOnTop ? "bg-popover/80 backdrop-blur-md" : ""}>
+                <MenubarContent className={isTransparent ? "bg-popover/80 backdrop-blur-md" : ""}>
                   <MenubarRadioGroup value={theme}>
                     <MenubarRadioItem
                       onClick={() => setTheme("light")}
@@ -149,7 +155,7 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
                 <MenubarTrigger className="md:hidden" aria-label="Open menu">
                   <EllipsisVertical />
                 </MenubarTrigger>
-                <MenubarContent className={pageOnTop ? "bg-popover/80 backdrop-blur-md" : ""}>
+                <MenubarContent className={isTransparent ? "bg-popover/80 backdrop-blur-md" : ""}>
                   {headerNavItems.map((item) => (
                     <Link
                       key={item}

@@ -28,6 +28,9 @@ export default function Footer(props: PropsFooter) {
             <Link href="/#products" className="text-muted-foreground hover:text-primary transition-colors">
               Products & Apps
             </Link>
+            <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+              Contact
+            </Link>
             <Link href="/terms-of-use/" className="text-muted-foreground hover:text-primary transition-colors">
               Terms of Use
             </Link>

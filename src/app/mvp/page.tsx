@@ -3,19 +3,19 @@
 // External Imports
 import React, { useState, useEffect, useRef } from "react";
 import Script from "next/script";
-import { 
-  Sparkles, 
-  Copy, 
-  Check, 
-  ExternalLink, 
-  ArrowRight, 
-  Send, 
-  Cpu, 
-  Database, 
-  CreditCard, 
-  Layers, 
-  Info, 
-  CheckCircle2, 
+import {
+  Sparkles,
+  Copy,
+  Check,
+  ExternalLink,
+  ArrowRight,
+  Send,
+  Cpu,
+  Database,
+  CreditCard,
+  Layers,
+  Info,
+  CheckCircle2,
   Loader2,
   Lock,
   Zap,
@@ -31,7 +31,7 @@ import { email } from "@/data/website-data";
 
 export default function MVPMarketingPage() {
   const { toast } = useToast();
-  
+
   // State for AI prompt generator
   const [appIdea, setAppIdea] = useState("");
   const [isCopiedPrompt, setIsCopiedPrompt] = useState(false);
@@ -49,11 +49,11 @@ export default function MVPMarketingPage() {
 
   // Master Prompt Template Generator
   const generateMasterPrompt = () => {
-    const techStackDescription = 
+    const techStackDescription =
       "Frontend: React/Next.js, Backend Database & Auth: Supabase, Payments/Subscriptions: Stripe.";
 
-    const ideaPart = appIdea.trim() 
-      ? `Here is my application idea:\n"${appIdea.trim()}"` 
+    const ideaPart = appIdea.trim()
+      ? `Here is my application idea:\n"${appIdea.trim()}"`
       : "Here is my application idea:\n[Describe your app here. e.g., 'A SaaS platform for independent personal trainers to schedule clients, track workouts, and process recurring monthly memberships.']";
 
     return `Act as a Senior Product Manager and Full-Stack System Architect. I want to build a Minimum Viable Product (MVP) based on the following stack:
@@ -92,7 +92,7 @@ Keep your response extremely organized, utilizing clear headings, bullet points,
       if (typeof window !== "undefined" && (window as any).turnstile && turnstileContainerRef.current) {
         // Clear potential duplicate containers
         turnstileContainerRef.current.innerHTML = "";
-        
+
         try {
           const id = (window as any).turnstile.render(turnstileContainerRef.current, {
             sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAADC8NlV7V9DNxkYy",
@@ -163,7 +163,7 @@ Keep your response extremely organized, utilizing clear headings, bullet points,
       }
 
       // Build structured email message body
-      const subject = `LinkedIn Request: ${appName || "New App idea"}`;
+      const subject = `MVP Plan for $199 Request: ${appName || "New App idea"}`;
       const emailBody = `
 === NEW MVP BLUEPRINT REQUEST ($199 OFFER) ===
 Client Email: ${clientEmail}
@@ -190,7 +190,7 @@ The full AI-generated specification has been attached to this email as a markdow
           subject: subject,
           message: emailBody,
           token: turnstileToken,
-          sourceApp: "MVP Planner",
+          sourceApp: "frameworkteam.com",
           attachmentText: aiSpecification,
           attachmentFilename: attachmentFilename,
         }),
@@ -207,7 +207,7 @@ The full AI-generated specification has been attached to this email as a markdow
       });
 
       setIsSuccess(true);
-      
+
       // Reset form fields
       setAppIdea("");
       setClientEmail("");
@@ -258,9 +258,9 @@ The full AI-generated specification has been attached to this email as a markdow
   return (
     <>
       {/* Cloudflare Turnstile Script */}
-      <Script 
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" 
-        strategy="afterInteractive" 
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        strategy="afterInteractive"
       />
 
       {/* JSON-LD Structured Data */}
@@ -271,18 +271,18 @@ The full AI-generated specification has been attached to this email as a markdow
 
       <main className="min-h-screen bg-gradient-to-b from-background via-background to-secondary/30 pt-28 pb-20">
         <div className="container mx-auto px-5 xl:max-w-screen-xl">
-          
+
           {/* Hero Section */}
           <header className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6 animate-pulse">
               <Sparkles className="size-3" />
               <span>Exclusive LinkedIn Offer</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-foreground via-primary to-primary/60 bg-clip-text text-transparent">
               Turn Your App Idea Into a Solid MVP Plan for $199
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
               We translate your vision into a development-ready package: a fully structured **User Journey**, **UI Wireframe designs**, a production-ready **Supabase database schema**, and an engineered **Tech Prompt** to kickstart your React/Next.js app.
             </p>
@@ -305,21 +305,21 @@ The full AI-generated specification has been attached to this email as a markdow
 
           {/* Interactive Steps Guide & Submission Form */}
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-20">
-            
+
             {/* Step Left Panel: Interactive Prompt Generator */}
             <div className="lg:col-span-7 flex flex-col gap-6">
-              
+
               {/* Box 1: Prompt Customizer */}
               <div className="bg-card/50 border rounded-2xl p-6 backdrop-blur-md shadow-sm relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
-                
+
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex-shrink-0 size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
                     1
                   </div>
                   <h2 className="text-xl font-bold">Step 1: Describe Your App</h2>
                 </div>
-                
+
                 <p className="text-muted-foreground text-sm mb-6 leading-normal">
                   Write a brief description of the product you want to build. We will automatically inject a standard Next.js, Supabase, and Stripe integration blueprint setup into the prompt.
                 </p>
@@ -362,7 +362,7 @@ The full AI-generated specification has been attached to this email as a markdow
                       <Cpu className="size-4 text-primary" />
                       <span className="text-xs font-mono text-neutral-400">master_prompt_template.txt</span>
                     </div>
-                    
+
                     <button
                       type="button"
                       onClick={handleCopyPrompt}
@@ -443,7 +443,7 @@ The full AI-generated specification has been attached to this email as a markdow
                   <p className="text-sm text-muted-foreground mb-6 max-w-xs mx-auto">
                     Thank you for submitting your app details. We have received your requirements and will contact you at your email address to kickstart the wireframe design!
                   </p>
-                  <Button 
+                  <Button
                     onClick={() => {
                       setIsSuccess(false);
                       if (typeof window !== "undefined" && (window as any).turnstile && widgetIdRef.current) {
@@ -458,7 +458,7 @@ The full AI-generated specification has been attached to this email as a markdow
                 </div>
 
                 <form onSubmit={handleSubmit} className={isSuccess ? "hidden" : "space-y-4"}>
-                  
+
                   {/* User Email */}
                   <div className="space-y-1.5">
                     <label htmlFor="email" className="text-sm font-semibold flex items-center gap-1.5">
@@ -551,7 +551,7 @@ The full AI-generated specification has been attached to this email as a markdow
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              
+
               {/* Deliverable 1 */}
               <div className="p-6 bg-card border rounded-2xl flex flex-col">
                 <div className="size-10 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
@@ -607,7 +607,7 @@ The full AI-generated specification has been attached to this email as a markdow
                 By standardizing on **Next.js** for client-side speed, **Supabase** for database auto-syncing, and **Stripe** for monetization, we ensure your MVP isn't a throwaway prototype. It is built to grow into a fully scaled product.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
               <div className="p-4 border rounded-xl bg-card text-center flex-1">
                 <span className="text-3xl font-bold text-primary">24h</span>
@@ -625,9 +625,9 @@ The full AI-generated specification has been attached to this email as a markdow
             <h2 className="text-2xl font-bold text-center mb-8 flex items-center justify-center gap-2">
               <HelpCircle className="size-6 text-primary" /> Frequently Asked Questions
             </h2>
-            
+
             <div className="border rounded-2xl bg-card/30 p-6 md:p-8 backdrop-blur-sm shadow-sm divide-y divide-border">
-              
+
               {/* FAQ 1 */}
               <details className="group py-5 first:pt-0 [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-base md:text-lg font-semibold text-foreground focus:outline-none focus:text-primary transition-colors">
@@ -635,10 +635,10 @@ The full AI-generated specification has been attached to this email as a markdow
                   <span className="text-primary font-bold text-xl group-open:rotate-45 transition-transform duration-200">+</span>
                 </summary>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  For $199, you will receive a comprehensive design and tech architectural package: 
-                  (1) Wireframe mapping of all core screens in your app, 
-                  (2) A complete SQL schema database diagram designed for Supabase/PostgreSQL, 
-                  (3) Checkout and licensing design mappings for Stripe, and 
+                  For $199, you will receive a comprehensive design and tech architectural package:
+                  (1) Wireframe mapping of all core screens in your app,
+                  (2) A complete SQL schema database diagram designed for Supabase/PostgreSQL,
+                  (3) Checkout and licensing design mappings for Stripe, and
                   (4) A detailed technical engineering prompt that you can feed into AI code generation engines (Cursor, Bolt.new, v0) to build the app code.
                 </p>
               </details>

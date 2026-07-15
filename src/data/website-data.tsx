@@ -24,6 +24,9 @@ export const headerNavItems: string[] = [
   HeaderNavItems.Contact,
 ];
 export function hrefValue(item: string): string {
+  if (item === HeaderNavItems.Contact) {
+    return "/contact";
+  }
   return `/#${item}`;
 }
 export const indexMetadata: Metadata = {

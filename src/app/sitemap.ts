@@ -112,6 +112,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${websiteURL}/mvp/`,
       lastModified: lastModified,
     },
+    {
+      url: `${websiteURL}/contact/`,
+      lastModified: lastModified,
+    },
   ];
 
   // Dynamically map over all service items to register their sitemap URLs
