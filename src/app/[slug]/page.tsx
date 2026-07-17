@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 
 // Internal Imports
-import { Categories, HeaderNavItems, websiteURL, companyName } from "@/data/website-data";
+import { Categories, HeaderNavItems, websiteURL, companyName, hrefValue } from "@/data/website-data";
 import { portfolioItems } from "@/data/portfolio-items";
 import { serviceItems } from "@/data/services-items";
 import SectionHeader from "@/components/section-header";
@@ -396,7 +396,7 @@ export default async function Page({ params }: Props) {
                   Get in touch with our experts to discuss how we can build custom web apps or automate internal tools for your business.
                 </p>
               </div>
-              <Link href={`/#${HeaderNavItems.Contact}`}>
+              <Link href={hrefValue(HeaderNavItems.Contact)}>
                 <Button size="lg" className="px-8 py-6 text-base group">
                   Work With Us
                   <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />

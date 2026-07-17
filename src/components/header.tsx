@@ -44,7 +44,9 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
     const pathName = window.location.pathname;
     if (hash) {
       const section = hash.substring(1); // Remove the "#" from the hash
-      if (headerNavItems.includes(section)) {
+      if (section === HeaderNavItems.Contact) {
+        window.location.replace("/contact");
+      } else if (headerNavItems.includes(section)) {
         setActiveSection(section);
       }
     } else if (pathName === `/`) {
