@@ -8,21 +8,6 @@ import {
   Slash,
   SquareArrowOutUpRight,
   ArrowRight,
-  Laptop,
-  ShoppingBag,
-  Layers,
-  LayoutDashboard,
-  Rocket,
-  Globe,
-  Settings,
-  Lock,
-  CreditCard,
-  Webhook,
-  Database,
-  Atom,
-  Gauge,
-  RefreshCw,
-  Brain,
   Plus,
   Minus
 } from "lucide-react";
@@ -44,24 +29,6 @@ import {
 import BreadcrumbNextLink from "@/components/breadcrumb-next-link";
 import ProductImageWebApp from "@/components/product-image-web-app";
 
-// Icon mapping dictionary for service details
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Laptop,
-  ShoppingBag,
-  Layers,
-  LayoutDashboard,
-  Rocket,
-  Globe,
-  Settings,
-  Lock,
-  CreditCard,
-  Webhook,
-  Database,
-  Atom,
-  Gauge,
-  RefreshCw,
-  Brain
-};
 
 export async function generateStaticParams() {
   const productPaths = portfolioItems.map((item) => ({ slug: item.id }));
@@ -321,12 +288,6 @@ export default async function Page({ params }: Props) {
           <article className="container mx-auto px-5 py-10 xl:max-w-screen-xl">
             {/* Header section */}
             <header className="flex flex-col items-center text-center">
-              <div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10 text-primary mb-6 ring-8 ring-primary/5">
-                {(() => {
-                  const IconComp = iconMap[serviceItem.iconName] || Laptop;
-                  return <IconComp className="size-12" />;
-                })()}
-              </div>
               <SectionHeader
                 caption={serviceItem.title}
               />
