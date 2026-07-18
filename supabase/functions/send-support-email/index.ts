@@ -41,6 +41,28 @@ Deno.serve(async (req) => {
     return new Response('ok', { headers: corsHeaders });
   }
 
+  if (req.method !== 'POST') {
+    return new Response(
+      JSON.stringify({ error: 'Method Not Allowed' }),
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 405,
+      }
+    );
+  }
+
+  // Limit payload size to prevent Denial of Service (OOM)
+  const contentLength = Number(req.headers.get('content-length') || 0);
+  if (contentLength > 100000) { // Limit to 100KB
+    return new Response(
+      JSON.stringify({ error: 'Payload too large' }),
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 413,
+      }
+    );
+  }
+
   try {
     const contentType = req.headers.get('content-type') || '';
     if (!contentType.includes('application/json')) {
@@ -52,7 +74,7 @@ Deno.serve(async (req) => {
       throw new Error('Invalid JSON request body');
     }
 
-    const { replyToEmail, subject, message, token, sourceApp, attachmentText, attachmentFilename } = body;
+    const { replyToEmail, subject, message, token, sourceApp } = body;
 
     if (!replyToEmail || !subject || !message || !token) {
       throw new Error('Missing required fields');
@@ -60,11 +82,10 @@ Deno.serve(async (req) => {
 
     // Trim and sanitize inputs to clean whitespace
     const trimmedReplyTo = replyToEmail.trim();
-    const trimmedSubject = subject.trim();
+    // Prevent header injection by removing newline characters from subject and sourceApp
+    const trimmedSubject = subject.trim().replace(/[\r\n]+/g, ' ');
     const trimmedMessage = message.trim();
-    const trimmedSourceApp = sourceApp ? String(sourceApp).trim() : '';
-    const trimmedAttachmentText = attachmentText ? String(attachmentText).trim() : '';
-    const trimmedAttachmentFilename = attachmentFilename ? String(attachmentFilename).trim() : 'specification.md';
+    const trimmedSourceApp = sourceApp ? String(sourceApp).trim().replace(/[\r\n]+/g, ' ') : '';
 
     // Email format validation (RFC-compliant regex)
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -84,10 +105,6 @@ Deno.serve(async (req) => {
     }
     if (trimmedMessage.length > 25000) {
       throw new Error('Message is too long (maximum 25,000 characters)');
-    }
-
-    if (trimmedAttachmentText && trimmedAttachmentText.length > 100000) {
-      throw new Error('Attachment content is too long (maximum 100,000 characters)');
     }
 
     // Rate Limiting & IP Tracking
@@ -153,8 +170,8 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Construct customizable sender name to display client's email in the inbox list view
-    const displayFrom = `"${trimmedReplyTo}" <support@frameworkteam.com>`;
+    // Construct a safe, authenticated Sender header to ensure high deliverability and avoid spam filters
+    const displayFrom = `"Contact Form" <support@frameworkteam.com>`;
 
     const emailPayload: Record<string, any> = {
       from: displayFrom,
@@ -163,22 +180,6 @@ Deno.serve(async (req) => {
       subject: `[${trimmedSourceApp || 'Support'}] ${trimmedSubject}`,
       text: `From: ${trimmedReplyTo}\n\n${trimmedMessage}`,
     };
-
-    if (trimmedAttachmentText) {
-      const bytes = new TextEncoder().encode(trimmedAttachmentText);
-      let binary = "";
-      for (let i = 0; i < bytes.byteLength; i++) {
-        binary += String.fromCharCode(bytes[i]);
-      }
-      const base64Content = btoa(binary);
-
-      emailPayload.attachments = [
-        {
-          content: base64Content,
-          filename: trimmedAttachmentFilename,
-        }
-      ];
-    }
 
     const emailRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
