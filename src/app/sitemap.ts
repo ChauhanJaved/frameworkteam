@@ -109,10 +109,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModified,
     },
     {
-      url: `${websiteURL}/mvp/`,
-      lastModified: lastModified,
-    },
-    {
       url: `${websiteURL}/contact/`,
       lastModified: lastModified,
     },

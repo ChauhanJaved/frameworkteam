@@ -259,9 +259,6 @@ export const serviceItems: ServiceItem[] = [
           Next.js, Tailwind CSS, and Supabase, we give you a launchpad that is ready to receive feedback and scale seamlessly 
           upon finding product-market fit.
         </p>
-        <p className="mt-4 pt-4 border-t border-border/50 text-sm">
-          Not ready to write code yet? Get a structured plan first! Try our <Link href="/mvp" className="text-primary font-semibold hover:underline">MVP Planning &amp; Architectural Blueprint</Link> service to design your database schema, wireframes, and developer prompts before coding.
-        </p>
       </div>
     ),
     faqs: [
