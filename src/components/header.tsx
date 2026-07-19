@@ -46,6 +46,8 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
       const section = hash.substring(1); // Remove the "#" from the hash
       if (section === HeaderNavItems.Contact) {
         window.location.replace("/contact");
+      } else if (section === HeaderNavItems.About) {
+        window.location.replace("/about");
       } else if (headerNavItems.includes(section)) {
         setActiveSection(section);
       }
@@ -53,6 +55,8 @@ export default function Header({ defaultActiveSection = "" }: HeaderProps) {
       setActiveSection(HeaderNavItems.Home);
     } else if (pathName === `/contact` || pathName === `/contact/`) {
       setActiveSection(HeaderNavItems.Contact);
+    } else if (pathName === `/about` || pathName === `/about/`) {
+      setActiveSection(HeaderNavItems.About);
     }
   }, [defaultActiveSection, setActiveSection]);
 

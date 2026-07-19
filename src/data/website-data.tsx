@@ -11,6 +11,7 @@ export enum HeaderNavItems {
   Home = "home",
   Services = "services",
   Portfolio = "products",
+  About = "about",
   Contact = "contact",
 }
 export const heroTitle: string =
@@ -21,11 +22,15 @@ export const headerNavItems: string[] = [
   HeaderNavItems.Home,
   HeaderNavItems.Services,
   HeaderNavItems.Portfolio,
+  HeaderNavItems.About,
   HeaderNavItems.Contact,
 ];
 export function hrefValue(item: string): string {
   if (item === HeaderNavItems.Contact) {
     return "/contact";
+  }
+  if (item === HeaderNavItems.About) {
+    return "/about";
   }
   return `/#${item}`;
 }

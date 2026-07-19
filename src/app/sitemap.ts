@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  
+
   const staticAndProductEntries: MetadataRoute.Sitemap = [
     {
       url: `${websiteURL}/`,
@@ -110,6 +110,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${websiteURL}/contact/`,
+      lastModified: lastModified,
+    },
+    {
+      url: `${websiteURL}/about/`,
       lastModified: lastModified,
     },
   ];

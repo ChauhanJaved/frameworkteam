@@ -31,6 +31,9 @@ export default function Footer(props: PropsFooter) {
               <Link href="/#products" className="text-muted-foreground hover:text-primary transition-colors">
                 Products & Apps
               </Link>
+              <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                About
+              </Link>
               <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                 Contact
               </Link>
