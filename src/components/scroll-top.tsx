@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { useActiveSection } from "@/context/active-section-context";
+import { usePathname } from "next/navigation";
 
 //Internal imports
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ import { HeaderNavItems } from "@/data/website-data";
 import { usePageOnTop } from "@/context/page-on-top-context";
 
 export default function ScrollTop() {
+  const pathname = usePathname();
   const { setActiveSection } = useActiveSection();
   const { setPageOnTop } = usePageOnTop();
   const [isVisible, setIsVisible] = useState(false);
@@ -34,8 +36,13 @@ export default function ScrollTop() {
         if (home) {
           setActiveSection(HeaderNavItems.Home);
         } else {
-          setActiveSection("");
-          setPageOnTop(false);
+          if (pathname === "/about" || pathname === "/about/") {
+            setActiveSection(HeaderNavItems.About);
+          } else if (pathname === "/contact" || pathname === "/contact/") {
+            setActiveSection(HeaderNavItems.Contact);
+          } else {
+            setActiveSection("");
+          }
         }
       }
     };
@@ -49,7 +56,7 @@ export default function ScrollTop() {
         observerRef.current.unobserve(target);
       }
     };
-  }, [setActiveSection, setPageOnTop]);
+  }, [setActiveSection, setPageOnTop, pathname]);
   return (
     <>
       <div id="page-top" style={{ position: "absolute", top: 0 }}></div>
