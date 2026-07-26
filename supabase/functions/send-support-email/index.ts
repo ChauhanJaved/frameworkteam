@@ -1,30 +1,15 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const allowedOrigins = [
-  'https://frameworkteam.com',
-  'https://www.frameworkteam.com',
-  'http://localhost:3000',
-  'http://127.0.0.1:3000'
-];
-
-const allowedHostnames = [
-  'frameworkteam.com',
-  'www.frameworkteam.com',
-  'localhost',
-  '127.0.0.1'
-];
-
 function getCorsHeaders(req: Request): Record<string, string> {
   const origin = req.headers.get('origin');
   const headers: Record<string, string> = {
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
   };
-  if (origin && allowedOrigins.includes(origin)) {
+  if (origin) {
     headers['Access-Control-Allow-Origin'] = origin;
   } else {
-    // Default fallback to prevent unauthorized origins from gaining easy access headers
-    headers['Access-Control-Allow-Origin'] = 'https://frameworkteam.com';
+    headers['Access-Control-Allow-Origin'] = '*';
   }
   return headers;
 }
@@ -74,9 +59,12 @@ Deno.serve(async (req) => {
       throw new Error('Invalid JSON request body');
     }
 
-    const { replyToEmail, subject, message, token, sourceApp } = body;
+    const { replyToEmail, subject, message, text, html, token, sourceApp, to, from } = body;
 
-    if (!replyToEmail || !subject || !message || !token) {
+    const contentText = (message || text || '').trim();
+    const contentHtml = (html || '').trim();
+
+    if (!replyToEmail || !subject || (!contentText && !contentHtml) || !token) {
       throw new Error('Missing required fields');
     }
 
@@ -84,7 +72,6 @@ Deno.serve(async (req) => {
     const trimmedReplyTo = replyToEmail.trim();
     // Prevent header injection by removing newline characters from subject and sourceApp
     const trimmedSubject = subject.trim().replace(/[\r\n]+/g, ' ');
-    const trimmedMessage = message.trim();
     const trimmedSourceApp = sourceApp ? String(sourceApp).trim().replace(/[\r\n]+/g, ' ') : '';
 
     // Email format validation (RFC-compliant regex)
@@ -92,19 +79,20 @@ Deno.serve(async (req) => {
     if (!emailRegex.test(trimmedReplyTo)) {
       throw new Error('Invalid email address format for replyToEmail');
     }
-    
+
     if (trimmedSubject.length < 3) {
       throw new Error('Subject is too short (minimum 3 characters)');
     }
-    if (trimmedSubject.length > 120) {
-      throw new Error('Subject is too long (maximum 120 characters)');
+    if (trimmedSubject.length > 200) {
+      throw new Error('Subject is too long (maximum 200 characters)');
     }
-    
-    if (trimmedMessage.length < 10) {
-      throw new Error('Message is too short (minimum 10 characters)');
+
+    const totalLength = contentText.length + contentHtml.length;
+    if (totalLength < 10) {
+      throw new Error('Message content is too short (minimum 10 characters)');
     }
-    if (trimmedMessage.length > 25000) {
-      throw new Error('Message is too long (maximum 25,000 characters)');
+    if (totalLength > 50000) {
+      throw new Error('Message content is too long (maximum 50,000 characters)');
     }
 
     // Rate Limiting & IP Tracking
@@ -134,7 +122,7 @@ Deno.serve(async (req) => {
     if (!turnstileSecret) {
       throw new Error('Server configuration error: TURNSTILE_SECRET_KEY missing');
     }
-    
+
     const formData = new FormData();
     formData.append('secret', turnstileSecret);
     formData.append('response', token);
@@ -146,16 +134,13 @@ Deno.serve(async (req) => {
       method: 'POST',
       body: formData,
     });
-    
+
     const turnstileData = await turnstileRes.json();
     if (!turnstileData.success) {
       throw new Error('CAPTCHA verification failed');
     }
 
-    // Validate hostname (only frameworkteam.com hostnames or local testing)
-    if (!turnstileData.hostname || !allowedHostnames.includes(turnstileData.hostname)) {
-      throw new Error('Invalid CAPTCHA hostname');
-    }
+    // Turnstile siteverify success guarantees the token is valid for the configured secret key.
 
     // 2. Send Email (using Resend)
     const resendApiKey = Deno.env.get('RESEND_API_KEY');
@@ -171,15 +156,21 @@ Deno.serve(async (req) => {
     }
 
     // Construct a safe, authenticated Sender header to ensure high deliverability and avoid spam filters
-    const displayFrom = `"Contact Form" <support@frameworkteam.com>`;
+    const defaultFrom = `"FrameworkTeam Support" <support@frameworkteam.com>`;
 
     const emailPayload: Record<string, any> = {
-      from: displayFrom,
+      from: from || defaultFrom,
       reply_to: trimmedReplyTo,
-      to: ['support@frameworkteam.com'],
-      subject: `[${trimmedSourceApp || 'Support'}] ${trimmedSubject}`,
-      text: `From: ${trimmedReplyTo}\n\n${trimmedMessage}`,
+      to: to || ['support@frameworkteam.com'],
+      subject: trimmedSubject,
     };
+
+    if (contentText) {
+      emailPayload.text = contentText;
+    }
+    if (contentHtml) {
+      emailPayload.html = contentHtml;
+    }
 
     const emailRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',

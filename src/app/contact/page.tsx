@@ -122,9 +122,10 @@ export default function ContactPage() {
         throw new Error("Supabase credentials are not configured in environment variables.");
       }
 
-      const subject = `[${inquiryType}]`;
+      const subject = `From ${clientEmail} for  [${inquiryType}]`;
       const emailBody = `
 === NEW CONTACT FORM SUBMISSION ===
+Source: frameworkteam.com
 From: ${name}
 Reply-To Email: ${clientEmail}
 Inquiry Type: ${inquiryType}
