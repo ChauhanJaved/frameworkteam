@@ -56,7 +56,7 @@ export default function ContactPage() {
         try {
           const id = (window as any).turnstile.render(turnstileContainerRef.current, {
             sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAADC8NlV7V9DNxkYy",
-            callback: (token: string) => setTurnstileToken(token),
+            callback: (token: string) => { setTurnstileToken(token); console.log("Turnstile token:", token); },
             "expired-callback": () => setTurnstileToken(null),
             "error-callback": () => setTurnstileToken(null),
             theme: "auto",
@@ -145,7 +145,6 @@ ${message}
           subject: subject,
           message: emailBody,
           token: turnstileToken,
-          sourceApp: "frameworkteam.com",
         }),
       });
 
