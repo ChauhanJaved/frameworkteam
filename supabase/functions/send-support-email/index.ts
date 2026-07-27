@@ -1,14 +1,65 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
-// -----------------------------------------------------------------------
-// FIX #2: CORS allowlist instead of reflecting any Origin
-// -----------------------------------------------------------------------
+// =========================================================================
+// CONFIG — everything you'd want to change for a different project or
+// domain lives here. Nothing below this block should need editing.
+// =========================================================================
+
+// Browser origins allowed to call this function (used for CORS).
 const ALLOWED_ORIGINS = [
   "https://frameworkteam.com",
   "https://www.frameworkteam.com",
-  "https://qr.frameworkteam.com",
+  "http://localhost:3000",
 ];
+
+// Hostnames allowed in the Cloudflare Turnstile response. This must be the
+// bare hostname (no protocol) for every domain listed in ALLOWED_ORIGINS,
+// otherwise real submissions from that domain will fail CAPTCHA
+// verification even though CORS lets the request through.
+const ALLOWED_HOSTNAMES = [
+  "frameworkteam.com",
+  "www.frameworkteam.com",
+  "localhost",
+];
+
+// Fixed sender/recipient for outgoing email. These are never taken from the
+// request body, so the function can only ever email this one inbox.
+const FIXED_FROM = `"FrameworkTeam Support" <support@frameworkteam.com>`;
+const FIXED_TO = ["support@frameworkteam.com"];
+
+// Request size limits.
+const MAX_PAYLOAD_BYTES = 100_000; // reject requests larger than this
+const MAX_SUBJECT_LENGTH = 200;
+const MIN_SUBJECT_LENGTH = 3;
+const MAX_MESSAGE_LENGTH = 50_000;
+const MIN_MESSAGE_LENGTH = 10;
+
+// Rate limiting.
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_TABLE = "contact_rate_limit";
+
+// External endpoints.
+const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const RESEND_API_URL = "https://api.resend.com/emails";
+
+// Names of the environment variables holding secrets (set these in your
+// Supabase project's Edge Function settings).
+const TURNSTILE_SECRET_ENV_VAR = "TURNSTILE_SECRET_KEY";
+const RESEND_API_KEY_ENV_VAR = "RESEND_API_KEY";
+const SUPABASE_URL_ENV_VAR = "SUPABASE_URL";
+const SUPABASE_SERVICE_ROLE_KEY_ENV_VAR = "SUPABASE_SERVICE_ROLE_KEY";
+
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+// =========================================================================
+// Setup
+// =========================================================================
+
+const supabaseUrl = Deno.env.get(SUPABASE_URL_ENV_VAR)!;
+const supabaseServiceKey = Deno.env.get(SUPABASE_SERVICE_ROLE_KEY_ENV_VAR)!;
+const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 function getCorsHeaders(req: Request): Record<string, string> {
   const origin = req.headers.get("origin");
@@ -25,10 +76,8 @@ function getCorsHeaders(req: Request): Record<string, string> {
   return headers;
 }
 
-// -----------------------------------------------------------------------
-// FIX #4: Durable, shared rate limiting via Postgres (Supabase) instead
-// of an in-memory Map that doesn't survive across isolates/cold starts.
-// Requires a table, e.g.:
+// Durable, shared rate limiting via Postgres so it holds up across
+// isolates/cold starts (an in-memory Map would not). Requires a table:
 //
 // create table public.contact_rate_limit (
 //   ip text primary key,
@@ -36,24 +85,23 @@ function getCorsHeaders(req: Request): Record<string, string> {
 //   window_start timestamptz not null default now()
 // );
 //
-// This uses the service role key so it can bypass RLS from the server side.
-// -----------------------------------------------------------------------
-const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
-
-async function checkRateLimit(ip: string, maxRequests = 5, windowMs = 60_000): Promise<boolean> {
+// Uses the service role key so it can bypass RLS from the server side.
+async function checkRateLimit(
+  ip: string,
+  maxRequests = RATE_LIMIT_MAX_REQUESTS,
+  windowMs = RATE_LIMIT_WINDOW_MS,
+): Promise<boolean> {
   if (ip === "unknown") return true; // can't rate-limit what you can't identify; consider blocking instead
 
   const nowIso = new Date().toISOString();
   const { data: existing } = await supabase
-    .from("contact_rate_limit")
+    .from(RATE_LIMIT_TABLE)
     .select("*")
     .eq("ip", ip)
     .maybeSingle();
 
   if (!existing) {
-    await supabase.from("contact_rate_limit").insert({ ip, count: 1, window_start: nowIso });
+    await supabase.from(RATE_LIMIT_TABLE).insert({ ip, count: 1, window_start: nowIso });
     return true;
   }
 
@@ -63,7 +111,7 @@ async function checkRateLimit(ip: string, maxRequests = 5, windowMs = 60_000): P
   if (now - windowStart > windowMs) {
     // window expired, reset
     await supabase
-      .from("contact_rate_limit")
+      .from(RATE_LIMIT_TABLE)
       .update({ count: 1, window_start: nowIso })
       .eq("ip", ip);
     return true;
@@ -74,11 +122,15 @@ async function checkRateLimit(ip: string, maxRequests = 5, windowMs = 60_000): P
   }
 
   await supabase
-    .from("contact_rate_limit")
+    .from(RATE_LIMIT_TABLE)
     .update({ count: existing.count + 1 })
     .eq("ip", ip);
   return true;
 }
+
+// =========================================================================
+// Handler
+// =========================================================================
 
 Deno.serve(async (req) => {
   const corsHeaders = getCorsHeaders(req);
@@ -87,9 +139,9 @@ Deno.serve(async (req) => {
     return new Response("ok", { headers: corsHeaders });
   }
 
-  // FIX #2 (continued): reject requests from disallowed origins outright.
-  // Browsers already block reading the response due to missing CORS header,
-  // but this also protects non-browser callers that ignore CORS.
+  // Reject requests from disallowed origins outright. Browsers already
+  // block reading the response due to the missing CORS header, but this
+  // also protects non-browser callers that ignore CORS.
   const origin = req.headers.get("origin");
   if (origin && !ALLOWED_ORIGINS.includes(origin)) {
     return new Response(JSON.stringify({ error: "Origin not allowed" }), {
@@ -106,7 +158,7 @@ Deno.serve(async (req) => {
   }
 
   const contentLength = Number(req.headers.get("content-length") || 0);
-  if (contentLength > 100000) {
+  if (contentLength > MAX_PAYLOAD_BYTES) {
     return new Response(JSON.stringify({ error: "Payload too large" }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 413,
@@ -124,11 +176,8 @@ Deno.serve(async (req) => {
       throw new Error("Invalid JSON request body");
     }
 
-    // -----------------------------------------------------------------
-    // FIX #1: `to` and `from` are no longer accepted from the client at
-    // all. They're not destructured, not read, not forwarded. Remove
-    // sourceApp too unless you actually use it downstream.
-    // -----------------------------------------------------------------
+    // `to` and `from` are intentionally not read from the request body at
+    // all — email always goes to/from the fixed addresses configured above.
     const { replyToEmail, subject, message, text, html, token } = body;
 
     const contentText = (message || text || "").trim();
@@ -141,37 +190,35 @@ Deno.serve(async (req) => {
     const trimmedReplyTo = replyToEmail.trim();
     const trimmedSubject = subject.trim().replace(/[\r\n]+/g, " ");
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(trimmedReplyTo)) {
+    if (!EMAIL_REGEX.test(trimmedReplyTo)) {
       throw new Error("Invalid email address format for replyToEmail");
     }
 
-    if (trimmedSubject.length < 3) {
-      throw new Error("Subject is too short (minimum 3 characters)");
+    if (trimmedSubject.length < MIN_SUBJECT_LENGTH) {
+      throw new Error(`Subject is too short (minimum ${MIN_SUBJECT_LENGTH} characters)`);
     }
-    if (trimmedSubject.length > 200) {
-      throw new Error("Subject is too long (maximum 200 characters)");
+    if (trimmedSubject.length > MAX_SUBJECT_LENGTH) {
+      throw new Error(`Subject is too long (maximum ${MAX_SUBJECT_LENGTH} characters)`);
     }
 
     const totalLength = contentText.length + contentHtml.length;
-    if (totalLength < 10) {
-      throw new Error("Message content is too short (minimum 10 characters)");
+    if (totalLength < MIN_MESSAGE_LENGTH) {
+      throw new Error(`Message content is too short (minimum ${MIN_MESSAGE_LENGTH} characters)`);
     }
-    if (totalLength > 50000) {
-      throw new Error("Message content is too long (maximum 50,000 characters)");
+    if (totalLength > MAX_MESSAGE_LENGTH) {
+      throw new Error(`Message content is too long (maximum ${MAX_MESSAGE_LENGTH} characters)`);
     }
 
-    // FIX #4 (continued): durable rate limit check
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
     const allowed = await checkRateLimit(clientIp);
     if (!allowed) {
       throw new Error("Too many requests, please try again later");
     }
 
-    // 1. Verify Turnstile Token
-    const turnstileSecret = Deno.env.get("TURNSTILE_SECRET_KEY");
+    // Verify Turnstile token
+    const turnstileSecret = Deno.env.get(TURNSTILE_SECRET_ENV_VAR);
     if (!turnstileSecret) {
-      throw new Error("Server configuration error: TURNSTILE_SECRET_KEY missing");
+      throw new Error(`Server configuration error: ${TURNSTILE_SECRET_ENV_VAR} missing`);
     }
 
     const formData = new FormData();
@@ -181,29 +228,26 @@ Deno.serve(async (req) => {
       formData.append("remoteip", clientIp);
     }
 
-    const turnstileRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    const turnstileRes = await fetch(TURNSTILE_VERIFY_URL, {
       method: "POST",
       body: formData,
     });
 
     const turnstileData = await turnstileRes.json();
 
-    // -------------------------------------------------------------
-    // FIX #3: verify the token was actually solved on your own site,
-    // not just that it's *a* valid token for your sitekey (which is
-    // public and can be reused on any attacker-controlled page).
-    // -------------------------------------------------------------
-    const EXPECTED_HOSTNAME = "frameworkteam.com";
+    // Confirm the token was solved on one of our own allowed hostnames —
+    // not just that it's *a* valid token for the sitekey (which is public
+    // and could otherwise be reused on any attacker-controlled page).
     if (
       !turnstileData.success ||
       !turnstileData.hostname ||
-      turnstileData.hostname !== EXPECTED_HOSTNAME
+      !ALLOWED_HOSTNAMES.includes(turnstileData.hostname)
     ) {
       throw new Error("CAPTCHA verification failed");
     }
 
-    // 2. Send Email (using Resend)
-    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    // Send email (via Resend)
+    const resendApiKey = Deno.env.get(RESEND_API_KEY_ENV_VAR);
     if (!resendApiKey) {
       console.warn("RESEND_API_KEY is not set. Email will not be actually sent.");
       return new Response(
@@ -211,10 +255,6 @@ Deno.serve(async (req) => {
         { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 200 }
       );
     }
-
-    // FIX #1 (continued): from/to are fixed, server-controlled constants.
-    const FIXED_FROM = `"FrameworkTeam Support" <support@frameworkteam.com>`;
-    const FIXED_TO = ["support@frameworkteam.com"];
 
     const emailPayload: Record<string, any> = {
       from: FIXED_FROM,
@@ -226,7 +266,7 @@ Deno.serve(async (req) => {
     if (contentText) emailPayload.text = contentText;
     if (contentHtml) emailPayload.html = contentHtml;
 
-    const emailRes = await fetch("https://api.resend.com/emails", {
+    const emailRes = await fetch(RESEND_API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
