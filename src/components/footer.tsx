@@ -23,9 +23,10 @@ export default function Footer(props: PropsFooter) {
             <Link
               className={`${raleway.className} flex flex-col items-start justify-center border-l-[5px] border-l-primary py-1 pl-3 text-base font-extrabold leading-tight tracking-wider text-blue-dark-imperial dark:text-foreground`}
               href="/"
+              aria-label="Go to home page"
             >
-              <span className="font-extrabold">FrameworkTeam</span>
-              <span className="text-[10px] tracking-widest text-muted-foreground uppercase">Softwares</span>
+              <p>FrameworkTeam</p>
+              <p>Softwares</p>
             </Link>
             <p className="text-muted-foreground text-xs leading-relaxed max-w-sm">
               We design and build high-performance web applications, secure client portals, custom cloud integrations, and fully offline-capable desktop utilities that help organizations streamline operations.
