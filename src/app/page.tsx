@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/hero";
 import Services from "@/components/services";
 import Portfolio from "@/components/portfolio";
+import RecentBlogs from "@/components/recent-blogs";
 import { indexMetadata } from "@/data/website-data";
 
 export const metadata: Metadata = indexMetadata;
@@ -14,6 +15,7 @@ export default async function Home() {
       <Hero />
       <Services />
       <Portfolio galleryID="products" />
+      <RecentBlogs />
     </main>
   );
 }

@@ -10,7 +10,6 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 const ALLOWED_ORIGINS = [
   "https://frameworkteam.com",
   "https://www.frameworkteam.com",
-  "http://localhost:3000",
 ];
 
 // Hostnames allowed in the Cloudflare Turnstile response. This must be the
@@ -20,7 +19,6 @@ const ALLOWED_ORIGINS = [
 const ALLOWED_HOSTNAMES = [
   "frameworkteam.com",
   "www.frameworkteam.com",
-  "localhost",
 ];
 
 // Fixed sender/recipient for outgoing email. These are never taken from the
@@ -76,16 +74,6 @@ function getCorsHeaders(req: Request): Record<string, string> {
   return headers;
 }
 
-// Durable, shared rate limiting via Postgres so it holds up across
-// isolates/cold starts (an in-memory Map would not). Requires a table:
-//
-// create table public.contact_rate_limit (
-//   ip text primary key,
-//   count int not null default 1,
-//   window_start timestamptz not null default now()
-// );
-//
-// Uses the service role key so it can bypass RLS from the server side.
 async function checkRateLimit(
   ip: string,
   maxRequests = RATE_LIMIT_MAX_REQUESTS,

@@ -1,5 +1,6 @@
 import { ProductIDs, websiteURL } from "@/data/website-data";
 import { serviceItems } from "@/data/services-items";
+import blogsRegistry from "@/data/blogs-registry.json";
 import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
@@ -124,5 +125,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: lastModified,
   }));
 
-  return [...staticAndProductEntries, ...serviceEntries];
+  // Dynamically map over all blog items to register their sitemap URLs
+  const blogEntries: MetadataRoute.Sitemap = blogsRegistry.map((blog) => ({
+    url: `${websiteURL}/blog/${blog.id}/`,
+    lastModified: lastModified,
+  }));
+
+  return [...staticAndProductEntries, ...serviceEntries, ...blogEntries];
 }
