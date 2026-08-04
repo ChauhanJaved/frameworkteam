@@ -19,6 +19,7 @@ import {
 import { HeaderNavItems, websiteURL, companyName, hrefValue } from "@/data/website-data";
 import { serviceItems } from "@/data/services-items";
 import blogsRegistry from "@/data/blogs-registry.json";
+import cloudinaryLoader from "@/lib/cloudinary-loader";
 import SectionHeader from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import {
@@ -348,8 +349,26 @@ export default async function BlogDetailsPage({ params }: Props) {
             {/* Meta row */}
             <div className="flex flex-wrap items-center justify-center gap-6 mt-6 w-full text-sm text-muted-foreground border-y py-4">
               <div className="flex items-center gap-2">
-                <User className="size-4 text-primary" />
-                <span>By {blog.author}</span>
+                {blog.author.includes("Javed Chauhan") ? (
+                  <a
+                    href="https://www.linkedin.com/in/chauhanjaved/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:text-primary transition-colors duration-200"
+                  >
+                    <img
+                      src={cloudinaryLoader({ src: "/frameworkteam/javed-chauhan", width: 40 })}
+                      alt="Javed Chauhan"
+                      className="size-6 rounded-full object-cover border border-primary/20"
+                    />
+                    <span>By {blog.author}</span>
+                  </a>
+                ) : (
+                  <>
+                    <User className="size-4 text-primary" />
+                    <span>By {blog.author}</span>
+                  </>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="size-4 text-primary" />

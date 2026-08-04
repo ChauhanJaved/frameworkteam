@@ -4,7 +4,7 @@
     "title": "How Modern Custom Web Applications Drive Enterprise Efficiency",
     "shortDesc": "Transitioning from scattered legacy spreadsheets to secure, unified React and Next.js business tools yields immediate speed and data accuracy advantages.",
     "date": "2026-07-25T09:00:00Z",
-    "author": "FrameworkTeam Expert",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "Enterprise Software",
     "services": ["custom-web-applications"],
     "techStack": ["Next.js", "React", "Supabase", "PostgreSQL"],
@@ -25,7 +25,7 @@
     "title": "Architecting Multi-Tenant SaaS Platforms: Performance and Isolation",
     "shortDesc": "Building high-growth SaaS applications requires robust database tenant isolation and flexible subscription workflows. Learn how Next.js, PostgreSQL RLS, and Stripe scale together.",
     "date": "2026-07-27T10:30:00Z",
-    "author": "FrameworkTeam Expert",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Architecture",
     "services": ["saas-application-development"],
     "techStack": ["Next.js", "TypeScript", "Supabase Auth", "Stripe"],
@@ -46,7 +46,7 @@
     "title": "Why Headless CMS is the Future of Enterprise Content Marketing",
     "shortDesc": "Decoupling your CMS backend from your frontend layout using Sanity and Next.js boosts website loading speeds, improves search rankings, and empowers marketers without breaking code.",
     "date": "2026-07-28T14:45:00Z",
-    "author": "FrameworkTeam Expert",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "Content Systems",
     "services": ["headless-cms-websites", "cms-integration"],
     "techStack": ["Next.js", "Sanity CMS", "Tailwind CSS", "Vercel"],
@@ -59,6 +59,69 @@
       {
         "question": "Can marketers edit content easily without developer support?",
         "answer": "Yes. Headless engines like Sanity or Contentful provide intuitive editing interfaces, custom block builders, and preview URLs to preview drafts in real time before publishing."
+      }
+    ]
+  },
+  {
+    "id": "scaling-multitenant-saas-databases",
+    "title": "Scaling Multi-Tenant SaaS Databases: Row-Level Security & Tenant Isolation in Supabase",
+    "shortDesc": "Building high-growth SaaS requires robust tenant isolation at the database layer. Learn how to implement Row-Level Security (RLS) policies in PostgreSQL and Supabase to keep client data secure and isolated.",
+    "date": "2026-08-04T10:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "SaaS Infrastructure",
+    "services": ["saas-application-development"],
+    "techStack": ["Supabase", "PostgreSQL", "Next.js", "TypeScript"],
+    "keywords": ["multi-tenant SaaS databases", "PostgreSQL RLS", "Supabase tenant isolation", "Next.js database security"],
+    "faqs": [
+      {
+        "question": "What is PostgreSQL Row-Level Security (RLS)?",
+        "answer": "Row-Level Security is a PostgreSQL feature that acts as a query-level firewall, ensuring users can only read or write rows that meet specific policy checks."
+      },
+      {
+        "question": "Does Supabase support multi-tenant isolation out-of-the-box?",
+        "answer": "Yes, Supabase leverages PostgreSQL policies and JWT user metadata to enforce strict RLS rules natively."
+      }
+    ]
+  },
+  {
+    "id": "building-production-ready-rag-web-apps",
+    "title": "Building Production-Ready RAG Web Apps: Vector Search with PGVector and Next.js",
+    "shortDesc": "Integrating AI requires more than simple API calls. Discover how to build a Retrieval-Augmented Generation (RAG) system with Next.js, OpenAI embeddings, and pgvector in PostgreSQL.",
+    "date": "2026-08-02T14:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "AI Development",
+    "services": ["ai-powered-web-applications"],
+    "techStack": ["Next.js", "OpenAI API", "PostgreSQL", "Supabase Vector"],
+    "keywords": ["Retrieval-Augmented Generation", "pgvector database", "OpenAI embeddings Next.js", "semantic search web applications"],
+    "faqs": [
+      {
+        "question": "What is Retrieval-Augmented Generation (RAG)?",
+        "answer": "RAG is a technique where an AI model retrieves context from an external database before generating an answer, reducing hallucination and utilizing private data."
+      },
+      {
+        "question": "Why use pgvector instead of a standalone vector database?",
+        "answer": "Using pgvector allows you to keep relational data and vector embeddings in a single database, eliminating the need to sync data across separate services."
+      }
+    ]
+  },
+  {
+    "id": "core-web-vitals-playbook-nextjs",
+    "title": "The Core Web Vitals Playbook: Scoring 95+ Mobile Lighthouse Scores on Next.js",
+    "shortDesc": "Slow mobile sites kill search rankings and conversions. Discover the step-by-step optimization strategies to boost Largest Contentful Paint (LCP) and eliminate Cumulative Layout Shift (CLS) in Next.js.",
+    "date": "2026-07-31T09:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "Performance Optimization",
+    "services": ["performance-optimization"],
+    "techStack": ["Next.js", "Vercel CDN", "Tailwind CSS", "WebP Images"],
+    "keywords": ["Core Web Vitals optimization", "Next.js speed performance", "LCP mobile score", "CLS layout shift fixes"],
+    "faqs": [
+      {
+        "question": "Why are Core Web Vitals important for SEO?",
+        "answer": "Google uses page loading metrics as official ranking signals. Speed improvements directly correlate with better search visibility and lower bounce rates."
+      },
+      {
+        "question": "How do you fix Cumulative Layout Shift (CLS) in Next.js?",
+        "answer": "Use the Next.js <Image> component which requires width and height aspects, reserving layout space and preventing sudden shifting during resource loads."
       }
     ]
   }
