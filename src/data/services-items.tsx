@@ -256,7 +256,7 @@ export const serviceItems: ServiceItem[] = [
         </p>
         <p>
           We avoid over-engineering while ensuring that the base code is clean and scalable. By leveraging frameworks like 
-          Next.js, Tailwind CSS, and Supabase, we give you a launchpad that is ready to receive feedback and scale seamlessly 
+          Next.js, Tailwind CSS, Supabase, and Vercel, we give you a launchpad that is ready to receive feedback and scale seamlessly 
           upon finding product-market fit.
         </p>
       </div>
