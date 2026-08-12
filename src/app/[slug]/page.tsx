@@ -65,7 +65,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         siteName: companyName,
         locale: "en_US",
         type: "website",
-      }
+        ...serviceItem.metaData.openGraph,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: serviceItem.metaData.title || undefined,
+        description: serviceItem.metaData.description || undefined,
+        ...serviceItem.metaData.twitter,
+      },
     };
   }
 

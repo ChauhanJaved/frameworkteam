@@ -279,6 +279,29 @@ export const serviceItems: ServiceItem[] = [
       title: `Startup MVP Development Services | Rapid Prototyping | ${companyName}`,
       description: "Turn your startup idea into a production-ready MVP quickly. We build functional, scalable MVPs to test your market assumptions fast.",
       keywords: ["MVP development", "startup software developer", "rapid prototyping web apps", "build minimum viable product"],
+      openGraph: {
+        title: `Startup MVP Development Services | Rapid Prototyping | ${companyName}`,
+        description: "Turn your startup idea into a production-ready MVP quickly. We build functional, scalable MVPs to test your market assumptions fast.",
+        url: `${websiteURL}/mvp-development/`,
+        siteName: companyName,
+        images: [
+          {
+            url: `${websiteURL}/images/og/mvp-development.png`,
+            width: 1200,
+            height: 630,
+            alt: "Startup MVP Development Services by FrameworkTeam",
+            type: "image/png",
+          },
+        ],
+        locale: "en_US",
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `Startup MVP Development Services | Rapid Prototyping | ${companyName}`,
+        description: "Turn your startup idea into a production-ready MVP quickly. We build functional, scalable MVPs to test your market assumptions fast.",
+        images: [`${websiteURL}/images/og/mvp-development.png`],
+      },
     },
   },
   {
