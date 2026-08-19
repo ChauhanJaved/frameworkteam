@@ -133,6 +133,10 @@ function parseMarkdown(md: string) {
     const trimmed = block.trim();
     if (!trimmed) return null;
 
+    if (trimmed === "---" || trimmed === "***") {
+      return <hr key={idx} className="my-8 border-border" />;
+    }
+
     if (trimmed.startsWith("# ")) {
       return (
         <h1 key={idx} className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mt-10 mb-6">
@@ -162,6 +166,50 @@ function parseMarkdown(md: string) {
           <code>{code}</code>
         </pre>
       );
+    }
+    if (trimmed.startsWith("|")) {
+      const lines = trimmed.split("\n").map((l) => l.trim()).filter(Boolean);
+      if (lines.length >= 2) {
+        const parseRow = (rowStr: string) => {
+          const parts = rowStr.split("|");
+          if (parts[0] === "") parts.shift();
+          if (parts[parts.length - 1] === "") parts.pop();
+          return parts.map((p) => p.trim());
+        };
+
+        const headerCells = parseRow(lines[0]);
+        const bodyLines = lines.slice(1).filter((l) => l.replace(/[\s|:-]/g, "").length > 0 && !l.includes("---"));
+
+        return (
+          <div key={idx} className="overflow-x-auto my-8 rounded-xl border bg-card/40 backdrop-blur-sm shadow-sm">
+            <table className="w-full text-left text-sm text-muted-foreground border-collapse">
+              <thead className="bg-muted/60 text-foreground font-semibold text-xs uppercase tracking-wider border-b">
+                <tr>
+                  {headerCells.map((header, hIdx) => (
+                    <th key={hIdx} className="p-3.5 border-r last:border-r-0">
+                      {parseInlineStyles(header)}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {bodyLines.map((rowLine, rIdx) => {
+                  const cells = parseRow(rowLine);
+                  return (
+                    <tr key={rIdx} className="hover:bg-muted/30 transition-colors">
+                      {cells.map((cell, cIdx) => (
+                        <td key={cIdx} className="p-3.5 border-r last:border-r-0 leading-relaxed">
+                          {parseInlineStyles(cell)}
+                        </td>
+                      ))}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
     }
     if (trimmed.startsWith("- ")) {
       const items = trimmed.split("\n").map((line) => line.replace(/^-\s+/, ""));
