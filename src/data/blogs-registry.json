@@ -145,5 +145,27 @@
         "answer": "Tenant data is isolated using Row-Level Security (RLS) policies. PostgreSQL automatically filters query results by comparing the authenticated user's JWT credentials against organization membership tables."
       }
     ]
+  },
+  {
+    "id": "ai-prompting-saas-architecture-blueprints",
+    "title": "Prompting AI App Builders for SaaS Architecture: Blueprints for Cursor, v0, and Bolt",
+    "shortDesc": "Discover how to write structured architectural prompt blueprints for Cursor, v0, and Bolt.new to generate secure, scalable Next.js, Supabase, and Stripe SaaS applications without technical debt.",
+    "date": "2026-08-26T10:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "SaaS Architecture",
+    "services": ["saas-application-development", "custom-web-applications"],
+    "techStack": ["Next.js", "Supabase", "Stripe", "Vercel", "Cursor AI"],
+    "keywords": ["AI prompt engineering SaaS", "Cursor AI SaaS prompts", "v0 Bolt.new prompts", "Next.js Supabase architecture prompt", "multi-tenant SaaS AI prompt"],
+    "faqs": [
+      {
+        "question": "Why do AI coding tools struggle with multi-tenant SaaS architecture?",
+        "answer": "AI code generators often confuse row-level security scopes, mix user_id with workspace_id, or fail to handle async trigger flows during signup unless given explicit database schema boundaries in the prompt."
+      },
+      {
+        "question": "Which multi-tenant architecture pattern should I prompt AI to build first?",
+        "answer": "If building a solo tool, use the Single-User pattern. If building B2B SaaS where teammates collaborate in one workspace, prompt for the Single-Workspace pattern. For agency or multi-account tools, prompt for the Multi-Workspace switcher pattern."
+      }
+    ]
   }
 ]
+
