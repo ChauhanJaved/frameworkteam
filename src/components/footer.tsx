@@ -79,6 +79,11 @@ export default function Footer(props: PropsFooter) {
             </h4>
             <ul className="flex flex-col gap-2.5 text-xs">
               <li>
+                <Link href="/saas-architecture-wizard" className="text-muted-foreground hover:text-primary hover:translate-x-0.5 inline-block transition-all duration-200">
+                  SaaS Architecture Wizard
+                </Link>
+              </li>
+              <li>
                 <Link href="/free-qr-code-generator" className="text-muted-foreground hover:text-primary hover:translate-x-0.5 inline-block transition-all duration-200">
                   Free QR Generator
                 </Link>

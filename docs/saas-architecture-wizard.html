@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SaaS architecture wizard</title>
+<style>
+  :root{
+    --ink:#1c2321;
+    --ink-soft:#5b655f;
+    --ink-faint:#93998f;
+    --paper:#f6f4ee;
+    --panel:#ffffff;
+    --line:#dcd8cb;
+    --line-strong:#b9b3a0;
+    --accent:#2f5d4f;
+    --accent-soft:#e4ede9;
+    --accent-line:#2f5d4f;
+    --mono: 'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+    --sans: 'IBM Plex Sans','Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 6px;
+  }
+  h1{
+    font-size:26px;
+    font-weight:600;
+    margin:0 0 6px;
+    letter-spacing:-.01em;
+  }
+  .sub{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    line-height:1.5;
+    margin:0 0 28px;
+    max-width:58ch;
+  }
+
+  /* progress rail */
+  .rail{display:flex;gap:6px;margin-bottom:28px;}
+  .rail-seg{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden;}
+  .rail-seg i{display:block;height:100%;width:0%;background:var(--accent);transition:width .3s ease;}
+
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:26px 26px 22px;
+  }
+
+  .qnum{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-faint);
+    margin:0 0 4px;
+  }
+  .qtitle{
+    font-size:18px;
+    font-weight:600;
+    margin:0 0 4px;
+    letter-spacing:-.01em;
+  }
+  .qhint{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+    line-height:1.5;
+  }
+
+  .options{display:flex;flex-direction:column;gap:10px;}
+  .opt{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    text-align:left;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--paper);
+    cursor:pointer;
+    font-family:var(--sans);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .opt:hover{border-color:var(--line-strong);}
+  .opt.sel{
+    border-color:var(--accent-line);
+    background:var(--accent-soft);
+  }
+  .opt-mark{
+    width:16px;height:16px;flex:0 0 16px;
+    border-radius:4px;
+    border:1.5px solid var(--line-strong);
+    margin-top:2px;
+    display:flex;align-items:center;justify-content:center;
+    background:#fff;
+  }
+  .opt.sel .opt-mark{border-color:var(--accent);background:var(--accent);}
+  .opt-mark svg{width:10px;height:10px;display:none;stroke:#fff;stroke-width:2.5;}
+  .opt.sel .opt-mark svg{display:block;}
+  .opt-body strong{
+    display:block;
+    font-size:14.5px;
+    font-weight:600;
+    margin-bottom:2px;
+  }
+  .opt-body span{
+    font-size:13px;
+    color:var(--ink-soft);
+    line-height:1.45;
+  }
+  .opt-code{
+    font-family:var(--mono);
+    font-size:10.5px;
+    color:var(--ink-faint);
+    display:block;
+    margin-top:6px;
+  }
+
+  .checkline{
+    display:flex;gap:10px;align-items:flex-start;
+    padding:12px 14px;border:1px solid var(--line);border-radius:8px;
+    background:var(--paper); cursor:pointer; margin-bottom:8px;
+  }
+  .checkline.sel{border-color:var(--accent-line);background:var(--accent-soft);}
+  .checkline .opt-mark{border-radius:4px;}
+
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;
+    font-size:12.5px;
+    font-family:var(--mono);
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .field input[type=text], .field textarea{
+    width:100%;
+    font-family:var(--sans);
+    font-size:14px;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:#fff;
+    color:var(--ink);
+  }
+  .field textarea{resize:vertical;min-height:64px;line-height:1.5;}
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--accent-line);}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
+  button.navbtn{
+    font-family:var(--sans);
+    font-size:14px;
+    font-weight:500;
+    padding:10px 18px;
+    border-radius:7px;
+    border:1px solid var(--line-strong);
+    background:#fff;
+    color:var(--ink);
+    cursor:pointer;
+  }
+  button.navbtn:hover{background:#f1efe6;}
+  button.navbtn.primary{
+    background:var(--ink);
+    border-color:var(--ink);
+    color:#fff;
+  }
+  button.navbtn.primary:hover{background:#000;}
+  button.navbtn:disabled{opacity:.35;cursor:not-allowed;}
+
+  .stepdots{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-faint);
+  }
+
+  /* result view */
+  .result-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px;flex-wrap:wrap;}
+  .badgebar{display:flex;gap:8px;flex-wrap:wrap;}
+  .badge{
+    font-family:var(--mono);
+    font-size:11px;
+    padding:4px 9px;
+    border-radius:20px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    border:1px solid var(--accent-line);
+  }
+  pre.output{
+    background:#1c2321;
+    color:#e9e6db;
+    font-family:var(--mono);
+    font-size:12.5px;
+    line-height:1.6;
+    padding:20px;
+    border-radius:8px;
+    white-space:pre-wrap;
+    word-break:break-word;
+    max-height:520px;
+    overflow-y:auto;
+    margin:0;
+  }
+  .copybar{display:flex;gap:10px;margin-top:14px;}
+  .copybar button{
+    font-family:var(--sans);
+    font-size:13.5px;
+    font-weight:500;
+    padding:9px 16px;
+    border-radius:7px;
+    border:1px solid var(--line-strong);
+    background:#fff;
+    cursor:pointer;
+  }
+  .copybar button.primary{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .copybar button.primary.copied{background:var(--accent);border-color:var(--accent);}
+  .restart-row{margin-top:18px;text-align:center;}
+  .restart-row a{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    cursor:pointer;
+    text-decoration:underline;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Base architecture builder</p>
+  <h1>SaaS architecture wizard</h1>
+  <p class="sub">Answer a handful of questions about your auth/workspace/role structure. At the end you get one prompt block, ready to paste into your AI app builder.</p>
+
+  <div class="rail" id="rail"></div>
+
+  <div class="panel" id="panel"></div>
+
+</div>
+
+<script>
+const state = {
+  step: 0,
+  answers: {
+    scope: null,
+    roles: null,
+    hierarchy: null,
+    joinMethod: null,
+    billingScope: null,
+    productName: '',
+    productFeature: ''
+  }
+};
+
+const questions = [
+  {
+    key: 'scope',
+    qnum: 'Q1 / access scope',
+    title: 'How do users access the software?',
+    hint: 'This decides whether your core tables key off user_id or workspace_id.',
+    type: 'single',
+    options: [
+      {
+        value: 'single',
+        title: 'Just the user, alone',
+        desc: 'One person signs up and uses it solo. No teammates, no shared data.',
+        code: 'profiles only'
+      },
+      {
+        value: 'single-workspace',
+        title: 'One workspace per account, team can join',
+        desc: 'User gets one workspace automatically and can invite teammates into it.',
+        code: 'profiles + workspaces (1:1) + workspace_members'
+      },
+      {
+        value: 'multi-workspace',
+        title: 'User can belong to many workspaces',
+        desc: 'User creates or joins multiple separate workspaces and switches between them.',
+        code: 'profiles + workspaces (many) + workspace_members'
+      }
+    ]
+  },
+  {
+    key: 'roles',
+    qnum: 'Q2 / role system',
+    title: 'How should roles/permissions work?',
+    hint: 'Only asked if there is a workspace — skipped for solo apps.',
+    type: 'single',
+    skipIf: (a) => a.scope === 'single',
+    options: [
+      {
+        value: 'enum',
+        title: 'Fixed roles (owner / admin / member)',
+        desc: 'Simple and enough for 90% of products. Permissions are hardcoded in app logic.',
+        code: 'workspace_members.role text'
+      },
+      {
+        value: 'rbac',
+        title: 'Custom / granular permissions (RBAC)',
+        desc: 'Workspace owners can create custom roles with specific permissions per feature.',
+        code: 'roles + permissions tables'
+      }
+    ]
+  },
+  {
+    key: 'hierarchy',
+    qnum: 'Q3 / hierarchy',
+    title: 'Do workspaces need to sit under a parent organization?',
+    hint: 'Useful for agency-style tools where one org manages several client workspaces.',
+    type: 'single',
+    skipIf: (a) => a.scope === 'single',
+    options: [
+      {
+        value: 'flat',
+        title: 'No, workspaces are top-level',
+        desc: 'Each workspace stands on its own. Most SaaS products work this way.',
+        code: 'no organizations table'
+      },
+      {
+        value: 'nested',
+        title: 'Yes, organization > workspace',
+        desc: 'One organization owns multiple workspaces, billed together.',
+        code: 'organizations + org_members'
+      }
+    ]
+  },
+  {
+    key: 'joinMethod',
+    qnum: 'Q4 / joining a workspace',
+    title: 'How do new members get into a workspace?',
+    hint: 'Determines whether you need an invite-token flow, a domain check, or both.',
+    type: 'single',
+    skipIf: (a) => a.scope === 'single',
+    options: [
+      {
+        value: 'invite',
+        title: 'Manual invite only',
+        desc: 'Owner/admin sends an email invite link with a token.',
+        code: 'invites table'
+      },
+      {
+        value: 'domain',
+        title: 'Domain-based auto-join',
+        desc: 'Anyone signing up with an approved email domain joins automatically.',
+        code: 'workspaces.allowed_domains'
+      },
+      {
+        value: 'both',
+        title: 'Both',
+        desc: 'Support manual invites and domain auto-join side by side.',
+        code: 'invites + allowed_domains'
+      }
+    ]
+  },
+  {
+    key: 'billingScope',
+    qnum: 'Q5 / billing',
+    title: 'Who gets billed?',
+    hint: 'This decides where the Stripe customer ID and plan field actually live.',
+    type: 'single',
+    options: [
+      {
+        value: 'user',
+        title: 'The individual user',
+        desc: 'Billing lives on the profile — matches solo, no-workspace apps.',
+        code: 'profiles.stripe_customer_id'
+      },
+      {
+        value: 'workspace',
+        title: 'The workspace',
+        desc: 'One subscription covers the whole team inside that workspace.',
+        code: 'workspaces.stripe_customer_id'
+      },
+      {
+        value: 'org',
+        title: 'The parent organization',
+        desc: 'Billing rolls up to the organization, covering all its workspaces.',
+        code: 'organizations.stripe_customer_id'
+      }
+    ]
+  },
+  {
+    key: 'product',
+    qnum: 'Q6 / the product itself',
+    title: 'What is the product, and what does it do?',
+    hint: 'This gets dropped straight into the generated prompt as the core feature.',
+    type: 'text'
+  }
+];
+
+function visibleQuestions(){
+  return questions.filter(q => !q.skipIf || !q.skipIf(state.answers));
+}
+
+function renderRail(){
+  const qs = visibleQuestions();
+  const rail = document.getElementById('rail');
+  rail.innerHTML = '';
+  qs.forEach((q, i) => {
+    const seg = document.createElement('div');
+    seg.className = 'rail-seg';
+    const fill = document.createElement('i');
+    fill.style.width = i < state.step ? '100%' : (i === state.step ? '50%' : '0%');
+    seg.appendChild(fill);
+    rail.appendChild(seg);
+  });
+}
+
+function selectMark(){
+  return '<svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+}
+
+function renderQuestion(){
+  const qs = visibleQuestions();
+  const q = qs[state.step];
+  const panel = document.getElementById('panel');
+
+  if(!q){
+    renderResult();
+    return;
+  }
+
+  let bodyHtml = '';
+
+  if(q.type === 'single'){
+    bodyHtml = '<div class="options" id="optWrap">' + q.options.map(o => {
+      const sel = state.answers[q.key] === o.value ? ' sel' : '';
+      return `<button type="button" class="opt${sel}" data-key="${q.key}" data-value="${o.value}">
+        <span class="opt-mark">${selectMark()}</span>
+        <span class="opt-body">
+          <strong>${o.title}</strong>
+          <span>${o.desc}</span>
+          <span class="opt-code">${o.code}</span>
+        </span>
+      </button>`;
+    }).join('') + '</div>';
+  } else if(q.type === 'text'){
+    bodyHtml = `
+      <div class="field">
+        <label>Product name</label>
+        <input type="text" id="productName" placeholder="e.g. QuickQR, PulseBot" value="${escapeAttr(state.answers.productName)}">
+      </div>
+      <div class="field">
+        <label>What does it actually do</label>
+        <textarea id="productFeature" placeholder="e.g. Generate dynamic QR codes that can be edited after printing, with per-scan analytics">${escapeHtml(state.answers.productFeature)}</textarea>
+      </div>
+    `;
+  }
+
+  panel.innerHTML = `
+    <p class="qnum">${q.qnum}</p>
+    <h2 class="qtitle">${q.title}</h2>
+    ${q.hint ? `<p class="qhint">${q.hint}</p>` : ''}
+    ${bodyHtml}
+    <div class="nav">
+      <button type="button" class="navbtn" id="backBtn" ${state.step===0 ? 'disabled' : ''}>Back</button>
+      <span class="stepdots">${state.step+1} / ${qs.length}</span>
+      <button type="button" class="navbtn primary" id="nextBtn">${state.step === qs.length-1 ? 'Build prompt' : 'Next'}</button>
+    </div>
+  `;
+
+  renderRail();
+
+  if(q.type === 'single'){
+    panel.querySelectorAll('.opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.answers[q.key] = btn.getAttribute('data-value');
+        panel.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
+        btn.classList.add('sel');
+        updateNextEnabled();
+      });
+    });
+  }
+
+  if(q.type === 'text'){
+    document.getElementById('productName').addEventListener('input', e => {
+      state.answers.productName = e.target.value;
+      updateNextEnabled();
+    });
+    document.getElementById('productFeature').addEventListener('input', e => {
+      state.answers.productFeature = e.target.value;
+      updateNextEnabled();
+    });
+  }
+
+  document.getElementById('backBtn').addEventListener('click', () => {
+    if(state.step > 0){ state.step--; renderQuestion(); }
+  });
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    const qq = visibleQuestions()[state.step];
+    if(qq.type === 'text'){
+      if(!state.answers.productFeature.trim()){
+        flashError();
+        return;
+      }
+    }
+    state.step++;
+    renderQuestion();
+  });
+
+  updateNextEnabled();
+}
+
+function flashError(){
+  const ta = document.getElementById('productFeature');
+  if(!ta) return;
+  ta.style.borderColor = '#b3564a';
+  let msg = document.getElementById('errMsg');
+  if(!msg){
+    msg = document.createElement('div');
+    msg.id = 'errMsg';
+    msg.style.color = '#b3564a';
+    msg.style.fontSize = '12.5px';
+    msg.style.marginTop = '-10px';
+    msg.style.marginBottom = '14px';
+    ta.parentElement.appendChild(msg);
+  }
+  msg.textContent = 'Describe what the product does before continuing.';
+}
+
+function updateNextEnabled(){
+  const qs = visibleQuestions();
+  const q = qs[state.step];
+  const nextBtn = document.getElementById('nextBtn');
+  if(!nextBtn) return;
+  if(q.type === 'single'){
+    nextBtn.disabled = !state.answers[q.key];
+  } else {
+    nextBtn.disabled = false;
+  }
+}
+
+function escapeHtml(s){
+  return (s || '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+function escapeAttr(s){
+  return (s || '').replace(/"/g, '&quot;');
+}
+
+function buildPrompt(){
+  const a = state.answers;
+  const name = a.productName.trim() || '[PRODUCT NAME]';
+  const feature = a.productFeature.trim() || '[PRODUCT FEATURE]';
+
+  let lines = [];
+  lines.push(`Build a SaaS application called ${name} using Next.js, Supabase, and deployed on Vercel.`);
+  lines.push('');
+
+  // architecture label
+  let archLabel = a.scope === 'single' ? 'Single-user, no workspace/team concept.'
+    : a.scope === 'single-workspace' ? 'Single-workspace per account, team members can join with roles.'
+    : 'Multi-workspace. A single user can own or belong to many separate workspaces.';
+  lines.push(`ARCHITECTURE: ${archLabel}`);
+  lines.push('');
+
+  // auth block
+  lines.push('Auth:');
+  lines.push('- Use Supabase Auth (email/password + Google OAuth)');
+  if(a.scope === 'single'){
+    lines.push('- On signup, auto-create a row in `profiles` linked to auth.users.id');
+  } else if(a.scope === 'single-workspace'){
+    lines.push('- On signup, auto-create a `profiles` row AND auto-create one `workspaces` row owned by that user');
+    lines.push("- Auto-insert the creator into `workspace_members` with role = 'owner'");
+  } else {
+    lines.push('- On signup, auto-create a `profiles` row only — do NOT auto-create a workspace');
+    lines.push('- User is prompted to create a new workspace or accept a pending invite after signup');
+  }
+  lines.push('');
+
+  // schema block
+  lines.push('Database schema:');
+  if(a.scope === 'single'){
+    lines.push('- profiles (id, full_name, avatar_url, plan, stripe_customer_id, created_at)');
+  } else {
+    lines.push('- profiles (id, full_name, avatar_url' + (a.scope === 'multi-workspace' ? ', current_workspace_id' : '') + ', created_at)');
+    if(a.hierarchy === 'nested'){
+      lines.push('- organizations (id, name, owner_id, plan, stripe_customer_id, created_at)');
+      lines.push('- workspaces (id, organization_id, name, created_at)');
+      lines.push('- org_members (id, organization_id, user_id, role, created_at)');
+    } else {
+      lines.push('- workspaces (id, name, owner_id, plan, stripe_customer_id, created_at)');
+    }
+    if(a.roles === 'rbac'){
+      lines.push('- roles (id, workspace_id, name)');
+      lines.push('- permissions (id, role_id, action)');
+      lines.push('- workspace_members (id, workspace_id, user_id, role_id, created_at)');
+    } else {
+      lines.push('- workspace_members (id, workspace_id, user_id, role, created_at) — role: owner/admin/member');
+    }
+    if(a.joinMethod === 'invite' || a.joinMethod === 'both'){
+      lines.push('- invites (id, workspace_id, email, role, token, expires_at, created_at)');
+    }
+  }
+  lines.push('');
+
+  // access rules
+  lines.push('Access rules:');
+  lines.push('- Enable Row Level Security (RLS) on every table');
+  if(a.scope === 'single'){
+    lines.push('- Users can only select/insert/update/delete rows where user_id = auth.uid()');
+    lines.push('- All feature tables must have a `user_id` column referencing profiles.id');
+  } else {
+    lines.push('- A user can only read/write data belonging to a workspace where they exist in workspace_members');
+    lines.push('- All feature tables must have a `workspace_id` column, NOT user_id — data belongs to the workspace');
+    if(a.roles === 'rbac'){
+      lines.push('- Sensitive actions (invite, billing, delete) check the permissions table via role_id before allowing the action');
+    } else {
+      lines.push("- Only 'owner' or 'admin' roles can invite/remove members or change billing");
+      lines.push("- 'member' role can only use the core feature, not manage team/billing");
+    }
+    if(a.scope === 'multi-workspace'){
+      lines.push('- UI includes a workspace switcher pulling all workspaces the user belongs to via workspace_members');
+      lines.push('- profiles.current_workspace_id tracks the active workspace; queries default to this scope');
+    }
+  }
+  lines.push('');
+
+  // joining
+  if(a.scope !== 'single'){
+    lines.push('Joining a workspace:');
+    if(a.joinMethod === 'invite'){
+      lines.push('- Owner/admin invites via email, generating a token-based invite link');
+      lines.push('- Accepting the invite adds the user to workspace_members with the assigned role');
+    } else if(a.joinMethod === 'domain'){
+      lines.push("- Add `allowed_domains text[]` to workspaces");
+      lines.push("- After email verification, auto-add the user to workspace_members as 'member' if their email domain matches");
+    } else if(a.joinMethod === 'both'){
+      lines.push('- Support manual token-based invites AND domain-based auto-join');
+      lines.push("- Add `allowed_domains text[]` to workspaces for the auto-join path");
+    }
+    lines.push('');
+  }
+
+  // billing
+  lines.push('Billing:');
+  lines.push('- Integrate Stripe Checkout + Customer Portal');
+  if(a.billingScope === 'user'){
+    lines.push('- Subscription status stored on profiles.plan (free/pro/premium)');
+    lines.push('- Webhook updates profiles.plan on subscription events');
+  } else if(a.billingScope === 'workspace'){
+    lines.push('- Subscription tied to workspaces.stripe_customer_id — billing is per-workspace, not per-user');
+    lines.push('- Only owner/admin can access the billing portal');
+  } else {
+    lines.push('- Subscription tied to organizations.stripe_customer_id — billing rolls up across all workspaces in that org');
+    lines.push('- Only org-level owner/admin can access the billing portal');
+  }
+  lines.push('');
+
+  lines.push(`Core feature: ${feature}`);
+  lines.push('');
+
+  // build order
+  let order = ['auth pages', 'profile creation trigger'];
+  if(a.scope !== 'single') order.push('workspace' + (a.hierarchy === 'nested' ? ' + organization' : '') + ' creation flow');
+  if(a.scope === 'multi-workspace') order.push('workspace switcher');
+  order.push('RLS policies');
+  if(a.scope !== 'single' && (a.joinMethod === 'invite' || a.joinMethod === 'both')) order.push('invite flow');
+  order.push('core feature tables (' + (a.scope === 'single' ? 'user' : 'workspace') + '-scoped)');
+  order.push('Stripe integration');
+  order.push('dashboard UI');
+
+  lines.push('Build in this order: ' + order.join(' → ') + '.');
+
+  return lines.join('\n');
+}
+
+function summaryBadges(){
+  const a = state.answers;
+  const b = [];
+  b.push(a.scope === 'single' ? 'Single-user' : a.scope === 'single-workspace' ? 'Single-workspace' : 'Multi-workspace');
+  if(a.scope !== 'single'){
+    b.push(a.roles === 'rbac' ? 'Custom RBAC' : 'Fixed roles');
+    if(a.hierarchy === 'nested') b.push('Org hierarchy');
+    b.push(a.joinMethod === 'invite' ? 'Invite-only' : a.joinMethod === 'domain' ? 'Domain auto-join' : 'Invite + domain');
+  }
+  b.push('Billing: ' + (a.billingScope === 'user' ? 'per-user' : a.billingScope === 'workspace' ? 'per-workspace' : 'per-org'));
+  return b;
+}
+
+function renderResult(){
+  const panel = document.getElementById('panel');
+  const prompt = buildPrompt();
+  const badges = summaryBadges();
+
+  document.getElementById('rail').querySelectorAll('.rail-seg i').forEach(i => i.style.width = '100%');
+
+  panel.innerHTML = `
+    <div class="result-head">
+      <div>
+        <p class="qnum">Ready</p>
+        <h2 class="qtitle">Your architecture prompt</h2>
+      </div>
+      <div class="badgebar">${badges.map(x => `<span class="badge">${x}</span>`).join('')}</div>
+    </div>
+    <pre class="output" id="outputText"></pre>
+    <div class="copybar">
+      <button type="button" class="primary" id="copyBtn">Copy prompt</button>
+      <button type="button" id="editBtn">Edit answers</button>
+    </div>
+    <div class="restart-row"><a id="restartLink">Start over</a></div>
+  `;
+
+  document.getElementById('outputText').textContent = prompt;
+
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    navigator.clipboard.writeText(prompt).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copied';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy prompt'; btn.classList.remove('copied'); }, 1600);
+    });
+  });
+
+  document.getElementById('editBtn').addEventListener('click', () => {
+    state.step = visibleQuestions().length - 1;
+    renderQuestion();
+  });
+
+  document.getElementById('restartLink').addEventListener('click', () => {
+    state.step = 0;
+    state.answers = { scope:null, roles:null, hierarchy:null, joinMethod:null, billingScope:null, productName:'', productFeature:'' };
+    renderQuestion();
+  });
+}
+
+renderQuestion();
+</script>
+</body>
+</html>

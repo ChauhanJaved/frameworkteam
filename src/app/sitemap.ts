@@ -117,6 +117,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${websiteURL}/about/`,
       lastModified: lastModified,
     },
+    {
+      url: `${websiteURL}/saas-architecture-wizard/`,
+      lastModified: lastModified,
+    },
   ];
 
   // Dynamically map over all service items to register their sitemap URLs
