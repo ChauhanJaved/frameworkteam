@@ -166,6 +166,37 @@
         "answer": "If building a solo tool, use the Single-User pattern. If building B2B SaaS where teammates collaborate in one workspace, prompt for the Single-Workspace pattern. For agency or multi-account tools, prompt for the Multi-Workspace switcher pattern."
       }
     ]
+  },
+  {
+    "id": "stripe-paywall-nextjs-supabase-edge-functions-webhook-security",
+    "title": "Architecting a Secure Paywall: Next.js, Supabase Edge Functions, and Stripe Webhook Vulnerabilities",
+    "shortDesc": "Discover how to build a robust SaaS paywall using Next.js, Supabase Edge Functions, and Stripe. Learn essential webhook events, state sync, and real-world security vulnerabilities that exploit unhandled webhooks.",
+    "date": "2026-09-20T10:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "SaaS Architecture",
+    "services": ["saas-application-development", "custom-web-applications"],
+    "techStack": ["Next.js", "Stripe", "Supabase", "Edge Functions", "TypeScript", "PostgreSQL"],
+    "keywords": [
+      "Stripe paywall Next.js",
+      "Supabase Edge Functions webhook",
+      "Stripe subscription webhooks security",
+      "SaaS webhook exploits",
+      "PostgreSQL subscription sync"
+    ],
+    "faqs": [
+      {
+        "question": "Why use Supabase Edge Functions instead of Next.js API routes for Stripe webhooks?",
+        "answer": "Supabase Edge Functions run globally on Deno at the edge with zero cold starts, providing low-latency execution, native connection pooling to PostgreSQL, and direct access to Supabase Service Role administrative clients."
+      },
+      {
+        "question": "What happens if a Stripe webhook signature validation fails?",
+        "answer": "If signature verification fails (e.g. invalid signature header), the Edge Function must immediately return a 400 Bad Request. This blocks attackers from sending forged payment payloads to elevate account status without paying."
+      },
+      {
+        "question": "How do you prevent race conditions when Stripe webhooks arrive out-of-order?",
+        "answer": "Store the event created timestamp (event.created) or subscription modified timestamp in PostgreSQL. When processing an incoming webhook, compare the payload timestamp against the existing database record to discard stale status updates."
+      }
+    ]
   }
 ]
 
