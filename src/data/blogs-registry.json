@@ -197,6 +197,42 @@
         "answer": "Store the event created timestamp (event.created) or subscription modified timestamp in PostgreSQL. When processing an incoming webhook, compare the payload timestamp against the existing database record to discard stale status updates."
       }
     ]
+  },
+  {
+    "id": "stripe-fastspring-subscription-lifecycle-cancel-resume-supabase",
+    "title": "SaaS Subscription Lifecycle: Stripe vs FastSpring Cancel, Resume, and Plan Upgrades on a Single Persistent Subscription ID",
+    "shortDesc": "Discover how to manage complex SaaS subscription lifecycles across Stripe and FastSpring. Learn how to handle cancel-at-period-end, mid-cycle reactivations, prorated upgrades, and Edge Function webhook synchronization without corrupting customer subscription IDs.",
+    "date": "2026-10-10T10:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "SaaS Architecture",
+    "services": ["saas-application-development", "custom-web-applications"],
+    "techStack": ["Next.js", "Stripe", "FastSpring", "Supabase", "Edge Functions", "PostgreSQL"],
+    "keywords": [
+      "Stripe vs FastSpring subscription",
+      "SaaS subscription lifecycle cancel resume",
+      "single subscription ID architecture",
+      "FastSpring API subscription updates",
+      "Stripe prorated upgrade downgrade",
+      "Supabase Edge Functions webhook security"
+    ],
+    "faqs": [
+      {
+        "question": "Why should all subscription activities remain on the initial Subscription ID?",
+        "answer": "Creating new checkout sessions for plan updates or reactivations spawns orphan customer records, causes duplicate billing, corrupts churn/MRR metrics, and fragments invoice history. All updates must mutate the existing subscription ID in-place."
+      },
+      {
+        "question": "How do you resume a canceled subscription before the billing period ends in Stripe?",
+        "answer": "Invoke the Stripe update API with cancel_at_period_end set to false on the existing subscription ID. This reactivates the subscription immediately without charging the customer or issuing a new subscription entity."
+      },
+      {
+        "question": "How does FastSpring handle subscription upgrades compared to Stripe?",
+        "answer": "FastSpring allows in-place product mutations via POST /subscriptions using proration parameters like 'prorate-now' or 'prorate-next'. It acts as a Merchant of Record (MoR) by directly adjusting global VAT and charging the payment method on file without initiating a new storefront session."
+      },
+      {
+        "question": "How do Supabase Edge Functions verify FastSpring webhooks?",
+        "answer": "Supabase Edge Functions use Deno Web Crypto API (crypto.subtle) to compute an HMAC-SHA256 hash of the raw request payload using the FastSpring webhook secret key, comparing the result with the incoming X-FS-Signature header."
+      }
+    ]
   }
 ]
 
