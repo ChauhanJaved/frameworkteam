@@ -233,6 +233,42 @@
         "answer": "Supabase Edge Functions use Deno Web Crypto API (crypto.subtle) to compute an HMAC-SHA256 hash of the raw request payload using the FastSpring webhook secret key, comparing the result with the incoming X-FS-Signature header."
       }
     ]
+  },
+  {
+    "id": "supabase-realtime-payment-sync-webhook-ux",
+    "title": "Eliminating Payment Loading Friction: How Supabase Realtime Syncs Webhook Subscriptions for Flawless UX",
+    "shortDesc": "Waiting for asynchronous Stripe or FastSpring webhooks to update subscriptions often causes stale UI flashes and user panic. Learn how to architect instant, reactive payment feedback using PostgreSQL CDC and Supabase Realtime.",
+    "date": "2026-10-20T10:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "SaaS Architecture",
+    "services": ["saas-application-development", "custom-web-applications"],
+    "techStack": ["Supabase Realtime", "Next.js", "PostgreSQL", "Stripe", "FastSpring", "TypeScript"],
+    "keywords": [
+      "Supabase Realtime payments",
+      "Stripe webhook subscription UX",
+      "PostgreSQL CDC Realtime",
+      "payment webhook latency sync",
+      "Next.js billing page realtime",
+      "SaaS subscription status sync"
+    ],
+    "faqs": [
+      {
+        "question": "Why does a user see stale plan data immediately after completing payment?",
+        "answer": "Payment gateways like Stripe or FastSpring process transactions asynchronously. The authoritative entitlement grant happens when the gateway's server-to-server webhook fires to your Edge Function, which updates PostgreSQL. If the client redirects or reloads before the webhook completes (typically 1.5 to 5 seconds), the frontend queries the database prematurely and displays the old tier."
+      },
+      {
+        "question": "How does Supabase Realtime eliminate the need for HTTP polling loops?",
+        "answer": "Supabase Realtime connects client browsers over a persistent WebSocket directly to PostgreSQL's Write-Ahead Log (WAL) replication stream. When the webhook handler writes the new subscription status into PostgreSQL, Postgres instantly broadcasts the updated row to the client in under 100 milliseconds, eliminating repetitive short-polling API requests."
+      },
+      {
+        "question": "Does Supabase Realtime expose private billing data to unauthorized users?",
+        "answer": "No. When Row-Level Security (RLS) is enabled on the subscriptions table, Supabase Realtime enforces your PostgreSQL RLS policies against the subscriber's authenticated JWT. Users can only receive change events for rows where their auth.uid() or organization_id membership matches the SELECT policy."
+      },
+      {
+        "question": "What happens if the client drops the WebSocket connection during payment checkout?",
+        "answer": "A resilient billing architecture implements a hybrid fallback: Supabase Realtime handles the primary sub-100ms push notification, while a safety fallback timer (e.g., 15-20 seconds) executes an authoritative server-side check if network disconnection prevents WebSocket event delivery."
+      }
+    ]
   }
 ]
 
