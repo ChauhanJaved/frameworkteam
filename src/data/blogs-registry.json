@@ -6,9 +6,21 @@
     "date": "2026-07-25T09:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "Enterprise Software",
-    "services": ["custom-web-applications"],
-    "techStack": ["Next.js", "React", "Supabase", "PostgreSQL"],
-    "keywords": ["custom web applications", "enterprise software speed", "database management portals", "Next.js dashboards"],
+    "services": [
+      "custom-web-applications"
+    ],
+    "techStack": [
+      "Next.js",
+      "React",
+      "Supabase",
+      "PostgreSQL"
+    ],
+    "keywords": [
+      "custom web applications",
+      "enterprise software speed",
+      "database management portals",
+      "Next.js dashboards"
+    ],
     "faqs": [
       {
         "question": "Why should we migrate from spreadsheets to a custom web app?",
@@ -27,9 +39,21 @@
     "date": "2026-07-27T10:30:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Architecture",
-    "services": ["saas-application-development"],
-    "techStack": ["Next.js", "TypeScript", "Supabase Auth", "Stripe"],
-    "keywords": ["multi-tenant SaaS", "PostgreSQL RLS", "Stripe subscription logic", "Next.js scalable architecture"],
+    "services": [
+      "saas-application-development"
+    ],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Supabase Auth",
+      "Stripe"
+    ],
+    "keywords": [
+      "multi-tenant SaaS",
+      "PostgreSQL RLS",
+      "Stripe subscription logic",
+      "Next.js scalable architecture"
+    ],
     "faqs": [
       {
         "question": "What is PostgreSQL Row-Level Security (RLS) in multi-tenancy?",
@@ -48,9 +72,22 @@
     "date": "2026-07-28T14:45:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "Content Systems",
-    "services": ["headless-cms-websites", "cms-integration"],
-    "techStack": ["Next.js", "Sanity CMS", "Tailwind CSS", "Vercel"],
-    "keywords": ["headless CMS advantages", "Next.js CMS developers", "Sanity integration website", "SEO Core Web Vitals"],
+    "services": [
+      "headless-cms-websites",
+      "cms-integration"
+    ],
+    "techStack": [
+      "Next.js",
+      "Sanity CMS",
+      "Tailwind CSS",
+      "Vercel"
+    ],
+    "keywords": [
+      "headless CMS advantages",
+      "Next.js CMS developers",
+      "Sanity integration website",
+      "SEO Core Web Vitals"
+    ],
     "faqs": [
       {
         "question": "How does a headless CMS setup improve SEO?",
@@ -69,9 +106,21 @@
     "date": "2026-08-04T10:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Infrastructure",
-    "services": ["saas-application-development"],
-    "techStack": ["Supabase", "PostgreSQL", "Next.js", "TypeScript"],
-    "keywords": ["multi-tenant SaaS databases", "PostgreSQL RLS", "Supabase tenant isolation", "Next.js database security"],
+    "services": [
+      "saas-application-development"
+    ],
+    "techStack": [
+      "Supabase",
+      "PostgreSQL",
+      "Next.js",
+      "TypeScript"
+    ],
+    "keywords": [
+      "multi-tenant SaaS databases",
+      "PostgreSQL RLS",
+      "Supabase tenant isolation",
+      "Next.js database security"
+    ],
     "faqs": [
       {
         "question": "What is PostgreSQL Row-Level Security (RLS)?",
@@ -90,9 +139,21 @@
     "date": "2026-08-02T14:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "AI Development",
-    "services": ["ai-powered-web-applications"],
-    "techStack": ["Next.js", "OpenAI API", "PostgreSQL", "Supabase Vector"],
-    "keywords": ["Retrieval-Augmented Generation", "pgvector database", "OpenAI embeddings Next.js", "semantic search web applications"],
+    "services": [
+      "ai-powered-web-applications"
+    ],
+    "techStack": [
+      "Next.js",
+      "OpenAI API",
+      "PostgreSQL",
+      "Supabase Vector"
+    ],
+    "keywords": [
+      "Retrieval-Augmented Generation",
+      "pgvector database",
+      "OpenAI embeddings Next.js",
+      "semantic search web applications"
+    ],
     "faqs": [
       {
         "question": "What is Retrieval-Augmented Generation (RAG)?",
@@ -111,9 +172,21 @@
     "date": "2026-07-31T09:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "Performance Optimization",
-    "services": ["performance-optimization"],
-    "techStack": ["Next.js", "Vercel CDN", "Tailwind CSS", "WebP Images"],
-    "keywords": ["Core Web Vitals optimization", "Next.js speed performance", "LCP mobile score", "CLS layout shift fixes"],
+    "services": [
+      "performance-optimization"
+    ],
+    "techStack": [
+      "Next.js",
+      "Vercel CDN",
+      "Tailwind CSS",
+      "WebP Images"
+    ],
+    "keywords": [
+      "Core Web Vitals optimization",
+      "Next.js speed performance",
+      "LCP mobile score",
+      "CLS layout shift fixes"
+    ],
     "faqs": [
       {
         "question": "Why are Core Web Vitals important for SEO?",
@@ -132,9 +205,23 @@
     "date": "2026-08-19T10:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Architecture",
-    "services": ["saas-application-development", "custom-web-applications"],
-    "techStack": ["Next.js", "PostgreSQL", "Supabase", "Vercel", "TypeScript"],
-    "keywords": ["multi-tenant SaaS models", "single user vs team SaaS", "multi-organization architecture", "PostgreSQL RLS tenant isolation"],
+    "services": [
+      "saas-application-development",
+      "custom-web-applications"
+    ],
+    "techStack": [
+      "Next.js",
+      "PostgreSQL",
+      "Supabase",
+      "Vercel",
+      "TypeScript"
+    ],
+    "keywords": [
+      "multi-tenant SaaS models",
+      "single user vs team SaaS",
+      "multi-organization architecture",
+      "PostgreSQL RLS tenant isolation"
+    ],
     "faqs": [
       {
         "question": "What is the difference between single-team and multi-organization SaaS architecture?",
@@ -153,9 +240,24 @@
     "date": "2026-08-26T10:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Architecture",
-    "services": ["saas-application-development", "custom-web-applications"],
-    "techStack": ["Next.js", "Supabase", "Stripe", "Vercel", "Cursor AI"],
-    "keywords": ["AI prompt engineering SaaS", "Cursor AI SaaS prompts", "v0 Bolt.new prompts", "Next.js Supabase architecture prompt", "multi-tenant SaaS AI prompt"],
+    "services": [
+      "saas-application-development",
+      "custom-web-applications"
+    ],
+    "techStack": [
+      "Next.js",
+      "Supabase",
+      "Stripe",
+      "Vercel",
+      "Cursor AI"
+    ],
+    "keywords": [
+      "AI prompt engineering SaaS",
+      "Cursor AI SaaS prompts",
+      "v0 Bolt.new prompts",
+      "Next.js Supabase architecture prompt",
+      "multi-tenant SaaS AI prompt"
+    ],
     "faqs": [
       {
         "question": "Why do AI coding tools struggle with multi-tenant SaaS architecture?",
@@ -174,8 +276,18 @@
     "date": "2026-09-20T10:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Architecture",
-    "services": ["saas-application-development", "custom-web-applications"],
-    "techStack": ["Next.js", "Stripe", "Supabase", "Edge Functions", "TypeScript", "PostgreSQL"],
+    "services": [
+      "saas-application-development",
+      "custom-web-applications"
+    ],
+    "techStack": [
+      "Next.js",
+      "Stripe",
+      "Supabase",
+      "Edge Functions",
+      "TypeScript",
+      "PostgreSQL"
+    ],
     "keywords": [
       "Stripe paywall Next.js",
       "Supabase Edge Functions webhook",
@@ -205,8 +317,18 @@
     "date": "2026-10-10T10:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Architecture",
-    "services": ["saas-application-development", "custom-web-applications"],
-    "techStack": ["Next.js", "Stripe", "FastSpring", "Supabase", "Edge Functions", "PostgreSQL"],
+    "services": [
+      "saas-application-development",
+      "custom-web-applications"
+    ],
+    "techStack": [
+      "Next.js",
+      "Stripe",
+      "FastSpring",
+      "Supabase",
+      "Edge Functions",
+      "PostgreSQL"
+    ],
     "keywords": [
       "Stripe vs FastSpring subscription",
       "SaaS subscription lifecycle cancel resume",
@@ -241,8 +363,18 @@
     "date": "2026-10-20T10:00:00Z",
     "author": "Javed Chauhan (Founder & Lead Software Engineer)",
     "category": "SaaS Architecture",
-    "services": ["saas-application-development", "custom-web-applications"],
-    "techStack": ["Supabase Realtime", "Next.js", "PostgreSQL", "Stripe", "FastSpring", "TypeScript"],
+    "services": [
+      "saas-application-development",
+      "custom-web-applications"
+    ],
+    "techStack": [
+      "Supabase Realtime",
+      "Next.js",
+      "PostgreSQL",
+      "Stripe",
+      "FastSpring",
+      "TypeScript"
+    ],
     "keywords": [
       "Supabase Realtime payments",
       "Stripe webhook subscription UX",
@@ -269,6 +401,59 @@
         "answer": "A resilient billing architecture implements a hybrid fallback: Supabase Realtime handles the primary sub-100ms push notification, while a safety fallback timer (e.g., 15-20 seconds) executes an authoritative server-side check if network disconnection prevents WebSocket event delivery."
       }
     ]
+  },
+  {
+    "id": "deepseek-harness-vs-claude-openai-agent-architecture",
+    "title": "DeepSeek Harness: Architecture, Features, and How It Compares to Claude and OpenAI",
+    "shortDesc": "Explore DeepSeek Harness (dsh): an open-source, Cordis-powered agent runtime offering hot-swappable plugins, trajectory replay, multi-LLM flexibility, and up to 95% cost savings over Claude and OpenAI.",
+    "date": "2026-11-10T10:00:00Z",
+    "author": "Javed Chauhan (Founder & Lead Software Engineer)",
+    "category": "AI Development",
+    "services": [
+      "ai-powered-web-applications",
+      "api-development-integration",
+      "custom-web-applications"
+    ],
+    "techStack": [
+      "DeepSeek",
+      "DeepSeek Harness",
+      "Node.js",
+      "Cordis",
+      "TypeScript",
+      "Claude",
+      "OpenAI"
+    ],
+    "keywords": [
+      "DeepSeek Harness",
+      "deepseek-harness github",
+      "open source AI agent harness",
+      "DeepSeek vs Claude Code",
+      "DeepSeek Harness vs OpenAI Swarm",
+      "agent runtime Cordis",
+      "AI agent cost comparison",
+      "multi-LLM agent harness"
+    ],
+    "faqs": [
+      {
+        "question": "What is DeepSeek Harness (dsh)?",
+        "answer": "DeepSeek Harness (dsh) is an open-source, plugin-first agent runtime and software development harness built by DeepSeek. Powered by the Cordis micro-kernel, it provides an extensible foundation where agent loops, tool routers, sandbox execution, and session telemetry are modular, hot-swappable plugins."
+      },
+      {
+        "question": "How does DeepSeek Harness compare to Claude Code and OpenAI agent frameworks?",
+        "answer": "Unlike Claude Code or OpenAI's closed-source harnesses that enforce fixed agent loops and proprietary vendor lock-in, DeepSeek Harness is 100% open-source, features a hot-reloadable plugin architecture, includes native session trajectory replay, and supports arbitrary third-party LLMs like Claude, GPT-4o, and local models."
+      },
+      {
+        "question": "Can I use models other than DeepSeek with DeepSeek Harness?",
+        "answer": "Yes. DeepSeek Harness is model-agnostic. Through its modular provider plugins, you can connect DeepSeek V3 and R1, Anthropic Claude 3.5 Sonnet, OpenAI GPT-4o, Google Gemini, or self-hosted models running on Ollama and vLLM."
+      },
+      {
+        "question": "How does running agent tasks on DeepSeek compare in price to OpenAI or Claude?",
+        "answer": "DeepSeek V3 costs approximately $0.14 per million input tokens and $0.28 per million output tokens, while reasoning model DeepSeek R1 costs $0.55 per million input tokens. Compared to GPT-4o ($2.50/$10.00) and Claude 3.5 Sonnet ($3.00/$15.00), DeepSeek reduces agent execution expenses by 85% to 95%, making large-scale agentic loops economically viable."
+      },
+      {
+        "question": "Does DeepSeek Harness support external tools and Model Context Protocol (MCP)?",
+        "answer": "Yes. The harness utilizes the Cordis dependency injection system, enabling straightforward integration with custom REST APIs, shell sandboxes, external databases, and MCP-compatible tool servers."
+      }
+    ]
   }
 ]
-
